@@ -125,6 +125,21 @@ class WikiCeleb(Experiment):
 
             logger.error(traceback.format_exc())
             logger.error(e)
+            # region agent log
+            try:
+                import json as _json, time as _time
+                _chain = []
+                _cur = e
+                for _ in range(6):
+                    if _cur is None:
+                        break
+                    _chain.append({"type": type(_cur).__name__, "module": type(_cur).__module__, "repr": repr(_cur)[:300]})
+                    _cur = _cur.__cause__ or _cur.__context__
+                with open(r"/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/.cursor/debug-6c783d.log", "a") as _f:
+                    _f.write(_json.dumps({"sessionId": "6c783d", "hypothesisId": "H1,H3,H4,H5", "location": "wiki_celeb.py:_run_row", "message": "system.run exception", "data": {"error_str": str(e), "top_type": type(e).__name__, "chain": _chain}, "timestamp": int(_time.time() * 1000)}) + "\n")
+            except Exception:
+                pass
+            # endregion
             error_metadata = {
                 "question": question,
                 "error": str(e),

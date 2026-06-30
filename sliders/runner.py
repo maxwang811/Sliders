@@ -10,6 +10,8 @@ Example:
 
 from __future__ import annotations
 
+import sliders._datadog  # noqa: F401
+
 import argparse
 import asyncio
 import json

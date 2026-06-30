@@ -79,7 +79,7 @@ cd sliders-public
 uv sync
 ```
 
-Create a `.env` file in your working directory (or copy from `.example.env`). SLIDERS supports either **Azure OpenAI** (default) or the **public OpenAI API** — pick one:
+Create a `.env` file in your working directory (or copy from `.example.env`). SLIDERS supports **Azure OpenAI** (default), the **public OpenAI API**, or any **OpenAI-compatible endpoint** such as **OpenRouter** — pick one:
 
 ```bash
 # Option A — Azure OpenAI (default)
@@ -89,6 +89,12 @@ AZURE_OPENAI_ENDPOINT=<your-endpoint>
 # Option B — OpenAI
 SLIDERS_LLM_PROVIDER=openai
 OPENAI_API_KEY=sk-...
+
+# Option C — OpenRouter (OpenAI-compatible; key starts with sk-or-)
+SLIDERS_LLM_PROVIDER=openai
+OPENAI_API_KEY=sk-or-...
+OPENAI_BASE_URL=https://openrouter.ai/api/v1
+# Bare model names in the config (gpt-4.1) are auto-prefixed to openai/gpt-4.1.
 
 # Where to write logs and results
 SLIDERS_LOGS_DIR=./logs

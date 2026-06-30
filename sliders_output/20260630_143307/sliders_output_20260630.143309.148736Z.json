@@ -1,0 +1,750 @@
+{
+  "experiment_id": "20260630.143309.148736Z",
+  "results": [
+    {
+      "question_id": "wiki_celeb_001",
+      "question": "Across the two trials, what drug was studied, what was the primary endpoint, and what was the main efficacy result?",
+      "predicted_answer": "Across the two trials:\n\n- **Drugs Studied:**  \n  1. **Alphaxolin**  \n  2. **Betapril**\n\n- **Primary Endpoints:**  \n  - For **alphaxolin**: The primary endpoint was the \"change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12.\"\n  - For **betapril**: The primary endpoint was the \"change from baseline in NT-proBNP at week 24.\"\n\n- **Main Efficacy Results:**  \n  - For **alphaxolin**: The adjusted mean change in systolic blood pressure was **-8.1 mmHg** for alphaxolin versus **-2.3 mmHg** for placebo, with a between-group difference of **-5.8 mmHg (P < 0.001)**, indicating a statistically significant reduction.\n  - For **betapril**: The geometric mean ratio of NT-proBNP at week 24 versus placebo was **0.92 (95% CI 0.83-1.02) for 40 mg**, **0.81 (0.72-0.91) for 80 mg**, and **0.78 (0.70-0.88) for 160 mg**; the test for trend was **P < 0.001**, showing a significant dose-dependent reduction in NT-proBNP.\n\n**Summary:**  \nThe two trials studied alphaxolin and betapril. The primary endpoints were change in 24-hour ambulatory systolic blood pressure (alphaxolin) and change in NT-proBNP (betapril). Both drugs showed statistically significant improvements in their respective primary endpoints compared to placebo."
+    }
+  ],
+  "all_metadata": [
+    {
+      "question": "Across the two trials, what drug was studied, what was the primary endpoint, and what was the main efficacy result?",
+      "num_documents": 2,
+      "document_names": [
+        "drug_trial_a",
+        "drug_trial_b"
+      ],
+      "document_sizes": [
+        4571,
+        4674
+      ],
+      "total_chunks": 2,
+      "timing": {
+        "start_time": 1782844399.090142,
+        "schema_generation": {
+          "generation_time": 18.386780977249146,
+          "library_based_selection_time": 18.386831998825073
+        },
+        "schema_extraction": {},
+        "table_merging": {
+          "merging_time": 37.547943115234375
+        },
+        "answer_generation": {},
+        "total_duration": 266.41143012046814
+      },
+      "schema": {
+        "generated_classes": 1,
+        "total_fields": 4,
+        "generation_tokens": 0,
+        "generation_time": 18.386831998825073,
+        "question_type": "simple",
+        "document_type": "others",
+        "classification_reasoning": "The question asks for specific factual information about the drug studied, the primary endpoint, and the main efficacy result across two clinical trials. This is a straightforward information retrieval task from the given document descriptions of clinical trials. Therefore, the question type is 'simple'. The documents are descriptions of clinical trials, which are structured reports of studies, fitting best under 'Others' since they are not datasets, stories, or policies.",
+        "average_fields_per_class": 4.0,
+        "field_types_distribution": {
+          "str": 4
+        },
+        "schema_object": {
+          "reasoning": "To answer the question, we need to extract, for each trial: (1) the drug studied, (2) the primary endpoint, and (3) the main efficacy result. These are all trial-level facts, so a single table capturing per-trial summary information is sufficient. We need fields for trial identification (e.g., trial_id), drug name, primary endpoint description, and main efficacy result (as a text summary, since efficacy results may be reported in various formats). No nested types are needed, as each trial will have one row. If there were multiple drugs or endpoints per trial, we would need additional tables, but the question and sample suggest one per trial.",
+          "tables": [
+            {
+              "name": "TrialSummary",
+              "description": "Summary information for each clinical trial, including drug studied, primary endpoint, and main efficacy result.",
+              "fields": [
+                {
+                  "name": "trial_id",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Unique identifier for the clinical trial (e.g., registry number, protocol ID, or study name).",
+                  "required": true,
+                  "normalization": null
+                },
+                {
+                  "name": "drug_name",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Name of the drug studied in the trial (generic or brand name as stated in the document).",
+                  "required": true,
+                  "normalization": null
+                },
+                {
+                  "name": "primary_endpoint_description",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Verbatim or paraphrased description of the primary endpoint as defined in the trial (e.g., 'change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12').",
+                  "required": true,
+                  "normalization": null
+                },
+                {
+                  "name": "main_efficacy_result",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Summary of the main efficacy result for the primary endpoint, including effect size and statistical significance if reported (e.g., 'adjusted mean change -8.2 mmHg vs -2.1 mmHg for placebo, p<0.001').",
+                  "required": true,
+                  "normalization": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "extraction": {
+        "chunks_processed": 2,
+        "successful_extractions": 2,
+        "failed_extractions": 0,
+        "retry_attempts": 0,
+        "extraction_time": 67.6665370464325,
+        "success_rate": 1.0
+      },
+      "merging": {
+        "tables_created": 0,
+        "sql_queries_executed": 0,
+        "merge_failures": 0,
+        "total_rows_processed": 0,
+        "merging_time": 0,
+        "merged_tables_dir_path": "",
+        "successful_merges": 1,
+        "failed_merges": 0,
+        "merge_success_rate": 1.0
+      },
+      "answer_generation": {
+        "sql_execution_attempts": 0,
+        "sql_execution_errors": 0,
+        "final_answer_tokens": 178,
+        "used_tables": true,
+        "answer_time": 80.60754919052124,
+        "answer_strategy": "sql_inspect",
+        "citation_sql": "SELECT trial_id, drug_name, primary_endpoint_description, main_efficacy_result, drug_name_quote, drug_name_rationale, primary_endpoint_description_quote, primary_endpoint_description_rationale, main_efficacy_result_quote, main_efficacy_result_rationale, text_header FROM TrialSummary_470b2325;",
+        "citation_rows": 2,
+        "citation_reasoning": "The previous SQL result includes both rows from the TrialSummary table, with all primary key columns (trial_id), all data columns referenced in the answer (drug_name, primary_endpoint_description, main_efficacy_result), and all provenance columns (all columns containing 'quote', 'rationale', or 'text_header'). These are the exact rows and columns used to answer the question, so the result is complete and correct for citation purposes.",
+        "citation_attempts": 2,
+        "citation_paragraph": "This answer is based on data from two clinical trial summaries in the provided table: SAMPLE-HTX-001 (alphaxolin) and SAMPLE-HFPEF-004 (betapril). For alphaxolin, the drug name, primary endpoint (\"change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12\"), and main efficacy result (adjusted mean change \u22128.1 mmHg vs \u22122.3 mmHg for placebo, between-group difference \u22125.8 mmHg, P < 0.001) are explicitly quoted and supported by rationales referencing the abstract, methods, and results sections. For betapril, the drug name, primary endpoint (\"change from baseline in NT-proBNP at week 24\"), and main efficacy result (geometric mean ratio of NT-proBNP at week 24 versus placebo for various doses, with a significant test for trend, P < 0.001) are similarly documented with direct quotes and rationales from the trial's abstract, methods, and results. The text headers and provenance information confirm that these data points were drawn from the relevant sections of each trial report.",
+        "reconciliation_stats_summary": "The reconciliation process used the trial ID as the primary key to group and compare data from the two clinical trials. Each trial was represented by a single, unique row, with no duplicates or conflicting entries detected, so no reconciliation actions (such as deduplication or conflict resolution) were needed. As a result, the total number of rows remained unchanged at two, ensuring that each trial\u2019s information was preserved as originally extracted.",
+        "num_queries": 1
+      },
+      "quality": {
+        "tables_with_data": 1,
+        "empty_tables": 0,
+        "data_completeness_score": 1.0
+      },
+      "errors": [],
+      "question_id": "wiki_celeb_001",
+      "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_143307",
+      "rephrase_question": {
+        "enabled": true,
+        "original_question": "Across the two trials, what drug was studied, what was the primary endpoint, and what was the main efficacy result?",
+        "questions": {
+          "schema": {
+            "question": "For each clinical trial, capture the following attributes: (1) the name of the drug studied, (2) the primary endpoint (including its definition and measurement details), and (3) the main efficacy result (including outcome, effect size, statistical significance, relevant units, and timepoints).",
+            "reasoning": "The original question asks for the drug studied, the primary endpoint, and the main efficacy result for each of two clinical trials. To design a schema that is document-agnostic and comprehensive, we need to capture, for each trial: the name of the drug studied, the primary endpoint (including its definition and any relevant measurement details), and the main efficacy result (including the outcome, effect size, statistical significance, and any relevant units or timepoints). This schema should be flexible enough to accommodate different types of trials and endpoints."
+          },
+          "extraction": {
+            "question": "For each chunk in the documents 'drug_trial_a' and 'drug_trial_b', extract all information about the drug studied, the primary endpoint, and the main efficacy result. Capture every instance where any of these fields are mentioned, regardless of context or repetition.",
+            "reasoning": "The user wants to know, for both trials, the drug studied, the primary endpoint, and the main efficacy result. To ensure exhaustive extraction at the chunk level, the question should instruct the extractor to capture all mentions of the studied drug, all primary endpoints, and all main efficacy results found in any chunk of either 'drug_trial_a' or 'drug_trial_b'. This avoids missing any relevant data and ensures that every chunk is checked for these fields, regardless of how the information is distributed across the documents."
+          },
+          "merge": {
+            "question": "Combine all extracted rows from 'drug_trial_a' and 'drug_trial_b' into a consolidated table with columns for trial identifier, drug studied, primary endpoint, and main efficacy result. Deduplicate and resolve any conflicts or partial information, ensuring each row accurately reflects the data from the source documents.",
+            "reasoning": "The user's question asks for the drug studied, primary endpoint, and main efficacy result for each of two trials. For the table merging stage, we need to consolidate all extracted rows from both documents into a single table, ensuring each row contains the trial identifier, drug name, primary endpoint, and main efficacy result. We should deduplicate and resolve any conflicting or partial information, but not filter or aggregate by trial at this stage. The merged table should preserve all relevant data from both 'drug_trial_a' and 'drug_trial_b' for downstream processing."
+          },
+          "answer": {
+            "question": "For each of the two trials, what drug was investigated, what was the primary endpoint, and what was the main efficacy outcome?",
+            "reasoning": "The user wants a summary of the drug studied, the primary endpoint, and the main efficacy result for each of the two trials. The question should be rephrased to explicitly ask for this information for both trials, making it clear that the answer should cover each trial separately."
+          }
+        },
+        "fallback_components": [],
+        "question_list": [
+          "For each clinical trial, capture the following attributes: (1) the name of the drug studied, (2) the primary endpoint (including its definition and measurement details), and (3) the main efficacy result (including outcome, effect size, statistical significance, relevant units, and timepoints).",
+          "For each chunk in the documents 'drug_trial_a' and 'drug_trial_b', extract all information about the drug studied, the primary endpoint, and the main efficacy result. Capture every instance where any of these fields are mentioned, regardless of context or repetition.",
+          "Combine all extracted rows from 'drug_trial_a' and 'drug_trial_b' into a consolidated table with columns for trial identifier, drug studied, primary endpoint, and main efficacy result. Deduplicate and resolve any conflicts or partial information, ensuring each row accurately reflects the data from the source documents.",
+          "For each of the two trials, what drug was investigated, what was the primary endpoint, and what was the main efficacy outcome?"
+        ]
+      },
+      "reconciliation": {
+        "initial_stats": {
+          "row_count": 2,
+          "column_count": 16,
+          "columns": [
+            {
+              "name": "row_id",
+              "dtype": "int64",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "page_number",
+              "dtype": "int64",
+              "null_count": 0,
+              "distinct_count": 1
+            },
+            {
+              "name": "document_name",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "text_header",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "trial_id_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "trial_id_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "trial_id",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "drug_name_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "drug_name_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "drug_name",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "primary_endpoint_description_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "primary_endpoint_description_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "primary_endpoint_description",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "main_efficacy_result_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "main_efficacy_result_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "main_efficacy_result",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            }
+          ]
+        },
+        "primary_key": {
+          "fields": [
+            "trial_id"
+          ],
+          "reasoning": "The table represents summary information for each clinical trial, with each row corresponding to a unique trial as identified by the 'trial_id' field. All other fields (drug_name, primary_endpoint_description, main_efficacy_result) are attributes of the trial and should be consolidated if there are duplicate extractions for the same trial_id. The statistics confirm that 'trial_id' is populated and distinct for each row, making it the appropriate business/domain identifier for consolidation. This ensures that all extracted information about the same trial is merged into a single row, as required.",
+          "query_count": 0
+        },
+        "pk_canonicalization": {
+          "pass_1_document_level": {
+            "successful_documents": [
+              "drug_trial_a",
+              "drug_trial_b"
+            ],
+            "failed_documents": [],
+            "total_documents": 2,
+            "rows_processed": 2
+          },
+          "pass_2_global_level": {
+            "canonicalized_fields": [],
+            "skipped_fields": [],
+            "canonicalization_count": 0,
+            "canonicalization_sqls": []
+          }
+        },
+        "null_pk_handling": {
+          "pass_1_document_level": {
+            "total_null_rows": 0,
+            "filled_count": 0,
+            "discarded_count": 0,
+            "placeholder_count": 0,
+            "initial_rows": 2,
+            "final_rows": 2,
+            "documents_processed": 2,
+            "documents_failed": 0
+          },
+          "pass_2_global_level": {
+            "total_null_rows": 0,
+            "filled_count": 0,
+            "discarded_count": 0,
+            "placeholder_count": 0,
+            "initial_rows": 2,
+            "final_rows": 2
+          }
+        },
+        "non_pk_null_handling": {
+          "documents_processed": 2,
+          "documents_failed": 0,
+          "rows_modified": 0,
+          "initial_rows": 2,
+          "final_rows": 2
+        },
+        "pk_groups": {
+          "total": 2,
+          "single_row": 2,
+          "multi_row": 0,
+          "processed": 0,
+          "failed": 0
+        },
+        "multi_row_group_initial_rows": 0,
+        "all_operations": [],
+        "final_row_count": 2,
+        "non_pk_canonicalization": {
+          "canonicalized_fields": [],
+          "skipped_fields": [],
+          "canonicalization_count": 0,
+          "canonicalization_sqls": []
+        },
+        "stats": {
+          "primary_key": [
+            "trial_id"
+          ],
+          "canonicalization": {
+            "stats_per_field": {},
+            "total_fields_canonicalized": 0,
+            "total_fields_processed": 0
+          },
+          "non_pk_canonicalization": {
+            "enabled": true,
+            "stats_per_field": {},
+            "total_fields_canonicalized": 0,
+            "total_fields_processed": 0,
+            "columns_identified": []
+          },
+          "row_grouping": {
+            "unique_primary_key_values": 2,
+            "single_row_groups": 2,
+            "multi_row_groups": 0
+          },
+          "multi_row_processing": {
+            "initial_total_rows": 0,
+            "final_total_rows": 0,
+            "rows_reduced": 0
+          },
+          "controller_actions": {
+            "deduplicate": 0,
+            "aggregate": 0,
+            "resolve_conflicts": 0,
+            "canonicalize": 0
+          },
+          "final_stats": {
+            "initial_total_rows": 2,
+            "final_total_rows": 2,
+            "total_rows_reduced": 0
+          }
+        }
+      },
+      "answer_stage": "post_merge",
+      "regular_answer": "Trial 1 (SAMPLE-HTX-001):\n- Drug: alphaxolin\n- Primary endpoint: change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12\n- Main efficacy result: adjusted mean change -8.1 mmHg vs -2.3 mmHg for placebo, between-group difference -5.8 mmHg (P < 0.001)\n\nTrial 2 (SAMPLE-HFPEF-004):\n- Drug: betapril\n- Primary endpoint: change from baseline in NT-proBNP at week 24\n- Main efficacy result: geometric mean ratio of NT-proBNP at week 24 versus placebo was 0.92 (40 mg), 0.81 (80 mg), and 0.78 (160 mg); test for trend P < 0.001",
+      "inspect_answer": "Across the two trials:\n\n- **Drugs Studied:**  \n  1. **Alphaxolin**  \n  2. **Betapril**\n\n- **Primary Endpoints:**  \n  - For **alphaxolin**: The primary endpoint was the \"change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12.\"\n  - For **betapril**: The primary endpoint was the \"change from baseline in NT-proBNP at week 24.\"\n\n- **Main Efficacy Results:**  \n  - For **alphaxolin**: The adjusted mean change in systolic blood pressure was **-8.1 mmHg** for alphaxolin versus **-2.3 mmHg** for placebo, with a between-group difference of **-5.8 mmHg (P < 0.001)**, indicating a statistically significant reduction.\n  - For **betapril**: The geometric mean ratio of NT-proBNP at week 24 versus placebo was **0.92 (95% CI 0.83-1.02) for 40 mg**, **0.81 (0.72-0.91) for 80 mg**, and **0.78 (0.70-0.88) for 160 mg**; the test for trend was **P < 0.001**, showing a significant dose-dependent reduction in NT-proBNP.\n\n**Summary:**  \nThe two trials studied alphaxolin and betapril. The primary endpoints were change in 24-hour ambulatory systolic blood pressure (alphaxolin) and change in NT-proBNP (betapril). Both drugs showed statistically significant improvements in their respective primary endpoints compared to placebo.",
+      "pre_merge_answer": "Trial 1 (SAMPLE-HTX-001): Drug studied: alphaxolin; Primary endpoint: change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12; Main efficacy result: adjusted mean change -8.1 mmHg vs -2.3 mmHg for placebo, between-group difference -5.8 mmHg (P < 0.001).\n\nTrial 2 (SAMPLE-HFPEF-004): Drug studied: betapril; Primary endpoint: change from baseline in NT-proBNP at week 24; Main efficacy result: geometric mean ratio of NT-proBNP at week 24 versus placebo was 0.92 (40 mg), 0.81 (80 mg), and 0.78 (160 mg); test for trend P < 0.001.",
+      "post_merge_answer": "Across the two trials:\n\n- **Drugs Studied:**  \n  1. **Alphaxolin**  \n  2. **Betapril**\n\n- **Primary Endpoints:**  \n  - For **alphaxolin**: The primary endpoint was the \"change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12.\"\n  - For **betapril**: The primary endpoint was the \"change from baseline in NT-proBNP at week 24.\"\n\n- **Main Efficacy Results:**  \n  - For **alphaxolin**: The adjusted mean change in systolic blood pressure was **-8.1 mmHg** for alphaxolin versus **-2.3 mmHg** for placebo, with a between-group difference of **-5.8 mmHg (P < 0.001)**, indicating a statistically significant reduction.\n  - For **betapril**: The geometric mean ratio of NT-proBNP at week 24 versus placebo was **0.92 (95% CI 0.83-1.02) for 40 mg**, **0.81 (0.72-0.91) for 80 mg**, and **0.78 (0.70-0.88) for 160 mg**; the test for trend was **P < 0.001**, showing a significant dose-dependent reduction in NT-proBNP.\n\n**Summary:**  \nThe two trials studied alphaxolin and betapril. The primary endpoints were change in 24-hour ambulatory systolic blood pressure (alphaxolin) and change in NT-proBNP (betapril). Both drugs showed statistically significant improvements in their respective primary endpoints compared to placebo.",
+      "pre_merge_metadata": {
+        "question": "Across the two trials, what drug was studied, what was the primary endpoint, and what was the main efficacy result?",
+        "num_documents": 2,
+        "document_names": [
+          "drug_trial_a",
+          "drug_trial_b"
+        ],
+        "document_sizes": [
+          4571,
+          4674
+        ],
+        "total_chunks": 2,
+        "timing": {
+          "start_time": 1782844399.090142,
+          "schema_generation": {
+            "generation_time": 18.386780977249146,
+            "library_based_selection_time": 18.386831998825073
+          },
+          "schema_extraction": {},
+          "table_merging": {},
+          "answer_generation": {
+            "answer_time": 4.887006044387817
+          },
+          "total_duration": null
+        },
+        "schema": {
+          "generated_classes": 1,
+          "total_fields": 4,
+          "generation_tokens": 0,
+          "generation_time": 18.386831998825073,
+          "question_type": "simple",
+          "document_type": "others",
+          "classification_reasoning": "The question asks for specific factual information about the drug studied, the primary endpoint, and the main efficacy result across two clinical trials. This is a straightforward information retrieval task from the given document descriptions of clinical trials. Therefore, the question type is 'simple'. The documents are descriptions of clinical trials, which are structured reports of studies, fitting best under 'Others' since they are not datasets, stories, or policies.",
+          "average_fields_per_class": 4.0,
+          "field_types_distribution": {
+            "str": 4
+          },
+          "schema_object": {
+            "reasoning": "To answer the question, we need to extract, for each trial: (1) the drug studied, (2) the primary endpoint, and (3) the main efficacy result. These are all trial-level facts, so a single table capturing per-trial summary information is sufficient. We need fields for trial identification (e.g., trial_id), drug name, primary endpoint description, and main efficacy result (as a text summary, since efficacy results may be reported in various formats). No nested types are needed, as each trial will have one row. If there were multiple drugs or endpoints per trial, we would need additional tables, but the question and sample suggest one per trial.",
+            "tables": [
+              {
+                "name": "TrialSummary",
+                "description": "Summary information for each clinical trial, including drug studied, primary endpoint, and main efficacy result.",
+                "fields": [
+                  {
+                    "name": "trial_id",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Unique identifier for the clinical trial (e.g., registry number, protocol ID, or study name).",
+                    "required": true,
+                    "normalization": null
+                  },
+                  {
+                    "name": "drug_name",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Name of the drug studied in the trial (generic or brand name as stated in the document).",
+                    "required": true,
+                    "normalization": null
+                  },
+                  {
+                    "name": "primary_endpoint_description",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Verbatim or paraphrased description of the primary endpoint as defined in the trial (e.g., 'change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12').",
+                    "required": true,
+                    "normalization": null
+                  },
+                  {
+                    "name": "main_efficacy_result",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Summary of the main efficacy result for the primary endpoint, including effect size and statistical significance if reported (e.g., 'adjusted mean change -8.2 mmHg vs -2.1 mmHg for placebo, p<0.001').",
+                    "required": true,
+                    "normalization": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "extraction": {
+          "chunks_processed": 2,
+          "successful_extractions": 2,
+          "failed_extractions": 0,
+          "retry_attempts": 0,
+          "extraction_time": 67.6665370464325,
+          "success_rate": 1.0
+        },
+        "merging": {
+          "tables_created": 0,
+          "sql_queries_executed": 0,
+          "merge_failures": 0,
+          "total_rows_processed": 0,
+          "merging_time": 0,
+          "merged_tables_dir_path": ""
+        },
+        "answer_generation": {
+          "sql_execution_attempts": 0,
+          "sql_execution_errors": 0,
+          "final_answer_tokens": 87,
+          "used_tables": true,
+          "answer_time": 0
+        },
+        "quality": {
+          "tables_with_data": 0,
+          "empty_tables": 0,
+          "data_completeness_score": 0.0
+        },
+        "errors": [],
+        "question_id": "wiki_celeb_001",
+        "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_143307",
+        "rephrase_question": {
+          "enabled": true,
+          "original_question": "Across the two trials, what drug was studied, what was the primary endpoint, and what was the main efficacy result?",
+          "questions": {
+            "schema": {
+              "question": "For each clinical trial, capture the following attributes: (1) the name of the drug studied, (2) the primary endpoint (including its definition and measurement details), and (3) the main efficacy result (including outcome, effect size, statistical significance, relevant units, and timepoints).",
+              "reasoning": "The original question asks for the drug studied, the primary endpoint, and the main efficacy result for each of two clinical trials. To design a schema that is document-agnostic and comprehensive, we need to capture, for each trial: the name of the drug studied, the primary endpoint (including its definition and any relevant measurement details), and the main efficacy result (including the outcome, effect size, statistical significance, and any relevant units or timepoints). This schema should be flexible enough to accommodate different types of trials and endpoints."
+            },
+            "extraction": {
+              "question": "For each chunk in the documents 'drug_trial_a' and 'drug_trial_b', extract all information about the drug studied, the primary endpoint, and the main efficacy result. Capture every instance where any of these fields are mentioned, regardless of context or repetition.",
+              "reasoning": "The user wants to know, for both trials, the drug studied, the primary endpoint, and the main efficacy result. To ensure exhaustive extraction at the chunk level, the question should instruct the extractor to capture all mentions of the studied drug, all primary endpoints, and all main efficacy results found in any chunk of either 'drug_trial_a' or 'drug_trial_b'. This avoids missing any relevant data and ensures that every chunk is checked for these fields, regardless of how the information is distributed across the documents."
+            },
+            "merge": {
+              "question": "Combine all extracted rows from 'drug_trial_a' and 'drug_trial_b' into a consolidated table with columns for trial identifier, drug studied, primary endpoint, and main efficacy result. Deduplicate and resolve any conflicts or partial information, ensuring each row accurately reflects the data from the source documents.",
+              "reasoning": "The user's question asks for the drug studied, primary endpoint, and main efficacy result for each of two trials. For the table merging stage, we need to consolidate all extracted rows from both documents into a single table, ensuring each row contains the trial identifier, drug name, primary endpoint, and main efficacy result. We should deduplicate and resolve any conflicting or partial information, but not filter or aggregate by trial at this stage. The merged table should preserve all relevant data from both 'drug_trial_a' and 'drug_trial_b' for downstream processing."
+            },
+            "answer": {
+              "question": "For each of the two trials, what drug was investigated, what was the primary endpoint, and what was the main efficacy outcome?",
+              "reasoning": "The user wants a summary of the drug studied, the primary endpoint, and the main efficacy result for each of the two trials. The question should be rephrased to explicitly ask for this information for both trials, making it clear that the answer should cover each trial separately."
+            }
+          },
+          "fallback_components": [],
+          "question_list": [
+            "For each clinical trial, capture the following attributes: (1) the name of the drug studied, (2) the primary endpoint (including its definition and measurement details), and (3) the main efficacy result (including outcome, effect size, statistical significance, relevant units, and timepoints).",
+            "For each chunk in the documents 'drug_trial_a' and 'drug_trial_b', extract all information about the drug studied, the primary endpoint, and the main efficacy result. Capture every instance where any of these fields are mentioned, regardless of context or repetition.",
+            "Combine all extracted rows from 'drug_trial_a' and 'drug_trial_b' into a consolidated table with columns for trial identifier, drug studied, primary endpoint, and main efficacy result. Deduplicate and resolve any conflicts or partial information, ensuring each row accurately reflects the data from the source documents.",
+            "For each of the two trials, what drug was investigated, what was the primary endpoint, and what was the main efficacy outcome?"
+          ]
+        },
+        "answer_stage": "pre_merge"
+      },
+      "predicted_answer": "Across the two trials:\n\n- **Drugs Studied:**  \n  1. **Alphaxolin**  \n  2. **Betapril**\n\n- **Primary Endpoints:**  \n  - For **alphaxolin**: The primary endpoint was the \"change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12.\"\n  - For **betapril**: The primary endpoint was the \"change from baseline in NT-proBNP at week 24.\"\n\n- **Main Efficacy Results:**  \n  - For **alphaxolin**: The adjusted mean change in systolic blood pressure was **-8.1 mmHg** for alphaxolin versus **-2.3 mmHg** for placebo, with a between-group difference of **-5.8 mmHg (P < 0.001)**, indicating a statistically significant reduction.\n  - For **betapril**: The geometric mean ratio of NT-proBNP at week 24 versus placebo was **0.92 (95% CI 0.83-1.02) for 40 mg**, **0.81 (0.72-0.91) for 80 mg**, and **0.78 (0.70-0.88) for 160 mg**; the test for trend was **P < 0.001**, showing a significant dose-dependent reduction in NT-proBNP.\n\n**Summary:**  \nThe two trials studied alphaxolin and betapril. The primary endpoints were change in 24-hour ambulatory systolic blood pressure (alphaxolin) and change in NT-proBNP (betapril). Both drugs showed statistically significant improvements in their respective primary endpoints compared to placebo.",
+      "id": "wiki_celeb_001"
+    }
+  ],
+  "config": {
+    "experiment": "sliders",
+    "system": "sliders",
+    "system_config": {
+      "generate_task_guidelines": false,
+      "rephrase_question": {
+        "enabled": true,
+        "prompt_file": "sliders/rephrase_question_component.prompt",
+        "library_of_guidelines_path": "sliders_taxonomy.json"
+      },
+      "generate_schema": {
+        "add_extra_information_class": false,
+        "add_document_text": true,
+        "generate_schema_type": "library_based",
+        "library_of_guidelines_path": "sliders_taxonomy.json"
+      },
+      "extract_schema": {
+        "decompose_fields": false,
+        "dedupe_merged_rows": false,
+        "num_samples_per_chunk": 1,
+        "is_relevant_chunk": true,
+        "extract_quotes": true
+      },
+      "merge_tables": {
+        "merge_strategy": "reconciliation",
+        "reconciliation": {
+          "debug_mode": false,
+          "primary_key_selection": {
+            "version": "v1",
+            "max_candidates": 10,
+            "max_inspections_per_candidate": 10,
+            "max_retries": 3
+          },
+          "canonicalization": {
+            "mode": "two_pass",
+            "max_cycles": 20,
+            "max_retries_per_cycle": 3,
+            "max_inspection_history": 3,
+            "inspections_per_field": 50,
+            "null_handling": {
+              "max_inspections": 5,
+              "placeholder_text": "UNKNOWN",
+              "verification": {
+                "enable": false,
+                "max_inspections": 5
+              }
+            },
+            "document_level_max_cycles": 5
+          },
+          "controller_executor_loop": {
+            "max_iterations": 5,
+            "max_controller_inspections": 5,
+            "max_executor_inspections": 5,
+            "max_sql_attempts": 3,
+            "verification": {
+              "enable": true,
+              "max_inspections": 5
+            },
+            "context_generator": {
+              "enable": true,
+              "model": "gpt-4.1",
+              "max_rows": 20
+            }
+          },
+          "non_pk_canonicalization": {
+            "enable": true,
+            "inspections_per_field": 5,
+            "column_selector": {
+              "max_inspections": 5,
+              "excluded_columns": [
+                "row_id",
+                "page_number",
+                "__reconciliation_context__",
+                "number_instances"
+              ],
+              "excluded_patterns": [
+                "_quote",
+                "_rationale",
+                "_confidence"
+              ]
+            }
+          },
+          "statistics": {
+            "enable": true,
+            "filename": "reconciliation_stats.json"
+          }
+        },
+        "include_quotes": true
+      },
+      "inspect_answer": {
+        "enable_citation_generation": true,
+        "enable_reconciliation_stats_verbalization": true
+      },
+      "check_if_merge_needed": false,
+      "force_sql": false,
+      "answer_strategy": "sql_inspect",
+      "models": {
+        "answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "answer_no_table": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "answer_tool_output": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "extract_schema": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 32000,
+          "temperature": 0.0
+        },
+        "generate_schema": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "merge_tables": {
+          "model": "gpt-4.1",
+          "max_tokens": 32000,
+          "temperature": 0.0
+        },
+        "task_guidelines": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "check_objective_necessity": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "rephrase_question": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "direct_answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "force_answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "is_relevant_chunk": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "check_if_merge_needed": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "select_guidelines_for_schema": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 2000,
+          "temperature": 0.0
+        },
+        "select_primary_key": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "canonicalize_fields": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "column_selector": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "context_generator": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "handle_null_pks": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        }
+      },
+      "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_143307"
+    },
+    "experiment_config": {
+      "questions_path": "/var/folders/9_/c7gvlh6n0v58806dy29ztq2r0000gn/T/tmptme9a_kg/questions.txt",
+      "files_dir": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sample_docs",
+      "num_questions": null,
+      "random_state": 42,
+      "document_config": {
+        "chunk_size": 16000,
+        "overlap_size": 0,
+        "title_model": "gpt-4.1",
+        "description_model": "gpt-4.1-mini",
+        "table_summary_model": "gpt-4.1-mini"
+      }
+    },
+    "output_file": "sliders_output.json"
+  }
+}

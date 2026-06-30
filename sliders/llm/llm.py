@@ -142,6 +142,21 @@ def _is_openai_compatible_azure_endpoint(endpoint: str | None) -> bool:
     return normalized_path.endswith("/openai/v1")
 
 
+def _is_openrouter_base_url(base_url: str | None) -> bool:
+    """Detect OpenRouter's OpenAI-compatible endpoint."""
+    return bool(base_url) and "openrouter.ai" in base_url
+
+
+def _normalize_openrouter_model(model: str) -> str:
+    """Return an OpenRouter-compatible model slug.
+
+    OpenRouter requires vendor-namespaced model IDs (e.g. ``openai/gpt-4.1``).
+    Bare OpenAI-style names (no ``/``) are prefixed with ``openai/``; names that
+    are already namespaced (``anthropic/...``, ``~openai/...``) are left as-is.
+    """
+    return model if "/" in model else f"openai/{model}"
+
+
 def get_llm_client(*, model: str, slow_rate_limiter: bool = False, provider: str | None = None, **kwargs):
     """Get an LLM client with optional caching support across providers.
 
@@ -212,6 +227,11 @@ def get_llm_client(*, model: str, slow_rate_limiter: bool = False, provider: str
             )
         api_key = kwargs.pop("api_key", default_api_key or "EMPTY")
         base_url = kwargs.pop("base_url", default_base_url)
+
+        # OpenRouter requires vendor-prefixed model slugs (e.g. openai/gpt-4.1).
+        # Auto-prefix bare names so existing configs work unchanged.
+        if _is_openrouter_base_url(base_url):
+            shared_kwargs["model"] = _normalize_openrouter_model(shared_kwargs["model"])
 
         chat_kwargs = {
             "api_key": api_key,

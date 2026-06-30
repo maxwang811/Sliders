@@ -6,6 +6,8 @@ for people who have cloned the source tree. After ``pip install sliders``
 you can use the installed ``sliders`` console script instead.
 """
 
+import sliders._datadog  # noqa: F401
+
 from sliders.cli import main
 
 if __name__ == "__main__":
