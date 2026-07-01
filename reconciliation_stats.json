@@ -1390,5 +1390,45 @@
       "final_total_rows": 11,
       "total_rows_reduced": 0
     }
+  },
+  "BalanceSheetPPNE": {
+    "primary_key": [
+      "company_name",
+      "fiscal_year_end",
+      "balance_sheet_item"
+    ],
+    "canonicalization": {
+      "stats_per_field": {},
+      "total_fields_canonicalized": 0,
+      "total_fields_processed": 0
+    },
+    "non_pk_canonicalization": {
+      "enabled": true,
+      "stats_per_field": {},
+      "total_fields_canonicalized": 0,
+      "total_fields_processed": 0,
+      "columns_identified": []
+    },
+    "row_grouping": {
+      "unique_primary_key_values": 1,
+      "single_row_groups": 0,
+      "multi_row_groups": 1
+    },
+    "multi_row_processing": {
+      "initial_total_rows": 5,
+      "final_total_rows": 1,
+      "rows_reduced": 4
+    },
+    "controller_actions": {
+      "deduplicate": 0,
+      "aggregate": 0,
+      "resolve_conflicts": 1,
+      "canonicalize": 0
+    },
+    "final_stats": {
+      "initial_total_rows": 5,
+      "final_total_rows": 1,
+      "total_rows_reduced": 4
+    }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "TrialKeyFindings": {
+    "primary_key": [
+      "trial_id",
+      "finding_type",
+      "finding_text"
+    ],
+    "canonicalization": {
+      "stats_per_field": {},
+      "total_fields_canonicalized": 0,
+      "total_fields_processed": 0
+    },
+    "non_pk_canonicalization": {
+      "enabled": true,
+      "stats_per_field": {},
+      "total_fields_canonicalized": 0,
+      "total_fields_processed": 0,
+      "columns_identified": []
+    },
+    "row_grouping": {
+      "unique_primary_key_values": 16,
+      "single_row_groups": 16,
+      "multi_row_groups": 0
+    },
+    "multi_row_processing": {
+      "initial_total_rows": 0,
+      "final_total_rows": 0,
+      "rows_reduced": 0
+    },
+    "controller_actions": {
+      "deduplicate": 0,
+      "aggregate": 0,
+      "resolve_conflicts": 0,
+      "canonicalize": 0
+    },
+    "final_stats": {
+      "initial_total_rows": 16,
+      "final_total_rows": 16,
+      "total_rows_reduced": 0
+    }
+  }
+}

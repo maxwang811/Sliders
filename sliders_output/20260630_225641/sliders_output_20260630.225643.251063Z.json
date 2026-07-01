@@ -1,0 +1,723 @@
+{
+  "experiment_id": "20260630.225643.251063Z",
+  "results": [
+    {
+      "question_id": "wiki_celeb_001",
+      "question": "What are the key findings?",
+      "predicted_answer": "Based on the SQL query results from the `TrialKeyFindings` table, the key findings from the two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004) are as follows:\n\n---\n\n## SAMPLE-HTX-001 (Alphaxolin in Hypertension)\n\n### Efficacy\n- **Ambulatory Blood Pressure:** At week 12, alphaxolin reduced 24-hour ambulatory systolic blood pressure by an adjusted mean of \u22128.1 mmHg compared to \u22122.3 mmHg with placebo, resulting in a statistically significant between-group difference of \u22125.8 mmHg (P < 0.001).\n- **Office Blood Pressure:** Office systolic blood pressure decreased by \u22129.4 mmHg with alphaxolin versus \u22123.1 mmHg with placebo; office diastolic blood pressure decreased by \u22125.2 mmHg versus \u22121.6 mmHg, respectively.\n- **Overall Conclusion:** Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.\n\n### Safety\n- **Adverse Events:** Treatment-emergent adverse events occurred in 18% of alphaxolin participants and 15% of placebo participants.\n- **Serious Adverse Events:** Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to the study drug.\n- **Common Adverse Events:** The most common treatment-emergent adverse events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).\n\n### Other Findings\n- **Subgroup Consistency:** The blood pressure reduction effect of alphaxolin was consistent across prespecified subgroups including age, sex, baseline background therapy class, and presence of diabetes.\n- **Limitations:** The trial duration (12 weeks) is too short to assess cardiovascular outcomes; background therapy was restricted to monotherapy, limiting generalizability; and the study population was predominantly from high-income countries.\n- **Future Directions:** Longer trials powered on cardiovascular outcomes are warranted before routine use of alphaxolin can be recommended.\n\n---\n\n## SAMPLE-HFPEF-004 (Betapril in HFpEF)\n\n### Efficacy\n- **NT-proBNP Reduction:** Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.\n    - At week 24, the geometric mean ratio of NT-proBNP versus placebo was:\n        - 0.92 (95% CI 0.83-1.02) for the 40 mg arm\n        - 0.81 (0.72-0.91) for the 80 mg arm\n        - 0.78 (0.70-0.88) for the 160 mg arm\n- **Quality of Life:** KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm.\n- **Exercise Capacity:** 6-minute walk distance improved by 8, 18, 32, and 30 meters across the four arms.\n- **Dose Selection:** The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.\n\n### Safety\n- **Adverse Events:** Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo.\n- **Clinically Meaningful Hypotension:** Occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg). No drug-related serious adverse events were reported.\n\n### Other Findings\n- **Limitations:** Limitations include the modest sample size, the 24-week duration which does not permit assessment of hospitalization or mortality endpoints, and enrollment predominantly from academic centers.\n\n---\n\n## **Summary Table**\n\n| Trial              | Efficacy Highlights                                                                 | Safety Highlights                                                                 | Other Key Points                                                                                 |\n|--------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001     | Significant BP reduction (ambulatory: \u22125.8 mmHg vs placebo, P<0.001)               | Adverse events: 18% (alphaxolin) vs 15% (placebo); no drug-related serious events | Effect consistent across subgroups; short duration; limited generalizability; longer trials needed|\n| SAMPLE-HFPEF-004   | Dose-dependent NT-proBNP reduction; improved QoL and walk distance; 80 mg optimal  | Similar AE rates; hypotension in up to 3%; no drug-related serious events         | Modest sample size; short duration; academic center bias; Phase III trial planned                |\n\n---\n\n**In summary:**  \nBoth trials demonstrated that the investigational drugs (alphaxolin and betapril) produced clinically meaningful improvements in their respective endpoints with acceptable short-term safety profiles. However, both studies were limited by short duration and sample characteristics, and further, longer-term studies are needed to confirm clinical outcome benefits."
+    }
+  ],
+  "all_metadata": [
+    {
+      "question": "What are the key findings?",
+      "num_documents": 2,
+      "document_names": [
+        "drug_trial_a",
+        "drug_trial_b"
+      ],
+      "document_sizes": [
+        4571,
+        4674
+      ],
+      "total_chunks": 2,
+      "timing": {
+        "start_time": 1782874612.811733,
+        "schema_generation": {
+          "generation_time": 3.5158519744873047,
+          "library_based_selection_time": 3.515909194946289
+        },
+        "schema_extraction": {},
+        "table_merging": {
+          "merging_time": 39.10793924331665
+        },
+        "answer_generation": {},
+        "total_duration": 145.67340111732483
+      },
+      "schema": {
+        "generated_classes": 1,
+        "total_fields": 3,
+        "generation_tokens": 0,
+        "generation_time": 3.5159101486206055,
+        "question_type": "simple",
+        "document_type": "others",
+        "classification_reasoning": "The question asks for the key findings from clinical trial documents. This is a straightforward information retrieval task where the answer is found directly in the document. Therefore, the question type is 'simple'. The documents are clinical trial reports describing randomized controlled trials, which do not fit the categories of dataset, story, or policy. They are best categorized as 'others' since they are scientific reports not covered by the other document types.",
+        "average_fields_per_class": 3.0,
+        "field_types_distribution": {
+          "str": 2,
+          "enum": 1
+        },
+        "schema_object": {
+          "reasoning": "To answer 'What are the key findings?' from a clinical trial report, we need to extract the main results and conclusions as stated in the document. These are typically found in the Results and Conclusions sections, and may include primary and secondary endpoint outcomes, statistical significance, effect sizes, and any notable safety findings. Since 'key findings' is a narrative summary, we need a table that captures each distinct finding or conclusion, along with supporting context such as the trial identifier and the type of finding (e.g., efficacy, safety, other). Each finding should be a separate row, as there may be multiple key findings per document. No nested types are needed; each finding is a single string. We also need to link findings to the trial (e.g., via trial_id or title).",
+          "tables": [
+            {
+              "name": "TrialKeyFindings",
+              "description": "Narrative key findings and conclusions as stated in the clinical trial document, including efficacy, safety, and other major results. Each row represents a distinct key finding or conclusion.",
+              "fields": [
+                {
+                  "name": "trial_id",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Unique identifier for the clinical trial (e.g., registry number, protocol ID, or document-stated trial ID).",
+                  "required": true,
+                  "normalization": null
+                },
+                {
+                  "name": "finding_type",
+                  "data_type": "enum",
+                  "enum_values": [
+                    "efficacy",
+                    "safety",
+                    "other"
+                  ],
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Type of key finding: efficacy (treatment effect), safety (adverse events, tolerability), or other (e.g., subgroup, exploratory, limitations).",
+                  "required": true,
+                  "normalization": null
+                },
+                {
+                  "name": "finding_text",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Verbatim or closely paraphrased statement of the key finding or conclusion as presented in the document. May include effect sizes, statistical significance, or qualitative conclusions.",
+                  "required": true,
+                  "normalization": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "extraction": {
+        "chunks_processed": 2,
+        "successful_extractions": 2,
+        "failed_extractions": 0,
+        "retry_attempts": 0,
+        "extraction_time": 71.19243311882019,
+        "success_rate": 1.0
+      },
+      "merging": {
+        "tables_created": 0,
+        "sql_queries_executed": 0,
+        "merge_failures": 0,
+        "total_rows_processed": 0,
+        "merging_time": 0,
+        "merged_tables_dir_path": "",
+        "successful_merges": 1,
+        "failed_merges": 0,
+        "merge_success_rate": 1.0
+      },
+      "answer_generation": {
+        "sql_execution_attempts": 0,
+        "sql_execution_errors": 0,
+        "final_answer_tokens": 633,
+        "used_tables": true,
+        "answer_time": 13.95002293586731,
+        "answer_strategy": "sql_inspect",
+        "citation_sql_error": "No successful citation after 1 attempts",
+        "reconciliation_stats_summary": "The reconciliation process for the \"TrialKeyFindings\" table used a combination of trial ID, finding type, and finding text as the primary key to identify unique findings. Out of 16 unique findings extracted, all were distinct with no duplicates or conflicting entries, so no reconciliation actions (such as deduplication or conflict resolution) were needed. As a result, the total number of rows remained unchanged at 16, with no reduction required during processing.",
+        "num_queries": 1
+      },
+      "quality": {
+        "tables_with_data": 1,
+        "empty_tables": 0,
+        "data_completeness_score": 1.0
+      },
+      "errors": [],
+      "question_id": "wiki_celeb_001",
+      "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_225641",
+      "rephrase_question": {
+        "enabled": true,
+        "original_question": "What are the key findings?",
+        "questions": {
+          "schema": {
+            "question": "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety and adverse event data, and any major conclusions or recommendations. Ensure the schema captures outcome measures, quantitative results, statistical details, and safety information.",
+            "reasoning": "The original question asks for 'key findings' from clinical trial documents. To design an extraction schema, we need to capture all relevant aspects of a study's findings, such as the main outcomes, statistical significance, effect sizes, safety results, and any notable secondary findings. The schema should be general enough to apply to any clinical trial report and should include fields for outcome measures, results, statistical data, safety/adverse events, and any conclusions or recommendations."
+          },
+          "extraction": {
+            "question": "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that is described as a key finding, regardless of its location in the document.",
+            "reasoning": "The original question asks for 'key findings,' which are likely to be spread throughout the documents and may include results, conclusions, or significant outcomes. To ensure exhaustive extraction, the question should instruct the extractor to capture all statements, data, or conclusions that are presented as key findings, results, or main outcomes in any part of the documents. This should be done for both 'drug_trial_a' and 'drug_trial_b', without limiting to any specific section or summary."
+          },
+          "merge": {
+            "question": "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure that each key finding is associated with its respective document name, and resolve any duplicate or conflicting entries to maintain data fidelity. The final table should include all unique key findings from both documents.",
+            "reasoning": "The original question asks for the key findings from the provided drug trial documents. For the table merging stage, the goal is to consolidate all extracted key findings from both 'drug_trial_a' and 'drug_trial_b' into a single, clean table. This table should preserve all relevant details, deduplicate overlapping information, and resolve any conflicts between chunks. The merged table should include all key findings from both documents, clearly labeled by document name, without filtering or aggregating beyond deduplication and conflict resolution."
+          },
+          "answer": {
+            "question": "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?",
+            "reasoning": "The user is asking for the main results from two clinical trials: one on alphaxolin for hypertension and one on betapril for HFpEF. To clarify, the question should specify that the key findings from both studies are requested."
+          }
+        },
+        "fallback_components": [],
+        "question_list": [
+          "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety and adverse event data, and any major conclusions or recommendations. Ensure the schema captures outcome measures, quantitative results, statistical details, and safety information.",
+          "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that is described as a key finding, regardless of its location in the document.",
+          "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure that each key finding is associated with its respective document name, and resolve any duplicate or conflicting entries to maintain data fidelity. The final table should include all unique key findings from both documents.",
+          "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?"
+        ]
+      },
+      "reconciliation": {
+        "initial_stats": {
+          "row_count": 16,
+          "column_count": 13,
+          "columns": [
+            {
+              "name": "row_id",
+              "dtype": "int64",
+              "null_count": 0,
+              "distinct_count": 16
+            },
+            {
+              "name": "page_number",
+              "dtype": "int64",
+              "null_count": 0,
+              "distinct_count": 1
+            },
+            {
+              "name": "document_name",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "text_header",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "trial_id_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "trial_id_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 7
+            },
+            {
+              "name": "trial_id",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "finding_type_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 16
+            },
+            {
+              "name": "finding_type_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 16
+            },
+            {
+              "name": "finding_type",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 3
+            },
+            {
+              "name": "finding_text_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 16
+            },
+            {
+              "name": "finding_text_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 15
+            },
+            {
+              "name": "finding_text",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 16
+            }
+          ]
+        },
+        "primary_key": {
+          "fields": [
+            "trial_id",
+            "finding_type",
+            "finding_text"
+          ],
+          "reasoning": "The table represents extracted key findings from clinical trial documents, where each row is a distinct key finding or conclusion. The unique observation is defined by the combination of the trial (trial_id), the type of finding (finding_type), and the specific finding text (finding_text). These three fields together identify a unique key finding within a trial. Including finding_text is necessary because multiple findings of the same type can exist for a trial, and the text itself is the distinguishing identifier. Other fields (like row_id, document_name, or rationale fields) are either system fields or extraction metadata and should not be part of the primary key. During consolidation, if two rows have the same trial_id, finding_type, and finding_text, they represent the same real-world key finding and should be merged, resolving any extraction conflicts in other fields.",
+          "query_count": 0
+        },
+        "pk_canonicalization": {
+          "pass_1_document_level": {
+            "successful_documents": [
+              "drug_trial_a",
+              "drug_trial_b"
+            ],
+            "failed_documents": [],
+            "total_documents": 2,
+            "rows_processed": 16
+          },
+          "pass_2_global_level": {
+            "canonicalized_fields": [],
+            "skipped_fields": [
+              "finding_text"
+            ],
+            "canonicalization_count": 0,
+            "canonicalization_sqls": []
+          }
+        },
+        "null_pk_handling": {
+          "pass_1_document_level": {
+            "total_null_rows": 0,
+            "filled_count": 0,
+            "discarded_count": 0,
+            "placeholder_count": 0,
+            "initial_rows": 16,
+            "final_rows": 16,
+            "documents_processed": 2,
+            "documents_failed": 0
+          },
+          "pass_2_global_level": {
+            "total_null_rows": 0,
+            "filled_count": 0,
+            "discarded_count": 0,
+            "placeholder_count": 0,
+            "initial_rows": 16,
+            "final_rows": 16
+          }
+        },
+        "non_pk_null_handling": {
+          "documents_processed": 2,
+          "documents_failed": 0,
+          "rows_modified": 0,
+          "initial_rows": 16,
+          "final_rows": 16
+        },
+        "pk_groups": {
+          "total": 16,
+          "single_row": 16,
+          "multi_row": 0,
+          "processed": 0,
+          "failed": 0
+        },
+        "multi_row_group_initial_rows": 0,
+        "all_operations": [],
+        "final_row_count": 16,
+        "non_pk_canonicalization": {
+          "canonicalized_fields": [],
+          "skipped_fields": [],
+          "canonicalization_count": 0
+        },
+        "stats": {
+          "primary_key": [
+            "trial_id",
+            "finding_type",
+            "finding_text"
+          ],
+          "canonicalization": {
+            "stats_per_field": {},
+            "total_fields_canonicalized": 0,
+            "total_fields_processed": 0
+          },
+          "non_pk_canonicalization": {
+            "enabled": true,
+            "stats_per_field": {},
+            "total_fields_canonicalized": 0,
+            "total_fields_processed": 0,
+            "columns_identified": []
+          },
+          "row_grouping": {
+            "unique_primary_key_values": 16,
+            "single_row_groups": 16,
+            "multi_row_groups": 0
+          },
+          "multi_row_processing": {
+            "initial_total_rows": 0,
+            "final_total_rows": 0,
+            "rows_reduced": 0
+          },
+          "controller_actions": {
+            "deduplicate": 0,
+            "aggregate": 0,
+            "resolve_conflicts": 0,
+            "canonicalize": 0
+          },
+          "final_stats": {
+            "initial_total_rows": 16,
+            "final_total_rows": 16,
+            "total_rows_reduced": 0
+          }
+        }
+      },
+      "answer_stage": "post_merge",
+      "regular_answer": "Key findings for SAMPLE-HTX-001 (alphaxolin in moderate hypertension):\n- Efficacy: Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure (adjusted mean change \u22128.1 mmHg vs \u22122.3 mmHg for placebo; between-group difference \u22125.8 mmHg, P < 0.001). Office BP reductions were also greater with alphaxolin. The effect was consistent across prespecified subgroups (age, sex, background therapy, diabetes).\n- Safety: Treatment-emergent adverse events occurred in 18% (alphaxolin) vs 15% (placebo); most common were headache (6%), dizziness (4%), and peripheral edema (3%). Three serious adverse events in alphaxolin and two in placebo, none judged related to study drug.\n- Other: The 12-week duration is too short to assess cardiovascular outcomes; findings may not generalize to patients on multiple antihypertensives; population was predominantly from high-income countries. Longer trials powered on cardiovascular outcomes are warranted before routine use can be recommended.\n\nKey findings for SAMPLE-HFPEF-004 (betapril in HFpEF):\n- Efficacy: Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life over 24 weeks. At week 24, geometric mean ratio of NT-proBNP vs placebo was 0.92 (40 mg), 0.81 (80 mg), 0.78 (160 mg). 6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms. KCCQ-OSS (quality of life) improved by 4.1, 6.8, and 7.2 points (betapril arms) vs 2.0 (placebo). The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III trial.\n- Safety: Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% (160 mg) and 1% (placebo). Clinically meaningful hypotension occurred in 1% (placebo, 40 mg), 3% (80 mg, 160 mg). No drug-related serious adverse events were reported.\n- Other: Limitations include modest sample size, 24-week duration (no assessment of hospitalization/mortality), and enrollment predominantly from academic centers.",
+      "inspect_answer": "Based on the SQL query results from the `TrialKeyFindings` table, the key findings from the two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004) are as follows:\n\n---\n\n## SAMPLE-HTX-001 (Alphaxolin in Hypertension)\n\n### Efficacy\n- **Ambulatory Blood Pressure:** At week 12, alphaxolin reduced 24-hour ambulatory systolic blood pressure by an adjusted mean of \u22128.1 mmHg compared to \u22122.3 mmHg with placebo, resulting in a statistically significant between-group difference of \u22125.8 mmHg (P < 0.001).\n- **Office Blood Pressure:** Office systolic blood pressure decreased by \u22129.4 mmHg with alphaxolin versus \u22123.1 mmHg with placebo; office diastolic blood pressure decreased by \u22125.2 mmHg versus \u22121.6 mmHg, respectively.\n- **Overall Conclusion:** Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.\n\n### Safety\n- **Adverse Events:** Treatment-emergent adverse events occurred in 18% of alphaxolin participants and 15% of placebo participants.\n- **Serious Adverse Events:** Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to the study drug.\n- **Common Adverse Events:** The most common treatment-emergent adverse events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).\n\n### Other Findings\n- **Subgroup Consistency:** The blood pressure reduction effect of alphaxolin was consistent across prespecified subgroups including age, sex, baseline background therapy class, and presence of diabetes.\n- **Limitations:** The trial duration (12 weeks) is too short to assess cardiovascular outcomes; background therapy was restricted to monotherapy, limiting generalizability; and the study population was predominantly from high-income countries.\n- **Future Directions:** Longer trials powered on cardiovascular outcomes are warranted before routine use of alphaxolin can be recommended.\n\n---\n\n## SAMPLE-HFPEF-004 (Betapril in HFpEF)\n\n### Efficacy\n- **NT-proBNP Reduction:** Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.\n    - At week 24, the geometric mean ratio of NT-proBNP versus placebo was:\n        - 0.92 (95% CI 0.83-1.02) for the 40 mg arm\n        - 0.81 (0.72-0.91) for the 80 mg arm\n        - 0.78 (0.70-0.88) for the 160 mg arm\n- **Quality of Life:** KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm.\n- **Exercise Capacity:** 6-minute walk distance improved by 8, 18, 32, and 30 meters across the four arms.\n- **Dose Selection:** The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.\n\n### Safety\n- **Adverse Events:** Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo.\n- **Clinically Meaningful Hypotension:** Occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg). No drug-related serious adverse events were reported.\n\n### Other Findings\n- **Limitations:** Limitations include the modest sample size, the 24-week duration which does not permit assessment of hospitalization or mortality endpoints, and enrollment predominantly from academic centers.\n\n---\n\n## **Summary Table**\n\n| Trial              | Efficacy Highlights                                                                 | Safety Highlights                                                                 | Other Key Points                                                                                 |\n|--------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001     | Significant BP reduction (ambulatory: \u22125.8 mmHg vs placebo, P<0.001)               | Adverse events: 18% (alphaxolin) vs 15% (placebo); no drug-related serious events | Effect consistent across subgroups; short duration; limited generalizability; longer trials needed|\n| SAMPLE-HFPEF-004   | Dose-dependent NT-proBNP reduction; improved QoL and walk distance; 80 mg optimal  | Similar AE rates; hypotension in up to 3%; no drug-related serious events         | Modest sample size; short duration; academic center bias; Phase III trial planned                |\n\n---\n\n**In summary:**  \nBoth trials demonstrated that the investigational drugs (alphaxolin and betapril) produced clinically meaningful improvements in their respective endpoints with acceptable short-term safety profiles. However, both studies were limited by short duration and sample characteristics, and further, longer-term studies are needed to confirm clinical outcome benefits.",
+      "pre_merge_answer": "Key findings for SAMPLE-HTX-001 (alphaxolin in moderate hypertension):\n- Alphaxolin reduced 24-hour ambulatory systolic blood pressure by an adjusted mean of \u22128.1 mmHg compared to \u22122.3 mmHg with placebo, a significant between-group difference of \u22125.8 mmHg (P < 0.001).\n- Office systolic BP decreased by \u22129.4 mmHg (alphaxolin) vs \u22123.1 mmHg (placebo); office diastolic BP decreased by \u22125.2 mmHg vs \u22121.6 mmHg.\n- Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants. Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to study drug.\n- The most common adverse events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).\n- The blood pressure reduction effect was consistent across prespecified subgroups (age, sex, background therapy, diabetes).\n- Limitations: 12-week duration too short for cardiovascular outcomes, restricted to monotherapy, predominantly high-income country population.\n- Conclusion: Alphaxolin 20 mg daily added to background therapy produced a clinically meaningful reduction in 24-hour ambulatory BP with an acceptable short-term safety profile. Longer trials powered on cardiovascular outcomes are warranted before routine use can be recommended.\n\nKey findings for SAMPLE-HFPEF-004 (betapril in HFpEF):\n- Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life over 24 weeks.\n- At week 24, the geometric mean ratio of NT-proBNP vs placebo was 0.92 (40 mg), 0.81 (80 mg), and 0.78 (160 mg).\n- KCCQ-OSS (quality of life) improved by 4.1, 6.8, and 7.2 points (betapril arms) vs 2.0 (placebo).\n- 6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms.\n- Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo. Clinically meaningful hypotension occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg). No drug-related serious adverse events were reported.\n- Limitations: modest sample size, 24-week duration does not permit assessment of hospitalization or mortality, enrollment mainly from academic centers.\n- The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.",
+      "post_merge_answer": "Based on the SQL query results from the `TrialKeyFindings` table, the key findings from the two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004) are as follows:\n\n---\n\n## SAMPLE-HTX-001 (Alphaxolin in Hypertension)\n\n### Efficacy\n- **Ambulatory Blood Pressure:** At week 12, alphaxolin reduced 24-hour ambulatory systolic blood pressure by an adjusted mean of \u22128.1 mmHg compared to \u22122.3 mmHg with placebo, resulting in a statistically significant between-group difference of \u22125.8 mmHg (P < 0.001).\n- **Office Blood Pressure:** Office systolic blood pressure decreased by \u22129.4 mmHg with alphaxolin versus \u22123.1 mmHg with placebo; office diastolic blood pressure decreased by \u22125.2 mmHg versus \u22121.6 mmHg, respectively.\n- **Overall Conclusion:** Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.\n\n### Safety\n- **Adverse Events:** Treatment-emergent adverse events occurred in 18% of alphaxolin participants and 15% of placebo participants.\n- **Serious Adverse Events:** Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to the study drug.\n- **Common Adverse Events:** The most common treatment-emergent adverse events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).\n\n### Other Findings\n- **Subgroup Consistency:** The blood pressure reduction effect of alphaxolin was consistent across prespecified subgroups including age, sex, baseline background therapy class, and presence of diabetes.\n- **Limitations:** The trial duration (12 weeks) is too short to assess cardiovascular outcomes; background therapy was restricted to monotherapy, limiting generalizability; and the study population was predominantly from high-income countries.\n- **Future Directions:** Longer trials powered on cardiovascular outcomes are warranted before routine use of alphaxolin can be recommended.\n\n---\n\n## SAMPLE-HFPEF-004 (Betapril in HFpEF)\n\n### Efficacy\n- **NT-proBNP Reduction:** Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.\n    - At week 24, the geometric mean ratio of NT-proBNP versus placebo was:\n        - 0.92 (95% CI 0.83-1.02) for the 40 mg arm\n        - 0.81 (0.72-0.91) for the 80 mg arm\n        - 0.78 (0.70-0.88) for the 160 mg arm\n- **Quality of Life:** KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm.\n- **Exercise Capacity:** 6-minute walk distance improved by 8, 18, 32, and 30 meters across the four arms.\n- **Dose Selection:** The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.\n\n### Safety\n- **Adverse Events:** Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo.\n- **Clinically Meaningful Hypotension:** Occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg). No drug-related serious adverse events were reported.\n\n### Other Findings\n- **Limitations:** Limitations include the modest sample size, the 24-week duration which does not permit assessment of hospitalization or mortality endpoints, and enrollment predominantly from academic centers.\n\n---\n\n## **Summary Table**\n\n| Trial              | Efficacy Highlights                                                                 | Safety Highlights                                                                 | Other Key Points                                                                                 |\n|--------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001     | Significant BP reduction (ambulatory: \u22125.8 mmHg vs placebo, P<0.001)               | Adverse events: 18% (alphaxolin) vs 15% (placebo); no drug-related serious events | Effect consistent across subgroups; short duration; limited generalizability; longer trials needed|\n| SAMPLE-HFPEF-004   | Dose-dependent NT-proBNP reduction; improved QoL and walk distance; 80 mg optimal  | Similar AE rates; hypotension in up to 3%; no drug-related serious events         | Modest sample size; short duration; academic center bias; Phase III trial planned                |\n\n---\n\n**In summary:**  \nBoth trials demonstrated that the investigational drugs (alphaxolin and betapril) produced clinically meaningful improvements in their respective endpoints with acceptable short-term safety profiles. However, both studies were limited by short duration and sample characteristics, and further, longer-term studies are needed to confirm clinical outcome benefits.",
+      "pre_merge_metadata": {
+        "question": "What are the key findings?",
+        "num_documents": 2,
+        "document_names": [
+          "drug_trial_a",
+          "drug_trial_b"
+        ],
+        "document_sizes": [
+          4571,
+          4674
+        ],
+        "total_chunks": 2,
+        "timing": {
+          "start_time": 1782874612.811733,
+          "schema_generation": {
+            "generation_time": 3.5158519744873047,
+            "library_based_selection_time": 3.515909194946289
+          },
+          "schema_extraction": {},
+          "table_merging": {},
+          "answer_generation": {
+            "answer_time": 3.995802879333496
+          },
+          "total_duration": null
+        },
+        "schema": {
+          "generated_classes": 1,
+          "total_fields": 3,
+          "generation_tokens": 0,
+          "generation_time": 3.5159101486206055,
+          "question_type": "simple",
+          "document_type": "others",
+          "classification_reasoning": "The question asks for the key findings from clinical trial documents. This is a straightforward information retrieval task where the answer is found directly in the document. Therefore, the question type is 'simple'. The documents are clinical trial reports describing randomized controlled trials, which do not fit the categories of dataset, story, or policy. They are best categorized as 'others' since they are scientific reports not covered by the other document types.",
+          "average_fields_per_class": 3.0,
+          "field_types_distribution": {
+            "str": 2,
+            "enum": 1
+          },
+          "schema_object": {
+            "reasoning": "To answer 'What are the key findings?' from a clinical trial report, we need to extract the main results and conclusions as stated in the document. These are typically found in the Results and Conclusions sections, and may include primary and secondary endpoint outcomes, statistical significance, effect sizes, and any notable safety findings. Since 'key findings' is a narrative summary, we need a table that captures each distinct finding or conclusion, along with supporting context such as the trial identifier and the type of finding (e.g., efficacy, safety, other). Each finding should be a separate row, as there may be multiple key findings per document. No nested types are needed; each finding is a single string. We also need to link findings to the trial (e.g., via trial_id or title).",
+            "tables": [
+              {
+                "name": "TrialKeyFindings",
+                "description": "Narrative key findings and conclusions as stated in the clinical trial document, including efficacy, safety, and other major results. Each row represents a distinct key finding or conclusion.",
+                "fields": [
+                  {
+                    "name": "trial_id",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Unique identifier for the clinical trial (e.g., registry number, protocol ID, or document-stated trial ID).",
+                    "required": true,
+                    "normalization": null
+                  },
+                  {
+                    "name": "finding_type",
+                    "data_type": "enum",
+                    "enum_values": [
+                      "efficacy",
+                      "safety",
+                      "other"
+                    ],
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Type of key finding: efficacy (treatment effect), safety (adverse events, tolerability), or other (e.g., subgroup, exploratory, limitations).",
+                    "required": true,
+                    "normalization": null
+                  },
+                  {
+                    "name": "finding_text",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Verbatim or closely paraphrased statement of the key finding or conclusion as presented in the document. May include effect sizes, statistical significance, or qualitative conclusions.",
+                    "required": true,
+                    "normalization": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "extraction": {
+          "chunks_processed": 2,
+          "successful_extractions": 2,
+          "failed_extractions": 0,
+          "retry_attempts": 0,
+          "extraction_time": 71.19243311882019,
+          "success_rate": 1.0
+        },
+        "merging": {
+          "tables_created": 0,
+          "sql_queries_executed": 0,
+          "merge_failures": 0,
+          "total_rows_processed": 0,
+          "merging_time": 0,
+          "merged_tables_dir_path": ""
+        },
+        "answer_generation": {
+          "sql_execution_attempts": 0,
+          "sql_execution_errors": 0,
+          "final_answer_tokens": 357,
+          "used_tables": true,
+          "answer_time": 0
+        },
+        "quality": {
+          "tables_with_data": 0,
+          "empty_tables": 0,
+          "data_completeness_score": 0.0
+        },
+        "errors": [],
+        "question_id": "wiki_celeb_001",
+        "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_225641",
+        "rephrase_question": {
+          "enabled": true,
+          "original_question": "What are the key findings?",
+          "questions": {
+            "schema": {
+              "question": "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety and adverse event data, and any major conclusions or recommendations. Ensure the schema captures outcome measures, quantitative results, statistical details, and safety information.",
+              "reasoning": "The original question asks for 'key findings' from clinical trial documents. To design an extraction schema, we need to capture all relevant aspects of a study's findings, such as the main outcomes, statistical significance, effect sizes, safety results, and any notable secondary findings. The schema should be general enough to apply to any clinical trial report and should include fields for outcome measures, results, statistical data, safety/adverse events, and any conclusions or recommendations."
+            },
+            "extraction": {
+              "question": "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that is described as a key finding, regardless of its location in the document.",
+              "reasoning": "The original question asks for 'key findings,' which are likely to be spread throughout the documents and may include results, conclusions, or significant outcomes. To ensure exhaustive extraction, the question should instruct the extractor to capture all statements, data, or conclusions that are presented as key findings, results, or main outcomes in any part of the documents. This should be done for both 'drug_trial_a' and 'drug_trial_b', without limiting to any specific section or summary."
+            },
+            "merge": {
+              "question": "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure that each key finding is associated with its respective document name, and resolve any duplicate or conflicting entries to maintain data fidelity. The final table should include all unique key findings from both documents.",
+              "reasoning": "The original question asks for the key findings from the provided drug trial documents. For the table merging stage, the goal is to consolidate all extracted key findings from both 'drug_trial_a' and 'drug_trial_b' into a single, clean table. This table should preserve all relevant details, deduplicate overlapping information, and resolve any conflicts between chunks. The merged table should include all key findings from both documents, clearly labeled by document name, without filtering or aggregating beyond deduplication and conflict resolution."
+            },
+            "answer": {
+              "question": "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?",
+              "reasoning": "The user is asking for the main results from two clinical trials: one on alphaxolin for hypertension and one on betapril for HFpEF. To clarify, the question should specify that the key findings from both studies are requested."
+            }
+          },
+          "fallback_components": [],
+          "question_list": [
+            "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety and adverse event data, and any major conclusions or recommendations. Ensure the schema captures outcome measures, quantitative results, statistical details, and safety information.",
+            "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that is described as a key finding, regardless of its location in the document.",
+            "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure that each key finding is associated with its respective document name, and resolve any duplicate or conflicting entries to maintain data fidelity. The final table should include all unique key findings from both documents.",
+            "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?"
+          ]
+        },
+        "answer_stage": "pre_merge"
+      },
+      "predicted_answer": "Based on the SQL query results from the `TrialKeyFindings` table, the key findings from the two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004) are as follows:\n\n---\n\n## SAMPLE-HTX-001 (Alphaxolin in Hypertension)\n\n### Efficacy\n- **Ambulatory Blood Pressure:** At week 12, alphaxolin reduced 24-hour ambulatory systolic blood pressure by an adjusted mean of \u22128.1 mmHg compared to \u22122.3 mmHg with placebo, resulting in a statistically significant between-group difference of \u22125.8 mmHg (P < 0.001).\n- **Office Blood Pressure:** Office systolic blood pressure decreased by \u22129.4 mmHg with alphaxolin versus \u22123.1 mmHg with placebo; office diastolic blood pressure decreased by \u22125.2 mmHg versus \u22121.6 mmHg, respectively.\n- **Overall Conclusion:** Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.\n\n### Safety\n- **Adverse Events:** Treatment-emergent adverse events occurred in 18% of alphaxolin participants and 15% of placebo participants.\n- **Serious Adverse Events:** Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to the study drug.\n- **Common Adverse Events:** The most common treatment-emergent adverse events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).\n\n### Other Findings\n- **Subgroup Consistency:** The blood pressure reduction effect of alphaxolin was consistent across prespecified subgroups including age, sex, baseline background therapy class, and presence of diabetes.\n- **Limitations:** The trial duration (12 weeks) is too short to assess cardiovascular outcomes; background therapy was restricted to monotherapy, limiting generalizability; and the study population was predominantly from high-income countries.\n- **Future Directions:** Longer trials powered on cardiovascular outcomes are warranted before routine use of alphaxolin can be recommended.\n\n---\n\n## SAMPLE-HFPEF-004 (Betapril in HFpEF)\n\n### Efficacy\n- **NT-proBNP Reduction:** Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.\n    - At week 24, the geometric mean ratio of NT-proBNP versus placebo was:\n        - 0.92 (95% CI 0.83-1.02) for the 40 mg arm\n        - 0.81 (0.72-0.91) for the 80 mg arm\n        - 0.78 (0.70-0.88) for the 160 mg arm\n- **Quality of Life:** KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm.\n- **Exercise Capacity:** 6-minute walk distance improved by 8, 18, 32, and 30 meters across the four arms.\n- **Dose Selection:** The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.\n\n### Safety\n- **Adverse Events:** Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo.\n- **Clinically Meaningful Hypotension:** Occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg). No drug-related serious adverse events were reported.\n\n### Other Findings\n- **Limitations:** Limitations include the modest sample size, the 24-week duration which does not permit assessment of hospitalization or mortality endpoints, and enrollment predominantly from academic centers.\n\n---\n\n## **Summary Table**\n\n| Trial              | Efficacy Highlights                                                                 | Safety Highlights                                                                 | Other Key Points                                                                                 |\n|--------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001     | Significant BP reduction (ambulatory: \u22125.8 mmHg vs placebo, P<0.001)               | Adverse events: 18% (alphaxolin) vs 15% (placebo); no drug-related serious events | Effect consistent across subgroups; short duration; limited generalizability; longer trials needed|\n| SAMPLE-HFPEF-004   | Dose-dependent NT-proBNP reduction; improved QoL and walk distance; 80 mg optimal  | Similar AE rates; hypotension in up to 3%; no drug-related serious events         | Modest sample size; short duration; academic center bias; Phase III trial planned                |\n\n---\n\n**In summary:**  \nBoth trials demonstrated that the investigational drugs (alphaxolin and betapril) produced clinically meaningful improvements in their respective endpoints with acceptable short-term safety profiles. However, both studies were limited by short duration and sample characteristics, and further, longer-term studies are needed to confirm clinical outcome benefits.",
+      "id": "wiki_celeb_001"
+    }
+  ],
+  "config": {
+    "experiment": "sliders",
+    "system": "sliders",
+    "system_config": {
+      "generate_task_guidelines": false,
+      "rephrase_question": {
+        "enabled": true,
+        "prompt_file": "sliders/rephrase_question_component.prompt",
+        "library_of_guidelines_path": "sliders_taxonomy.json"
+      },
+      "generate_schema": {
+        "add_extra_information_class": false,
+        "add_document_text": true,
+        "generate_schema_type": "library_based",
+        "library_of_guidelines_path": "sliders_taxonomy.json"
+      },
+      "extract_schema": {
+        "decompose_fields": false,
+        "dedupe_merged_rows": false,
+        "num_samples_per_chunk": 1,
+        "is_relevant_chunk": true,
+        "extract_quotes": true
+      },
+      "merge_tables": {
+        "merge_strategy": "reconciliation",
+        "reconciliation": {
+          "debug_mode": false,
+          "primary_key_selection": {
+            "version": "v1",
+            "max_candidates": 10,
+            "max_inspections_per_candidate": 10,
+            "max_retries": 3
+          },
+          "canonicalization": {
+            "mode": "two_pass",
+            "max_cycles": 20,
+            "max_retries_per_cycle": 3,
+            "max_inspection_history": 3,
+            "inspections_per_field": 50,
+            "null_handling": {
+              "max_inspections": 5,
+              "placeholder_text": "UNKNOWN",
+              "verification": {
+                "enable": false,
+                "max_inspections": 5
+              }
+            },
+            "document_level_max_cycles": 5
+          },
+          "controller_executor_loop": {
+            "max_iterations": 5,
+            "max_controller_inspections": 5,
+            "max_executor_inspections": 5,
+            "max_sql_attempts": 3,
+            "verification": {
+              "enable": true,
+              "max_inspections": 5
+            },
+            "context_generator": {
+              "enable": true,
+              "model": "gpt-4.1",
+              "max_rows": 20
+            }
+          },
+          "non_pk_canonicalization": {
+            "enable": true,
+            "inspections_per_field": 5,
+            "column_selector": {
+              "max_inspections": 5,
+              "excluded_columns": [
+                "row_id",
+                "page_number",
+                "__reconciliation_context__",
+                "number_instances"
+              ],
+              "excluded_patterns": [
+                "_quote",
+                "_rationale",
+                "_confidence"
+              ]
+            }
+          },
+          "statistics": {
+            "enable": true,
+            "filename": "reconciliation_stats.json"
+          }
+        },
+        "include_quotes": true
+      },
+      "inspect_answer": {
+        "enable_citation_generation": true,
+        "enable_reconciliation_stats_verbalization": true
+      },
+      "check_if_merge_needed": false,
+      "force_sql": false,
+      "answer_strategy": "sql_inspect",
+      "models": {
+        "answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "answer_no_table": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "answer_tool_output": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "extract_schema": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 32000,
+          "temperature": 0.0
+        },
+        "generate_schema": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "merge_tables": {
+          "model": "gpt-4.1",
+          "max_tokens": 32000,
+          "temperature": 0.0
+        },
+        "task_guidelines": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "check_objective_necessity": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "rephrase_question": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "direct_answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "force_answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "is_relevant_chunk": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "check_if_merge_needed": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "select_guidelines_for_schema": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 2000,
+          "temperature": 0.0
+        },
+        "select_primary_key": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "canonicalize_fields": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "column_selector": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "context_generator": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "handle_null_pks": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        }
+      },
+      "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_225641"
+    },
+    "experiment_config": {
+      "questions_path": "/var/folders/9_/c7gvlh6n0v58806dy29ztq2r0000gn/T/tmpsihz11g0/questions.txt",
+      "files_dir": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sample_docs",
+      "num_questions": null,
+      "random_state": 42,
+      "document_config": {
+        "chunk_size": 16000,
+        "overlap_size": 0,
+        "title_model": "gpt-4.1",
+        "description_model": "gpt-4.1-mini",
+        "table_summary_model": "gpt-4.1-mini"
+      }
+    },
+    "output_file": "sliders_output.json"
+  }
+}

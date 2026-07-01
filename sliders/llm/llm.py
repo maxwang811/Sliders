@@ -2,7 +2,6 @@ import asyncio
 import hashlib
 import inspect
 import json
-import logging
 import os
 from urllib.parse import urlparse
 import uuid
@@ -13,7 +12,6 @@ from typing import Any, Optional
 import redis.asyncio as redis
 from openai import RateLimitError
 from overrides import override
-from tenacity import before_sleep_log
 
 from langchain_core.callbacks.base import Callbacks
 from langchain_core.messages import BaseMessage
@@ -272,6 +270,27 @@ def get_llm_client(*, model: str, slow_rate_limiter: bool = False, provider: str
     raise ValueError(f"Unsupported LLM provider '{provider_value}'.")
 
 
+def _log_llm_retry(retry_state) -> None:
+    """Log an LLM retry via loguru without treating the error text as a format template.
+
+    tenacity's built-in ``before_sleep_log`` pre-renders the log message and then
+    calls ``logger.log(level, message, exc_info=...)``. Because ``exc_info`` is
+    passed as a keyword argument, loguru runs ``message.format()`` on the already
+    rendered string; when the exception body contains literal braces (e.g. an
+    OpenAI/Azure error like ``{'error': {...}}``) this raises ``KeyError: "'error'"``
+    and aborts the whole run. Passing the dynamic text as positional arguments keeps
+    loguru from re-parsing it.
+    """
+    exc = retry_state.outcome.exception() if retry_state.outcome else None
+    sleep = getattr(retry_state.next_action, "sleep", None)
+    logger.opt(exception=exc).warning(
+        "Retrying LLM call (attempt {}, sleeping {}s) after error: {}",
+        retry_state.attempt_number,
+        sleep,
+        exc,
+    )
+
+
 class CachedLLMMixin:
     async def _cached_agenerate(
         self,
@@ -413,7 +432,7 @@ class CachedLLMMixin:
             wait=wait_exponential_jitter(initial=1, max=30, exp_base=2, jitter=1),
             stop=stop_after_attempt(max_attempts),
             reraise=True,
-            before_sleep=before_sleep_log(logger, logging.WARNING, exc_info=True),
+            before_sleep=_log_llm_retry,
         )
 
         try:
