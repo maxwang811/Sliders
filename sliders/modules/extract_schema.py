@@ -1144,6 +1144,14 @@ Content:
         metadata["extraction"]["extraction_time"] = time.time() - extraction_start_time
         metadata["extraction"]["success_rate"] = successful_extractions / total_chunks if total_chunks > 0 else 0
 
+        # Record which chunks the relevance gate skipped, per document, so the
+        # pipeline visualization can show which chunks were gated in/out.
+        if self.config.get("is_relevant_chunk", False):
+            metadata["extraction"]["irrelevant_chunks"] = {
+                documents[i].document_name: sorted(int(c) for c in per_document_irrelevant_chunks[i])
+                for i in range(min(len(documents), len(per_document_irrelevant_chunks)))
+            }
+
         # Run fallback extraction for documents with missing data
         per_document_extracted_data = await self._run_extraction_fallback(
             question=question,

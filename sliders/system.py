@@ -654,6 +654,26 @@ class SlidersAgent(System):
         # Finalize metadata
         metadata = self._finalize_metadata(metadata, tables, start_time)
 
+        if self.config.get("visualize", False):
+            try:
+                from sliders.visualize import generate_visualization
+
+                report_path = generate_visualization(
+                    out_dir=self.config.get("output_folder") or metadata.get("output_folder", "."),
+                    question=question,
+                    question_id=question_id,
+                    documents=documents,
+                    schema=schema,
+                    extracted_tables=extracted_tables,
+                    pre_merge_tables=pre_merge_tables,
+                    post_merge_tables=tables,
+                    metadata=metadata,
+                    final_answer=answer,
+                )
+                metadata.setdefault("visualization", {})["report_path"] = str(report_path)
+            except Exception as exc:
+                logger.warning(f"Visualization generation failed: {exc}")
+
         return answer, metadata
 
     async def _force_answer_question_from_tables(

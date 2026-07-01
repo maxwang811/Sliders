@@ -125,8 +125,27 @@ uv run python run_sliders.py --docs ./my_papers/ --question "Summarize the treat
 | ------------------ | ------------------------------------------------------------------ |
 | `--verbose`        | Show full pipeline logs in the terminal                            |
 | `--debug`          | Save intermediate reconciliation tables as CSVs                    |
+| `--visualize`      | Write a self-contained HTML report visualizing every pipeline step |
 | `--output-dir DIR` | Set output directory (default: `./sliders_output/<timestamp>/`)    |
 | `--config PATH`    | Use a custom YAML config instead of `configs/default_sliders.yaml` |
+
+### Visualizing the pipeline
+
+Pass `--visualize` to write a single self-contained `report_<question_id>.html` (plus a machine-readable `trace_<question_id>.json`) into the output directory. Open the HTML file in any browser to walk through every stage of the run:
+
+```bash
+uv run python run_sliders.py --docs paper.pdf --question "What are the key findings?" --visualize
+```
+
+The report shows, in pipeline order:
+
+1. **Contextualized Chunking** — each document's description ("view") and its chunks, with a badge marking which chunks the relevance gate kept or skipped.
+2. **Schema Induction** — the question/document classification and the induced tables and fields.
+3. **Contextualized Extraction** — the pre-reconciliation rows written into each table, with every cell's provenance quote, rationale, and confidence.
+4. **Data Reconciliation** — the chosen primary key, operations performed, and the table before vs. after reconciliation.
+5. **SQL Answer Synthesis** — the SQL queries the answer agent ran against the reconciled database, the final answer, and citations.
+
+The CLI prints a `file://` link to each generated report when the run finishes.
 
 
 ### Python API
@@ -196,6 +215,7 @@ print(result["results_json_path"])
 | `question`           | `str`                | The question to answer                                                                        |
 | `verbose`            | `bool`               | Show pipeline logs                                                                             |
 | `debug`              | `bool`               | Save intermediate tables as CSVs                                                               |
+| `visualize`          | `bool`               | Write a self-contained HTML report per question visualizing every pipeline step               |
 | `output_dir`         | `str`                | Output directory                                                                               |
 | `config_path`        | `str`                | Custom YAML config path                                                                        |
 | `return_full_result` | `bool`               | Return a dict instead of the answer string                                                    |

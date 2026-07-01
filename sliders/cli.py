@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from pathlib import Path
 
 
 def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -46,6 +47,12 @@ Programmatic usage:
         "--debug",
         action="store_true",
         help="Persist intermediate reconciliation tables as CSVs under the output directory.",
+    )
+    parser.add_argument(
+        "--visualize",
+        action="store_true",
+        help="Generate a self-contained HTML report visualizing every pipeline step "
+        "(chunking, schema, extraction, reconciliation, and query) under the output directory.",
     )
     parser.add_argument(
         "--output-dir",
@@ -98,6 +105,7 @@ def main(argv: list[str] | None = None) -> None:
             azure_endpoint=args.azure_endpoint,
             openai_api_key=args.openai_api_key,
             openai_base_url=args.openai_base_url,
+            visualize=args.visualize,
         )
     except (FileNotFoundError, ValueError) as e:
         print(f"Error: {e}", file=sys.stderr)
@@ -106,6 +114,18 @@ def main(argv: list[str] | None = None) -> None:
     if not args.verbose:
         print()
     print(result["answer"])
+
+    if args.visualize:
+        report_paths = result.get("report_paths") or []
+        if report_paths:
+            print("\nPipeline visualization report(s):")
+            for report_path in report_paths:
+                try:
+                    print(f"  {Path(report_path).resolve().as_uri()}")
+                except Exception:
+                    print(f"  {report_path}")
+        else:
+            print("\n[visualize] No report was generated (see logs for details).")
 
     if args.verbose:
         print(f"\nFull results saved to: {result['results_json_path']}")

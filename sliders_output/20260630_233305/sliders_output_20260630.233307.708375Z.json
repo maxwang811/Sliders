@@ -1,0 +1,1105 @@
+{
+  "experiment_id": "20260630.233307.708375Z",
+  "results": [
+    {
+      "question_id": "wiki_celeb_001",
+      "question": "What are the key findings?",
+      "predicted_answer": "Based on the SQL query results from the `TrialKeyFinding` table, here are the key findings from two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004):\n\n---\n\n## 1. **SAMPLE-HTX-001 (Alphaxolin in Hypertension)**\n\n### **Efficacy**\n- **Ambulatory Blood Pressure:**  \n  - Alphaxolin reduced 24-hour ambulatory systolic blood pressure by **5.8 mmHg more than placebo at 12 weeks** (statistically significant, p = 0.001, 95% CI: -7.5 to -4.1 mmHg).\n- **Office Blood Pressure:**  \n  - Alphaxolin reduced office systolic blood pressure by **9.4 mmHg** and diastolic by **5.2 mmHg** compared to placebo reductions of 3.1 mmHg and 1.6 mmHg, respectively.\n- **Overall:**  \n  - Alphaxolin 20 mg daily added to background antihypertensive therapy produced a **clinically meaningful reduction in 24-hour ambulatory blood pressure** with an acceptable short-term safety profile.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **18%** of alphaxolin and **15%** of placebo participants.\n  - Serious adverse events were rare and **none were related to the study drug**.\n\n### **Tolerability**\n- **Common Adverse Events:**  \n  - Headache (**6%**), dizziness (**4%**), and peripheral edema (**3%**) were the most common with alphaxolin.\n\n---\n\n## 2. **SAMPLE-HFPEF-004 (Betapril in HFpEF)**\n\n### **Efficacy**\n- **NT-proBNP and Quality of Life:**  \n  - Betapril produced a **dose-dependent reduction in NT-proBNP** (ratio at week 24: **0.78**, p = 0.001, 95% CI: 0.7 to 0.88) and **improvement in quality of life** in HFpEF over 24 weeks.\n- **KCCQ-OSS (Quality of Life Score):**  \n  - Betapril improved KCCQ-OSS with dose-dependent increases of **4.1, 6.8, and 7.2 points** versus **2.0 in placebo**.\n- **6-Minute Walk Distance:**  \n  - Improved by up to **32 meters** in the 160 mg arm compared to **8 meters in placebo**.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **40\u201348%** of participants across arms, with **no significant between-group difference**.\n  - Hypotension occurred in **1%** (placebo), **1%** (40 mg), **3%** (80 mg), and **3%** (160 mg) arms (not statistically significant).\n\n### **Tolerability**\n- **Dose Selection:**  \n  - The **80 mg dose** achieved near-maximal efficacy with **lower hypotension burden than 160 mg**, making it the preferred dose for Phase III evaluation.\n\n---\n\n## **Summary Table**\n\n| Trial             | Efficacy Highlights                                                                 | Safety/Tolerability Highlights                                                                                 |\n|-------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001    | -24h SBP: -5.8 mmHg vs placebo (p=0.001)<br>-Office SBP: -9.4 mmHg vs placebo      | 18% adverse events (vs 15% placebo); common: headache (6%), dizziness (4%), edema (3%); no drug-related SAEs |\n| SAMPLE-HFPEF-004  | NT-proBNP ratio: 0.78 (p=0.001)<br>KCCQ-OSS: +7.2 pts (max dose)<br>6MWD: +32 m    | 40\u201348% adverse events; hypotension \u22643%; 80 mg dose preferred for efficacy/tolerability balance                |\n\n---\n\n**In summary:**  \n- **Alphaxolin** significantly lowers blood pressure with a favorable safety profile.\n- **Betapril** improves biomarkers, quality of life, and exercise capacity in HFpEF, with the 80 mg dose offering the best balance of efficacy and tolerability.  \n- Both drugs were generally well tolerated, with adverse events comparable to placebo and no major safety concerns identified."
+    }
+  ],
+  "all_metadata": [
+    {
+      "question": "What are the key findings?",
+      "num_documents": 2,
+      "document_names": [
+        "drug_trial_a",
+        "drug_trial_b"
+      ],
+      "document_sizes": [
+        4571,
+        4674
+      ],
+      "total_chunks": 2,
+      "timing": {
+        "start_time": 1782876800.596729,
+        "schema_generation": {
+          "generation_time": 7.000155925750732,
+          "library_based_selection_time": 7.000211000442505
+        },
+        "schema_extraction": {},
+        "table_merging": {
+          "merging_time": 129.83199787139893
+        },
+        "answer_generation": {},
+        "total_duration": 310.53621196746826
+      },
+      "schema": {
+        "generated_classes": 1,
+        "total_fields": 11,
+        "generation_tokens": 0,
+        "generation_time": 7.000211000442505,
+        "question_type": "simple",
+        "document_type": "others",
+        "classification_reasoning": "The question asks for the key findings from clinical trial documents. This is a straightforward information retrieval task where the answer is found directly in the document. Therefore, the question type is 'simple'. The documents are clinical trial reports describing randomized controlled trials, which do not fit the categories of dataset, story, or policy. They are best categorized as 'others' since they are scientific reports that do not fit the other document types.",
+        "average_fields_per_class": 11.0,
+        "field_types_distribution": {
+          "str": 5,
+          "enum": 1,
+          "decimal": 4,
+          "bool": 1
+        },
+        "schema_object": {
+          "reasoning": "To answer 'What are the key findings?' from a clinical trial report, we need to extract the main results and conclusions as stated in the document. These are typically found in the Results and Conclusions sections, and may include both quantitative (e.g., effect sizes, p-values) and qualitative (e.g., summary statements) findings. Since 'key findings' is a high-level summary, we need a table that captures each finding, its type (efficacy, safety, etc.), and any supporting quantitative/statistical information if present. Each finding should be linked to the trial (e.g., by trial_id or title) for later merging. If multiple findings are reported (e.g., primary and secondary endpoints, safety outcomes), each should be a separate row. No nested types are needed; each finding is a row. Supporting fields include the finding text, type, and any quantitative/statistical values if present.",
+          "tables": [
+            {
+              "name": "TrialKeyFinding",
+              "description": "Key findings and results as reported in the clinical trial document, including both qualitative and quantitative findings. Each row represents a single key finding or result.",
+              "fields": [
+                {
+                  "name": "trial_id",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Unique identifier for the clinical trial (e.g., as stated in the document: trial registration number, protocol ID, or title).",
+                  "required": true,
+                  "normalization": null
+                },
+                {
+                  "name": "finding_type",
+                  "data_type": "enum",
+                  "enum_values": [
+                    "efficacy",
+                    "safety",
+                    "tolerability",
+                    "pharmacokinetics",
+                    "other"
+                  ],
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Category of the key finding (e.g., efficacy, safety, tolerability, pharmacokinetics, or other as described in the document).",
+                  "required": true,
+                  "normalization": null
+                },
+                {
+                  "name": "finding_summary",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Concise summary of the key finding as stated in the document (may be a direct quote or paraphrase).",
+                  "required": true,
+                  "normalization": null
+                },
+                {
+                  "name": "endpoint_name",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Name or description of the endpoint or outcome to which the finding refers (e.g., 'change in mean 24-hour ambulatory systolic blood pressure at week 12').",
+                  "required": false,
+                  "normalization": null
+                },
+                {
+                  "name": "effect_value",
+                  "data_type": "decimal",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Numeric value of the effect or result (e.g., difference between groups, mean change, risk ratio), if reported. Unit should be specified in effect_unit.",
+                  "required": false,
+                  "normalization": null
+                },
+                {
+                  "name": "effect_unit",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Unit of measurement for effect_value (e.g., mmHg, %, events, etc.), as stated in the document.",
+                  "required": false,
+                  "normalization": null
+                },
+                {
+                  "name": "statistical_significance",
+                  "data_type": "bool",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Whether the finding was reported as statistically significant (true/false), if stated in the document.",
+                  "required": false,
+                  "normalization": null
+                },
+                {
+                  "name": "p_value",
+                  "data_type": "decimal",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Reported p-value for the finding, if available.",
+                  "required": false,
+                  "normalization": null
+                },
+                {
+                  "name": "confidence_interval_lower",
+                  "data_type": "decimal",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Lower bound of the reported confidence interval for the effect, if available.",
+                  "required": false,
+                  "normalization": null
+                },
+                {
+                  "name": "confidence_interval_upper",
+                  "data_type": "decimal",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Upper bound of the reported confidence interval for the effect, if available.",
+                  "required": false,
+                  "normalization": null
+                },
+                {
+                  "name": "confidence_interval_unit",
+                  "data_type": "str",
+                  "enum_values": null,
+                  "unit": null,
+                  "scale": "none",
+                  "description": "Unit of measurement for the confidence interval bounds (should match effect_unit), if available.",
+                  "required": false,
+                  "normalization": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "extraction": {
+        "chunks_processed": 2,
+        "successful_extractions": 2,
+        "failed_extractions": 0,
+        "retry_attempts": 0,
+        "extraction_time": 129.46742391586304,
+        "success_rate": 1.0,
+        "irrelevant_chunks": {
+          "drug_trial_a": [],
+          "drug_trial_b": []
+        }
+      },
+      "merging": {
+        "tables_created": 0,
+        "sql_queries_executed": 0,
+        "merge_failures": 0,
+        "total_rows_processed": 0,
+        "merging_time": 0,
+        "merged_tables_dir_path": "",
+        "successful_merges": 1,
+        "failed_merges": 0,
+        "merge_success_rate": 1.0
+      },
+      "answer_generation": {
+        "sql_execution_attempts": 0,
+        "sql_execution_errors": 0,
+        "final_answer_tokens": 469,
+        "used_tables": true,
+        "answer_time": 26.222575902938843,
+        "answer_strategy": "sql_inspect",
+        "citation_sql": "SELECT * FROM TrialKeyFinding_feda534a ORDER BY row_id ASC;",
+        "citation_rows": 10,
+        "citation_reasoning": "The previous SQL result includes all 10 rows from the TrialKeyFinding table, which correspond to every key finding cited in the answer. All relevant data columns (trial_id, finding_type, finding_summary, endpoint_name, effect_value, effect_unit, statistical_significance, p_value, confidence_interval_lower, confidence_interval_upper, confidence_interval_unit) and all provenance columns (columns containing 'quote', 'rationale', or 'text_header') are present. No additional filtering is needed, as all rows contributed to the answer. Therefore, the previous result is sufficient for citation.",
+        "citation_attempts": 1,
+        "citation_paragraph": "The key findings summarized above are based on data extracted from the `TrialKeyFinding` table for two clinical trials: SAMPLE-HTX-001 (Alphaxolin in hypertension) and SAMPLE-HFPEF-004 (Betapril in HFpEF). For SAMPLE-HTX-001, efficacy and safety results\u2014including the statistically significant reduction in 24-hour ambulatory systolic blood pressure (\u22125.8 mmHg, p = 0.001, 95% CI: \u22127.5 to \u22124.1 mmHg), office blood pressure changes, and adverse event rates\u2014were drawn from explicit statements in the Abstract, Results, and Conclusion sections, as indicated by the provided text headers and direct quotes (e.g., \"At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg... for a between-group difference of \u22125.8 mmHg (P < 0.001)\"). For SAMPLE-HFPEF-004, findings on NT-proBNP reduction, KCCQ-OSS improvement, 6-minute walk distance, and safety/tolerability were supported by direct quotes and rationales from the Abstract, Results, and Discussion (e.g., \"Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks\"). All data points, including effect values, statistical significance, and endpoint definitions, were referenced directly from the trial documents as detailed in the provenance fields and supporting rationales in the source data rows.",
+        "reconciliation_stats_summary": "The reconciliation process grouped key findings using a combination of trial ID, finding type, endpoint name, and finding summary as the primary key. All 10 key findings were unique, with no duplicates or conflicting entries detected, so no reconciliation actions (such as deduplication or conflict resolution) were needed. As a result, the total number of rows remained unchanged at 10, with no reduction during processing.",
+        "num_queries": 1,
+        "query_history": [
+          {
+            "reasoning": "The table is small (10 rows), so I will sample the full table to review all key findings, their summaries, and relevant details. This will allow me to directly answer the question about key findings.",
+            "sql": "SELECT trial_id, finding_type, finding_summary, endpoint_name, effect_value, effect_unit, statistical_significance, p_value, confidence_interval_lower, confidence_interval_upper, confidence_interval_unit FROM TrialKeyFinding_feda534a ORDER BY row_id ASC LIMIT 10;",
+            "result": "Shape: (10, 11)\n        trial_id finding_type                                                                                                                                                                                                  finding_summary                                                endpoint_name effect_value effect_unit statistical_significance p_value confidence_interval_lower confidence_interval_upper confidence_interval_unit\n  SAMPLE-HTX-001     EFFICACY                                                                                                         Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks.   mean 24-hour ambulatory systolic blood pressure at week 12         -5.8        MMHG                     TRUE   0.001                      -7.5                      -4.1                     mmHg\n  SAMPLE-HTX-001     EFFICACY                                     Alphaxolin reduced office systolic blood pressure by 9.4 mmHg and diastolic blood pressure by 5.2 mmHg compared to placebo reductions of 3.1 mmHg and 1.6 mmHg respectively.       change in office systolic and diastolic blood pressure         -9.4        MMHG                      NaN                                                                                  NaN\n  SAMPLE-HTX-001       SAFETY                                                Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants; serious adverse events were rare and none related to study drug. treatment-emergent adverse events and serious adverse events           18           %                      NaN                                                                                  NaN\n  SAMPLE-HTX-001 TOLERABILITY                                                                                                             Common adverse events with alphaxolin were headache (6%), dizziness (4%), and peripheral edema (3%).                           frequency of common adverse events            6           %                      NaN                                                                                  NaN\n  SAMPLE-HTX-001     EFFICACY                Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.   mean 24-hour ambulatory systolic blood pressure at week 12                      NaN                      NaN                                                                                  NaN\nSAMPLE-HFPEF-004     EFFICACY                                                                                             Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.                 change from baseline in NT-proBNP at week 24         0.78       RATIO                     TRUE   0.001                       0.7                      0.88                    ratio\nSAMPLE-HFPEF-004     EFFICACY                                                                       Betapril improved quality of life as measured by KCCQ-OSS with dose-dependent increases of 4.1, 6.8, and 7.2 points versus 2.0 in placebo.              change in KCCQ Overall Summary Score (KCCQ-OSS)          7.2      POINTS                      NaN                                                                                  NaN\nSAMPLE-HFPEF-004     EFFICACY                                                                                                   Betapril improved 6-minute walk distance by up to 32 meters in the 160 mg arm compared to 8 meters in placebo.                             change in 6-minute walk distance           32           M                      NaN                                                                                  NaN\nSAMPLE-HFPEF-004       SAFETY Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in 1% placebo, 1% (40 mg), 3% (80 mg), and 3% (160 mg) arms.  treatment-emergent adverse events and hypotension incidence            3           %                    FALSE                                                                                  NaN\nSAMPLE-HFPEF-004 TOLERABILITY                                                                  The 80 mg dose achieved near-maximal efficacy with lower hypotension burden than 160 mg, making it the preferred dose for Phase III evaluation.                              dose tolerability and selection                      NaN                      NaN                                                                                  NaN"
+          }
+        ]
+      },
+      "quality": {
+        "tables_with_data": 1,
+        "empty_tables": 0,
+        "data_completeness_score": 1.0
+      },
+      "errors": [],
+      "question_id": "wiki_celeb_001",
+      "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_233305",
+      "rephrase_question": {
+        "enabled": true,
+        "original_question": "What are the key findings?",
+        "questions": {
+          "schema": {
+            "question": "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety results, and any notable conclusions or limitations. Capture relevant contextual details such as population studied, interventions, comparators, outcome measures, and timeframes.",
+            "reasoning": "The original question asks for 'key findings' from clinical trial documents. To design an extraction schema, we need to capture all relevant details that constitute a 'key finding' in a clinical trial context. This includes the main outcomes, statistical significance, effect sizes, safety results, and any notable secondary findings. We should also anticipate capturing the context of the finding (e.g., population, intervention, comparator, outcome measures), as well as any limitations or conclusions drawn by the study authors. The schema should be general enough to apply to any clinical trial report, not just the specific documents mentioned."
+          },
+          "extraction": {
+            "question": "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that describes significant results or conclusions, regardless of where it appears in the text.",
+            "reasoning": "The original question asks for 'key findings,' which are likely to be spread throughout the documents and may include results, conclusions, or significant outcomes. To ensure exhaustive extraction, the question should instruct the extractor to capture all statements, data, or conclusions that are presented as key findings, results, or main outcomes in any chunk of either document. This approach ensures that no relevant information is missed, regardless of where it appears in the documents."
+          },
+          "merge": {
+            "question": "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure each finding is attributed to its source document, deduplicate any overlapping entries, and resolve conflicts where necessary, preserving the fidelity of the original data.",
+            "reasoning": "The original question asks for the key findings from two clinical trial documents. At the table merging stage, the goal is to consolidate all extracted key findings from both 'drug_trial_a' and 'drug_trial_b' into a single, clean table. This table should preserve all relevant details, deduplicate overlapping findings, and resolve any conflicts, ensuring each finding is clearly attributed to its source document. No filtering or aggregation by specific drugs or outcomes should be performed at this stage; all findings from both documents should be included in normalized form."
+          },
+          "answer": {
+            "question": "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?",
+            "reasoning": "The user is asking for the main results from two clinical trials: one on alphaxolin for hypertension and one on betapril for HFpEF. To clarify, the question should specify that the key findings from both drug_trial_a and drug_trial_b are requested."
+          }
+        },
+        "fallback_components": [],
+        "question_list": [
+          "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety results, and any notable conclusions or limitations. Capture relevant contextual details such as population studied, interventions, comparators, outcome measures, and timeframes.",
+          "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that describes significant results or conclusions, regardless of where it appears in the text.",
+          "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure each finding is attributed to its source document, deduplicate any overlapping entries, and resolve conflicts where necessary, preserving the fidelity of the original data.",
+          "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?"
+        ]
+      },
+      "reconciliation": {
+        "initial_stats": {
+          "row_count": 10,
+          "column_count": 37,
+          "columns": [
+            {
+              "name": "row_id",
+              "dtype": "int64",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "page_number",
+              "dtype": "int64",
+              "null_count": 0,
+              "distinct_count": 1
+            },
+            {
+              "name": "document_name",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "text_header",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "trial_id_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "trial_id_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "trial_id",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "finding_type_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "finding_type_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "finding_type",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 3
+            },
+            {
+              "name": "finding_summary_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "finding_summary_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "finding_summary",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "endpoint_name_quote",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "endpoint_name_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 9
+            },
+            {
+              "name": "endpoint_name",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "effect_value_quote",
+              "dtype": "object",
+              "null_count": 2,
+              "distinct_count": 8
+            },
+            {
+              "name": "effect_value_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "effect_value",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 9
+            },
+            {
+              "name": "effect_unit_quote",
+              "dtype": "object",
+              "null_count": 2,
+              "distinct_count": 8
+            },
+            {
+              "name": "effect_unit_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "effect_unit",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 6
+            },
+            {
+              "name": "statistical_significance_quote",
+              "dtype": "object",
+              "null_count": 7,
+              "distinct_count": 3
+            },
+            {
+              "name": "statistical_significance_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 10
+            },
+            {
+              "name": "statistical_significance",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 3
+            },
+            {
+              "name": "p_value_quote",
+              "dtype": "object",
+              "null_count": 8,
+              "distinct_count": 2
+            },
+            {
+              "name": "p_value_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 8
+            },
+            {
+              "name": "p_value",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 2
+            },
+            {
+              "name": "confidence_interval_lower_quote",
+              "dtype": "object",
+              "null_count": 8,
+              "distinct_count": 2
+            },
+            {
+              "name": "confidence_interval_lower_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 9
+            },
+            {
+              "name": "confidence_interval_lower",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 3
+            },
+            {
+              "name": "confidence_interval_upper_quote",
+              "dtype": "object",
+              "null_count": 8,
+              "distinct_count": 2
+            },
+            {
+              "name": "confidence_interval_upper_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 9
+            },
+            {
+              "name": "confidence_interval_upper",
+              "dtype": "object",
+              "null_count": 0,
+              "distinct_count": 3
+            },
+            {
+              "name": "confidence_interval_unit_quote",
+              "dtype": "object",
+              "null_count": 8,
+              "distinct_count": 2
+            },
+            {
+              "name": "confidence_interval_unit_rationale",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 5
+            },
+            {
+              "name": "confidence_interval_unit",
+              "dtype": "str",
+              "null_count": 0,
+              "distinct_count": 3
+            }
+          ]
+        },
+        "primary_key": {
+          "fields": [
+            "trial_id",
+            "finding_type",
+            "endpoint_name",
+            "finding_summary"
+          ],
+          "reasoning": "Each row represents a single key finding from a clinical trial document, and the goal is to consolidate overlapping findings from both 'drug_trial_a' and 'drug_trial_b' while preserving attribution to the source. The unique observation here is defined by the combination of the trial (trial_id), the type of finding (finding_type), the specific endpoint (endpoint_name), and the summary of the finding (finding_summary). These fields together capture what the finding is about, for which trial, and for which endpoint, without including measured values (which are consolidated). Including document_name is not necessary for the canonical table, as the same finding from different documents should be merged. This composite key ensures that duplicate extractions of the same finding are consolidated, while distinct findings remain separate.",
+          "query_count": 0
+        },
+        "pk_canonicalization": {
+          "pass_1_document_level": {
+            "successful_documents": [
+              "drug_trial_a",
+              "drug_trial_b"
+            ],
+            "failed_documents": [],
+            "total_documents": 2,
+            "rows_processed": 10
+          },
+          "pass_2_global_level": {
+            "canonicalized_fields": [
+              "finding_type"
+            ],
+            "skipped_fields": [
+              "trial_id",
+              "endpoint_name",
+              "finding_summary"
+            ],
+            "canonicalization_count": 1,
+            "canonicalization_sqls": [
+              {
+                "field": "finding_type",
+                "cycle": 1,
+                "sql": "SELECT\n  row_id,\n  CASE\n    WHEN finding_type IS NULL THEN NULL\n    ELSE UPPER(\n      REGEXP_REPLACE(\n        REGEXP_REPLACE(TRIM(finding_type), '[.,;:\\-''&()!?]', '', 'g'),\n        '\\s+', ' ', 'g'\n      )\n    )\n  END AS finding_type,\n  trial_id,\n  finding_summary,\n  endpoint_name,\n  effect_value,\n  effect_unit,\n  statistical_significance,\n  p_value,\n  confidence_interval_lower,\n  confidence_interval_upper,\n  confidence_interval_unit,\n  effect_unit_rationale,\n  statistical_significance_rationale,\n  text_header,\n  finding_type_quote,\n  finding_type_rationale,\n  document_name,\n  confidence_interval_upper_quote,\n  confidence_interval_unit_quote,\n  trial_id_quote,\n  effect_unit_quote,\n  statistical_significance_quote,\n  finding_summary_rationale,\n  confidence_interval_unit_rationale,\n  p_value_rationale,\n  endpoint_name_rationale,\n  confidence_interval_upper_rationale,\n  trial_id_rationale,\n  confidence_interval_lower_quote,\n  effect_value_rationale,\n  finding_summary_quote,\n  effect_value_quote,\n  endpoint_name_quote,\n  p_value_quote,\n  page_number,\n  confidence_interval_lower_rationale\nFROM TrialKeyFinding_feda534a\nORDER BY row_id;",
+                "reasoning": "Phase 3 Step 2: I examined all 3 distinct values sorted alphabetically (\"efficacy\", \"safety\", \"tolerability\").\n- All are simple, short categorical labels, each a single word.\n- There are no special characters, punctuation, or whitespace issues.\n- No adjacent variants (e.g., no plural/singular differences, no hyphens, no abbreviations, no case variation in the original data, but case sensitivity can't be fully inferred from inspection alone)\n- These are canonical category labels typical for finding types in clinical data.\n\nTo fully validate, I must check for possible case, whitespace, or punctuation variations that could occur (e.g., \"Efficacy\", \"EFFICACY\", \"Tolerability \", \"safety.\", etc.) even if not observed yet, since future entries could differ. General normalization with UPPER, punctuation removal, and whitespace normalization ensures robust deduplication even if minor entry errors occur in the future or from upstream changes. This is best practice for categorical PK fields. There is no risk to meaning, as all values are simple category labels.\n\nI will apply systematic canonicalization per guidelines."
+              }
+            ]
+          }
+        },
+        "null_pk_handling": {
+          "pass_1_document_level": {
+            "total_null_rows": 0,
+            "filled_count": 0,
+            "discarded_count": 0,
+            "placeholder_count": 0,
+            "initial_rows": 10,
+            "final_rows": 10,
+            "documents_processed": 2,
+            "documents_failed": 0
+          },
+          "pass_2_global_level": {
+            "total_null_rows": 0,
+            "filled_count": 0,
+            "discarded_count": 0,
+            "placeholder_count": 0,
+            "initial_rows": 10,
+            "final_rows": 10
+          }
+        },
+        "non_pk_null_handling": {
+          "documents_processed": 2,
+          "documents_failed": 0,
+          "rows_modified": 0,
+          "initial_rows": 10,
+          "final_rows": 10
+        },
+        "pk_groups": {
+          "total": 10,
+          "single_row": 10,
+          "multi_row": 0,
+          "processed": 0,
+          "failed": 0
+        },
+        "multi_row_group_initial_rows": 0,
+        "all_operations": [],
+        "final_row_count": 10,
+        "non_pk_canonicalization": {
+          "canonicalized_fields": [
+            "effect_unit",
+            "statistical_significance",
+            "confidence_interval_unit"
+          ],
+          "skipped_fields": [],
+          "canonicalization_count": 3,
+          "canonicalization_sqls": [
+            {
+              "field": "effect_unit",
+              "cycle": 1,
+              "sql": "SELECT\n  row_id,\n  CASE\n    WHEN TRIM(effect_unit) = '' THEN NULL\n    WHEN effect_unit IS NULL THEN NULL\n    ELSE UPPER(\n      REGEXP_REPLACE(REGEXP_REPLACE(TRIM(effect_unit), '[.,;:\\-''&()!?]', '', 'g'), '\\s+', ' ', 'g')\n    )\n  END AS effect_unit,\n  trial_id,\n  finding_type,\n  finding_summary,\n  endpoint_name,\n  effect_value,\n  statistical_significance,\n  p_value,\n  confidence_interval_lower,\n  confidence_interval_upper,\n  confidence_interval_unit,\n  effect_unit_rationale,\n  statistical_significance_rationale,\n  text_header,\n  finding_type_quote,\n  finding_type_rationale,\n  document_name,\n  confidence_interval_upper_quote,\n  confidence_interval_unit_quote,\n  trial_id_quote,\n  effect_unit_quote,\n  statistical_significance_quote,\n  finding_summary_rationale,\n  confidence_interval_unit_rationale,\n  p_value_rationale,\n  endpoint_name_rationale,\n  confidence_interval_upper_rationale,\n  trial_id_rationale,\n  confidence_interval_lower_quote,\n  effect_value_rationale,\n  finding_summary_quote,\n  effect_value_quote,\n  endpoint_name_quote,\n  number_instances,\n  p_value_quote,\n  page_number,\n  confidence_interval_lower_rationale,\n  __reconciliation_context__\nFROM TrialKeyFinding_feda534a\nORDER BY row_id;",
+              "reasoning": "There are 6 distinct values in 'effect_unit': '', '%', 'm', 'mmHg', 'points', 'ratio'. Observations by alphabetical order: (1) Blank/empty string: likely represents missing or unspecified unit\u2014should be canonically represented as NULL. (2) '%': has no special characters but could be susceptible to duplication with extra spaces/punctuation. (3) 'm', 'mmHg', 'points', 'ratio': these are atomic and short but could vary in case and punctuation. Special characters: only '%' as a symbol, no other punctuation but possible leading/trailing whitespace (not visible in this listing).\n\nAdjacent variants: No obvious singular/plural or hyphen variations here, but it's prudent to check for leading/trailing whitespace or case issues.\n\nTo enable future deduplication and reduce potential drift, I will canonicalize using systematic normalization: remove punctuation (excluding '%', since it is semantically meaningful in SI units), normalize case to uppercase, trim spaces, and transform empty strings to NULL. Since '%' is a legitimate unit, I will NOT remove it during punctuation removal. All other punctuation will be removed. My transformation will use REGEXP_REPLACE for whitespace and common punctuation except '%', standardize to UPPER, and treat empty values as NULL.\n\nThis will ensure 'mmHg', 'MMHG', 'mmhg', ' mmHg ', etc. all become 'MMHG', and similar for all other units, without merging 'm' with 'mmHg' or removing legitimate '%' symbols."
+            },
+            {
+              "field": "effect_unit",
+              "cycle": 2,
+              "sql": "SELECT\n  row_id,\n  CASE\n    WHEN effect_unit IS NULL THEN NULL\n    ELSE UPPER(\n      REGEXP_REPLACE(\n        REGEXP_REPLACE(TRIM(effect_unit), '[.,;:\\-''&()!?]', '', 'g'),\n        '\\s+', ' ', 'g'\n      )\n    )\n  END AS effect_unit,\n  trial_id,\n  finding_type,\n  finding_summary,\n  endpoint_name,\n  effect_value,\n  statistical_significance,\n  p_value,\n  confidence_interval_lower,\n  confidence_interval_upper,\n  confidence_interval_unit,\n  effect_unit_rationale,\n  statistical_significance_rationale,\n  text_header,\n  finding_type_quote,\n  finding_type_rationale,\n  document_name,\n  confidence_interval_upper_quote,\n  confidence_interval_unit_quote,\n  trial_id_quote,\n  effect_unit_quote,\n  statistical_significance_quote,\n  finding_summary_rationale,\n  confidence_interval_unit_rationale,\n  p_value_rationale,\n  endpoint_name_rationale,\n  confidence_interval_upper_rationale,\n  trial_id_rationale,\n  confidence_interval_lower_quote,\n  effect_value_rationale,\n  finding_summary_quote,\n  effect_value_quote,\n  endpoint_name_quote,\n  number_instances,\n  p_value_quote,\n  page_number,\n  confidence_interval_lower_rationale,\n  __reconciliation_context__\nFROM TrialKeyFinding_feda534a\nORDER BY row_id;",
+              "reasoning": "Looking at the sorted distinct values: '%', 'M', 'MMHG', 'POINTS', 'RATIO'. Observations: \n- '%' - Standard percent, likely fine\n- 'M' - Single letter units are ambiguous; could be 'Meters', 'Mol', or a typo/abbreviation. \n- 'MMHG' - Standard unit for blood pressure (millimeters of mercury)\n- 'POINTS' - Plural. Sometimes 'POINTS'/'POINT' are treated as same, but here only 'POINTS' present\n- 'RATIO' - Fine\n\nNone of the units have inconsistent punctuation, spacing, or casing ('MMHG', 'POINTS', 'RATIO' are upper; '%' is a symbol; 'M' is upper), but we should ensure uniform formatting for collision safety. \n\nMost notably, '%' mixes a symbol with text units. To standardize comparisons (and future deduplication), I'll apply canonicalization: \n- Remove unnecessary punctuation (though here just '%')\n- Normalize whitespace (just in case)\n- Standardize to UPPER (already done for most)\n\nPer guidance, will not alter unit semantics, just formatting. This will also catch latent inconsistency if e.g., 'mmhg' or 'points' appear after deduplication from other stages. NULL values will be preserved.\n\nI will use nested REGEXP_REPLACE and UPPER as specified."
+            },
+            {
+              "field": "statistical_significance",
+              "cycle": 1,
+              "sql": "SELECT\n  row_id,\n  CASE\n    WHEN statistical_significance IS NULL OR TRIM(statistical_significance) = '' THEN NULL\n    ELSE UPPER(TRIM(statistical_significance))\n  END AS statistical_significance,\n  trial_id,\n  finding_type,\n  finding_summary,\n  endpoint_name,\n  effect_value,\n  effect_unit,\n  p_value,\n  confidence_interval_lower,\n  confidence_interval_upper,\n  confidence_interval_unit,\n  effect_unit_rationale,\n  statistical_significance_rationale,\n  text_header,\n  finding_type_quote,\n  finding_type_rationale,\n  document_name,\n  confidence_interval_upper_quote,\n  confidence_interval_unit_quote,\n  trial_id_quote,\n  effect_unit_quote,\n  statistical_significance_quote,\n  finding_summary_rationale,\n  confidence_interval_unit_rationale,\n  p_value_rationale,\n  endpoint_name_rationale,\n  confidence_interval_upper_rationale,\n  trial_id_rationale,\n  confidence_interval_lower_quote,\n  effect_value_rationale,\n  finding_summary_quote,\n  effect_value_quote,\n  endpoint_name_quote,\n  number_instances,\n  p_value_quote,\n  page_number,\n  confidence_interval_lower_rationale,\n  __reconciliation_context__\nFROM TrialKeyFinding_feda534a\nORDER BY row_id;",
+              "reasoning": "There are 3 distinct values for statistical_significance: an empty string (represented as ''), 'True', and 'False'. The expected values for a categorical 'statistical_significance' field should be standardized boolean-like responses (e.g., 'TRUE', 'FALSE', or formally null). The presence of an empty string is potentially inconsistent\u2014it's almost certainly meant to represent 'not reported' or NULL. To enable accurate deduplication, I need to canonicalize as follows: (1) Standardize 'True' and 'False' to uppercase ('TRUE', 'FALSE'); (2) Convert any empty string ('') to NULL to avoid treating empty as a meaningful value. This will ensure downstream deduplication operates correctly on this categorical field."
+            },
+            {
+              "field": "confidence_interval_unit",
+              "cycle": 1,
+              "sql": "SELECT\n  row_id,\n  CASE\n    WHEN confidence_interval_unit IS NULL OR TRIM(confidence_interval_unit) = '' THEN NULL\n    ELSE confidence_interval_unit\n  END AS confidence_interval_unit,\n  trial_id,\n  finding_type,\n  finding_summary,\n  endpoint_name,\n  effect_value,\n  effect_unit,\n  statistical_significance,\n  p_value,\n  confidence_interval_lower,\n  confidence_interval_upper,\n  effect_unit_rationale,\n  statistical_significance_rationale,\n  text_header,\n  finding_type_quote,\n  finding_type_rationale,\n  document_name,\n  confidence_interval_upper_quote,\n  confidence_interval_unit_quote,\n  trial_id_quote,\n  effect_unit_quote,\n  statistical_significance_quote,\n  finding_summary_rationale,\n  confidence_interval_unit_rationale,\n  p_value_rationale,\n  endpoint_name_rationale,\n  confidence_interval_upper_rationale,\n  trial_id_rationale,\n  confidence_interval_lower_quote,\n  effect_value_rationale,\n  finding_summary_quote,\n  effect_value_quote,\n  endpoint_name_quote,\n  number_instances,\n  p_value_quote,\n  page_number,\n  confidence_interval_lower_rationale,\n  __reconciliation_context__\nFROM TrialKeyFinding_feda534a\nORDER BY row_id;",
+              "reasoning": "Phase 3 Step 2: I have examined all 3 distinct values from the prior inspections: 'mmHg', 'ratio', and an 8-row blank string (''). Observations: \n- 'mmHg': Clean, standard physiological unit abbreviation. Likely represents 'millimeters of mercury'.\n- 'ratio': Clean, logical as a statistical/metric unit.\n- '': This blank string is problematic. All 8 blank values have string length 0 (not a string of spaces, but a truly empty string). This is almost certainly an artifact of extraction and should be treated as NULL to correctly normalize missing categorical values for canonical comparison (primary key deduplication). If not canonicalized, deduplication will not recognize these as equivalent to missing/NULL. Special characters: No punctuation or whitespace variants, all clean. Adjacent variants: No near-duplicates for 'mmHg' or 'ratio', but blank string must be normalized. For evidence, these 8 blanks are truly empty, not alternate representations. \nCanonicalization is required to convert blank strings to NULL. No other issues in observed values."
+            }
+          ]
+        },
+        "stats": {
+          "primary_key": [
+            "trial_id",
+            "finding_type",
+            "endpoint_name",
+            "finding_summary"
+          ],
+          "canonicalization": {
+            "stats_per_field": {},
+            "total_fields_canonicalized": 0,
+            "total_fields_processed": 0
+          },
+          "non_pk_canonicalization": {
+            "enabled": true,
+            "stats_per_field": {},
+            "total_fields_canonicalized": 0,
+            "total_fields_processed": 0,
+            "columns_identified": [
+              "effect_unit",
+              "statistical_significance",
+              "confidence_interval_unit"
+            ]
+          },
+          "row_grouping": {
+            "unique_primary_key_values": 10,
+            "single_row_groups": 10,
+            "multi_row_groups": 0
+          },
+          "multi_row_processing": {
+            "initial_total_rows": 0,
+            "final_total_rows": 0,
+            "rows_reduced": 0
+          },
+          "controller_actions": {
+            "deduplicate": 0,
+            "aggregate": 0,
+            "resolve_conflicts": 0,
+            "canonicalize": 0
+          },
+          "final_stats": {
+            "initial_total_rows": 10,
+            "final_total_rows": 10,
+            "total_rows_reduced": 0
+          }
+        }
+      },
+      "answer_stage": "post_merge",
+      "regular_answer": "Key findings:\n\nFor SAMPLE-HTX-001 (Alphaxolin in hypertension):\n- Efficacy: Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks (statistically significant, p=0.001, 95% CI: -7.5 to -4.1 mmHg). Office systolic and diastolic BP also reduced more with Alphaxolin than placebo.\n- Safety: Treatment-emergent adverse events occurred in 18% of Alphaxolin and 15% of placebo participants; serious adverse events were rare and none related to study drug.\n- Tolerability: Most common adverse events were headache (6%), dizziness (4%), and peripheral edema (3%).\n- Conclusion: Alphaxolin 20 mg daily added to background therapy produced a clinically meaningful reduction in 24-hour ambulatory BP with an acceptable short-term safety profile.\n\nFor SAMPLE-HFPEF-004 (Betapril in HFpEF):\n- Efficacy: Betapril produced a dose-dependent reduction in NT-proBNP (geometric mean ratio 0.78 [0.70-0.88] for 160 mg arm, p=0.001) and improvement in quality of life (KCCQ-OSS increased by up to 7.2 points vs 2.0 in placebo). 6-minute walk distance improved by up to 32 meters in the 160 mg arm vs 8 meters in placebo.\n- Safety: Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in up to 3% in the highest dose arm.\n- Tolerability: The 80 mg dose achieved near-maximal efficacy with lower hypotension burden than 160 mg, making it the preferred dose for Phase III evaluation.",
+      "inspect_answer": "Based on the SQL query results from the `TrialKeyFinding` table, here are the key findings from two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004):\n\n---\n\n## 1. **SAMPLE-HTX-001 (Alphaxolin in Hypertension)**\n\n### **Efficacy**\n- **Ambulatory Blood Pressure:**  \n  - Alphaxolin reduced 24-hour ambulatory systolic blood pressure by **5.8 mmHg more than placebo at 12 weeks** (statistically significant, p = 0.001, 95% CI: -7.5 to -4.1 mmHg).\n- **Office Blood Pressure:**  \n  - Alphaxolin reduced office systolic blood pressure by **9.4 mmHg** and diastolic by **5.2 mmHg** compared to placebo reductions of 3.1 mmHg and 1.6 mmHg, respectively.\n- **Overall:**  \n  - Alphaxolin 20 mg daily added to background antihypertensive therapy produced a **clinically meaningful reduction in 24-hour ambulatory blood pressure** with an acceptable short-term safety profile.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **18%** of alphaxolin and **15%** of placebo participants.\n  - Serious adverse events were rare and **none were related to the study drug**.\n\n### **Tolerability**\n- **Common Adverse Events:**  \n  - Headache (**6%**), dizziness (**4%**), and peripheral edema (**3%**) were the most common with alphaxolin.\n\n---\n\n## 2. **SAMPLE-HFPEF-004 (Betapril in HFpEF)**\n\n### **Efficacy**\n- **NT-proBNP and Quality of Life:**  \n  - Betapril produced a **dose-dependent reduction in NT-proBNP** (ratio at week 24: **0.78**, p = 0.001, 95% CI: 0.7 to 0.88) and **improvement in quality of life** in HFpEF over 24 weeks.\n- **KCCQ-OSS (Quality of Life Score):**  \n  - Betapril improved KCCQ-OSS with dose-dependent increases of **4.1, 6.8, and 7.2 points** versus **2.0 in placebo**.\n- **6-Minute Walk Distance:**  \n  - Improved by up to **32 meters** in the 160 mg arm compared to **8 meters in placebo**.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **40\u201348%** of participants across arms, with **no significant between-group difference**.\n  - Hypotension occurred in **1%** (placebo), **1%** (40 mg), **3%** (80 mg), and **3%** (160 mg) arms (not statistically significant).\n\n### **Tolerability**\n- **Dose Selection:**  \n  - The **80 mg dose** achieved near-maximal efficacy with **lower hypotension burden than 160 mg**, making it the preferred dose for Phase III evaluation.\n\n---\n\n## **Summary Table**\n\n| Trial             | Efficacy Highlights                                                                 | Safety/Tolerability Highlights                                                                                 |\n|-------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001    | -24h SBP: -5.8 mmHg vs placebo (p=0.001)<br>-Office SBP: -9.4 mmHg vs placebo      | 18% adverse events (vs 15% placebo); common: headache (6%), dizziness (4%), edema (3%); no drug-related SAEs |\n| SAMPLE-HFPEF-004  | NT-proBNP ratio: 0.78 (p=0.001)<br>KCCQ-OSS: +7.2 pts (max dose)<br>6MWD: +32 m    | 40\u201348% adverse events; hypotension \u22643%; 80 mg dose preferred for efficacy/tolerability balance                |\n\n---\n\n**In summary:**  \n- **Alphaxolin** significantly lowers blood pressure with a favorable safety profile.\n- **Betapril** improves biomarkers, quality of life, and exercise capacity in HFpEF, with the 80 mg dose offering the best balance of efficacy and tolerability.  \n- Both drugs were generally well tolerated, with adverse events comparable to placebo and no major safety concerns identified.",
+      "pre_merge_answer": "Key findings:\n\nFor alphaxolin in moderate hypertension (SAMPLE-HTX-001):\n- Efficacy: Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks (statistically significant, p<0.001; 95% CI: -7.5 to -4.1 mmHg). Office systolic and diastolic BP also decreased more with alphaxolin than placebo.\n- Safety: Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants; serious adverse events were rare and none were related to the study drug.\n- Tolerability: The most common adverse events with alphaxolin were headache (6%), dizziness (4%), and peripheral edema (3%).\n- Overall: Alphaxolin added to background antihypertensive therapy produced a clinically meaningful reduction in blood pressure with an acceptable short-term safety profile.\n\nFor betapril in HFpEF (SAMPLE-HFPEF-004):\n- Efficacy: Betapril produced a dose-dependent reduction in NT-proBNP (geometric mean ratio 0.78 [0.70-0.88] for 160 mg arm, p<0.001) and improvement in quality of life (KCCQ-OSS improved by up to 7.2 points vs 2.0 in placebo) and 6-minute walk distance (up to 32 meters in 160 mg arm vs 8 meters in placebo).\n- Safety: Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in up to 3% of the highest dose arm.\n- Tolerability: The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III trial.\n\nThese findings are directly supported by the 'finding_summary' field in the provided table.",
+      "post_merge_answer": "Based on the SQL query results from the `TrialKeyFinding` table, here are the key findings from two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004):\n\n---\n\n## 1. **SAMPLE-HTX-001 (Alphaxolin in Hypertension)**\n\n### **Efficacy**\n- **Ambulatory Blood Pressure:**  \n  - Alphaxolin reduced 24-hour ambulatory systolic blood pressure by **5.8 mmHg more than placebo at 12 weeks** (statistically significant, p = 0.001, 95% CI: -7.5 to -4.1 mmHg).\n- **Office Blood Pressure:**  \n  - Alphaxolin reduced office systolic blood pressure by **9.4 mmHg** and diastolic by **5.2 mmHg** compared to placebo reductions of 3.1 mmHg and 1.6 mmHg, respectively.\n- **Overall:**  \n  - Alphaxolin 20 mg daily added to background antihypertensive therapy produced a **clinically meaningful reduction in 24-hour ambulatory blood pressure** with an acceptable short-term safety profile.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **18%** of alphaxolin and **15%** of placebo participants.\n  - Serious adverse events were rare and **none were related to the study drug**.\n\n### **Tolerability**\n- **Common Adverse Events:**  \n  - Headache (**6%**), dizziness (**4%**), and peripheral edema (**3%**) were the most common with alphaxolin.\n\n---\n\n## 2. **SAMPLE-HFPEF-004 (Betapril in HFpEF)**\n\n### **Efficacy**\n- **NT-proBNP and Quality of Life:**  \n  - Betapril produced a **dose-dependent reduction in NT-proBNP** (ratio at week 24: **0.78**, p = 0.001, 95% CI: 0.7 to 0.88) and **improvement in quality of life** in HFpEF over 24 weeks.\n- **KCCQ-OSS (Quality of Life Score):**  \n  - Betapril improved KCCQ-OSS with dose-dependent increases of **4.1, 6.8, and 7.2 points** versus **2.0 in placebo**.\n- **6-Minute Walk Distance:**  \n  - Improved by up to **32 meters** in the 160 mg arm compared to **8 meters in placebo**.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **40\u201348%** of participants across arms, with **no significant between-group difference**.\n  - Hypotension occurred in **1%** (placebo), **1%** (40 mg), **3%** (80 mg), and **3%** (160 mg) arms (not statistically significant).\n\n### **Tolerability**\n- **Dose Selection:**  \n  - The **80 mg dose** achieved near-maximal efficacy with **lower hypotension burden than 160 mg**, making it the preferred dose for Phase III evaluation.\n\n---\n\n## **Summary Table**\n\n| Trial             | Efficacy Highlights                                                                 | Safety/Tolerability Highlights                                                                                 |\n|-------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001    | -24h SBP: -5.8 mmHg vs placebo (p=0.001)<br>-Office SBP: -9.4 mmHg vs placebo      | 18% adverse events (vs 15% placebo); common: headache (6%), dizziness (4%), edema (3%); no drug-related SAEs |\n| SAMPLE-HFPEF-004  | NT-proBNP ratio: 0.78 (p=0.001)<br>KCCQ-OSS: +7.2 pts (max dose)<br>6MWD: +32 m    | 40\u201348% adverse events; hypotension \u22643%; 80 mg dose preferred for efficacy/tolerability balance                |\n\n---\n\n**In summary:**  \n- **Alphaxolin** significantly lowers blood pressure with a favorable safety profile.\n- **Betapril** improves biomarkers, quality of life, and exercise capacity in HFpEF, with the 80 mg dose offering the best balance of efficacy and tolerability.  \n- Both drugs were generally well tolerated, with adverse events comparable to placebo and no major safety concerns identified.",
+      "pre_merge_metadata": {
+        "question": "What are the key findings?",
+        "num_documents": 2,
+        "document_names": [
+          "drug_trial_a",
+          "drug_trial_b"
+        ],
+        "document_sizes": [
+          4571,
+          4674
+        ],
+        "total_chunks": 2,
+        "timing": {
+          "start_time": 1782876800.596729,
+          "schema_generation": {
+            "generation_time": 7.000155925750732,
+            "library_based_selection_time": 7.000211000442505
+          },
+          "schema_extraction": {},
+          "table_merging": {},
+          "answer_generation": {
+            "answer_time": 3.320020914077759
+          },
+          "total_duration": null
+        },
+        "schema": {
+          "generated_classes": 1,
+          "total_fields": 11,
+          "generation_tokens": 0,
+          "generation_time": 7.000211000442505,
+          "question_type": "simple",
+          "document_type": "others",
+          "classification_reasoning": "The question asks for the key findings from clinical trial documents. This is a straightforward information retrieval task where the answer is found directly in the document. Therefore, the question type is 'simple'. The documents are clinical trial reports describing randomized controlled trials, which do not fit the categories of dataset, story, or policy. They are best categorized as 'others' since they are scientific reports that do not fit the other document types.",
+          "average_fields_per_class": 11.0,
+          "field_types_distribution": {
+            "str": 5,
+            "enum": 1,
+            "decimal": 4,
+            "bool": 1
+          },
+          "schema_object": {
+            "reasoning": "To answer 'What are the key findings?' from a clinical trial report, we need to extract the main results and conclusions as stated in the document. These are typically found in the Results and Conclusions sections, and may include both quantitative (e.g., effect sizes, p-values) and qualitative (e.g., summary statements) findings. Since 'key findings' is a high-level summary, we need a table that captures each finding, its type (efficacy, safety, etc.), and any supporting quantitative/statistical information if present. Each finding should be linked to the trial (e.g., by trial_id or title) for later merging. If multiple findings are reported (e.g., primary and secondary endpoints, safety outcomes), each should be a separate row. No nested types are needed; each finding is a row. Supporting fields include the finding text, type, and any quantitative/statistical values if present.",
+            "tables": [
+              {
+                "name": "TrialKeyFinding",
+                "description": "Key findings and results as reported in the clinical trial document, including both qualitative and quantitative findings. Each row represents a single key finding or result.",
+                "fields": [
+                  {
+                    "name": "trial_id",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Unique identifier for the clinical trial (e.g., as stated in the document: trial registration number, protocol ID, or title).",
+                    "required": true,
+                    "normalization": null
+                  },
+                  {
+                    "name": "finding_type",
+                    "data_type": "enum",
+                    "enum_values": [
+                      "efficacy",
+                      "safety",
+                      "tolerability",
+                      "pharmacokinetics",
+                      "other"
+                    ],
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Category of the key finding (e.g., efficacy, safety, tolerability, pharmacokinetics, or other as described in the document).",
+                    "required": true,
+                    "normalization": null
+                  },
+                  {
+                    "name": "finding_summary",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Concise summary of the key finding as stated in the document (may be a direct quote or paraphrase).",
+                    "required": true,
+                    "normalization": null
+                  },
+                  {
+                    "name": "endpoint_name",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Name or description of the endpoint or outcome to which the finding refers (e.g., 'change in mean 24-hour ambulatory systolic blood pressure at week 12').",
+                    "required": false,
+                    "normalization": null
+                  },
+                  {
+                    "name": "effect_value",
+                    "data_type": "decimal",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Numeric value of the effect or result (e.g., difference between groups, mean change, risk ratio), if reported. Unit should be specified in effect_unit.",
+                    "required": false,
+                    "normalization": null
+                  },
+                  {
+                    "name": "effect_unit",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Unit of measurement for effect_value (e.g., mmHg, %, events, etc.), as stated in the document.",
+                    "required": false,
+                    "normalization": null
+                  },
+                  {
+                    "name": "statistical_significance",
+                    "data_type": "bool",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Whether the finding was reported as statistically significant (true/false), if stated in the document.",
+                    "required": false,
+                    "normalization": null
+                  },
+                  {
+                    "name": "p_value",
+                    "data_type": "decimal",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Reported p-value for the finding, if available.",
+                    "required": false,
+                    "normalization": null
+                  },
+                  {
+                    "name": "confidence_interval_lower",
+                    "data_type": "decimal",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Lower bound of the reported confidence interval for the effect, if available.",
+                    "required": false,
+                    "normalization": null
+                  },
+                  {
+                    "name": "confidence_interval_upper",
+                    "data_type": "decimal",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Upper bound of the reported confidence interval for the effect, if available.",
+                    "required": false,
+                    "normalization": null
+                  },
+                  {
+                    "name": "confidence_interval_unit",
+                    "data_type": "str",
+                    "enum_values": null,
+                    "unit": null,
+                    "scale": "none",
+                    "description": "Unit of measurement for the confidence interval bounds (should match effect_unit), if available.",
+                    "required": false,
+                    "normalization": null
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "extraction": {
+          "chunks_processed": 2,
+          "successful_extractions": 2,
+          "failed_extractions": 0,
+          "retry_attempts": 0,
+          "extraction_time": 129.46742391586304,
+          "success_rate": 1.0,
+          "irrelevant_chunks": {
+            "drug_trial_a": [],
+            "drug_trial_b": []
+          }
+        },
+        "merging": {
+          "tables_created": 0,
+          "sql_queries_executed": 0,
+          "merge_failures": 0,
+          "total_rows_processed": 0,
+          "merging_time": 0,
+          "merged_tables_dir_path": ""
+        },
+        "answer_generation": {
+          "sql_execution_attempts": 0,
+          "sql_execution_errors": 0,
+          "final_answer_tokens": 238,
+          "used_tables": true,
+          "answer_time": 0
+        },
+        "quality": {
+          "tables_with_data": 0,
+          "empty_tables": 0,
+          "data_completeness_score": 0.0
+        },
+        "errors": [],
+        "question_id": "wiki_celeb_001",
+        "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_233305",
+        "rephrase_question": {
+          "enabled": true,
+          "original_question": "What are the key findings?",
+          "questions": {
+            "schema": {
+              "question": "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety results, and any notable conclusions or limitations. Capture relevant contextual details such as population studied, interventions, comparators, outcome measures, and timeframes.",
+              "reasoning": "The original question asks for 'key findings' from clinical trial documents. To design an extraction schema, we need to capture all relevant details that constitute a 'key finding' in a clinical trial context. This includes the main outcomes, statistical significance, effect sizes, safety results, and any notable secondary findings. We should also anticipate capturing the context of the finding (e.g., population, intervention, comparator, outcome measures), as well as any limitations or conclusions drawn by the study authors. The schema should be general enough to apply to any clinical trial report, not just the specific documents mentioned."
+            },
+            "extraction": {
+              "question": "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that describes significant results or conclusions, regardless of where it appears in the text.",
+              "reasoning": "The original question asks for 'key findings,' which are likely to be spread throughout the documents and may include results, conclusions, or significant outcomes. To ensure exhaustive extraction, the question should instruct the extractor to capture all statements, data, or conclusions that are presented as key findings, results, or main outcomes in any chunk of either document. This approach ensures that no relevant information is missed, regardless of where it appears in the documents."
+            },
+            "merge": {
+              "question": "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure each finding is attributed to its source document, deduplicate any overlapping entries, and resolve conflicts where necessary, preserving the fidelity of the original data.",
+              "reasoning": "The original question asks for the key findings from two clinical trial documents. At the table merging stage, the goal is to consolidate all extracted key findings from both 'drug_trial_a' and 'drug_trial_b' into a single, clean table. This table should preserve all relevant details, deduplicate overlapping findings, and resolve any conflicts, ensuring each finding is clearly attributed to its source document. No filtering or aggregation by specific drugs or outcomes should be performed at this stage; all findings from both documents should be included in normalized form."
+            },
+            "answer": {
+              "question": "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?",
+              "reasoning": "The user is asking for the main results from two clinical trials: one on alphaxolin for hypertension and one on betapril for HFpEF. To clarify, the question should specify that the key findings from both drug_trial_a and drug_trial_b are requested."
+            }
+          },
+          "fallback_components": [],
+          "question_list": [
+            "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety results, and any notable conclusions or limitations. Capture relevant contextual details such as population studied, interventions, comparators, outcome measures, and timeframes.",
+            "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that describes significant results or conclusions, regardless of where it appears in the text.",
+            "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure each finding is attributed to its source document, deduplicate any overlapping entries, and resolve conflicts where necessary, preserving the fidelity of the original data.",
+            "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?"
+          ]
+        },
+        "answer_stage": "pre_merge"
+      },
+      "visualization": {
+        "report_path": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_233305/report_wiki_celeb_001.html"
+      },
+      "predicted_answer": "Based on the SQL query results from the `TrialKeyFinding` table, here are the key findings from two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004):\n\n---\n\n## 1. **SAMPLE-HTX-001 (Alphaxolin in Hypertension)**\n\n### **Efficacy**\n- **Ambulatory Blood Pressure:**  \n  - Alphaxolin reduced 24-hour ambulatory systolic blood pressure by **5.8 mmHg more than placebo at 12 weeks** (statistically significant, p = 0.001, 95% CI: -7.5 to -4.1 mmHg).\n- **Office Blood Pressure:**  \n  - Alphaxolin reduced office systolic blood pressure by **9.4 mmHg** and diastolic by **5.2 mmHg** compared to placebo reductions of 3.1 mmHg and 1.6 mmHg, respectively.\n- **Overall:**  \n  - Alphaxolin 20 mg daily added to background antihypertensive therapy produced a **clinically meaningful reduction in 24-hour ambulatory blood pressure** with an acceptable short-term safety profile.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **18%** of alphaxolin and **15%** of placebo participants.\n  - Serious adverse events were rare and **none were related to the study drug**.\n\n### **Tolerability**\n- **Common Adverse Events:**  \n  - Headache (**6%**), dizziness (**4%**), and peripheral edema (**3%**) were the most common with alphaxolin.\n\n---\n\n## 2. **SAMPLE-HFPEF-004 (Betapril in HFpEF)**\n\n### **Efficacy**\n- **NT-proBNP and Quality of Life:**  \n  - Betapril produced a **dose-dependent reduction in NT-proBNP** (ratio at week 24: **0.78**, p = 0.001, 95% CI: 0.7 to 0.88) and **improvement in quality of life** in HFpEF over 24 weeks.\n- **KCCQ-OSS (Quality of Life Score):**  \n  - Betapril improved KCCQ-OSS with dose-dependent increases of **4.1, 6.8, and 7.2 points** versus **2.0 in placebo**.\n- **6-Minute Walk Distance:**  \n  - Improved by up to **32 meters** in the 160 mg arm compared to **8 meters in placebo**.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **40\u201348%** of participants across arms, with **no significant between-group difference**.\n  - Hypotension occurred in **1%** (placebo), **1%** (40 mg), **3%** (80 mg), and **3%** (160 mg) arms (not statistically significant).\n\n### **Tolerability**\n- **Dose Selection:**  \n  - The **80 mg dose** achieved near-maximal efficacy with **lower hypotension burden than 160 mg**, making it the preferred dose for Phase III evaluation.\n\n---\n\n## **Summary Table**\n\n| Trial             | Efficacy Highlights                                                                 | Safety/Tolerability Highlights                                                                                 |\n|-------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001    | -24h SBP: -5.8 mmHg vs placebo (p=0.001)<br>-Office SBP: -9.4 mmHg vs placebo      | 18% adverse events (vs 15% placebo); common: headache (6%), dizziness (4%), edema (3%); no drug-related SAEs |\n| SAMPLE-HFPEF-004  | NT-proBNP ratio: 0.78 (p=0.001)<br>KCCQ-OSS: +7.2 pts (max dose)<br>6MWD: +32 m    | 40\u201348% adverse events; hypotension \u22643%; 80 mg dose preferred for efficacy/tolerability balance                |\n\n---\n\n**In summary:**  \n- **Alphaxolin** significantly lowers blood pressure with a favorable safety profile.\n- **Betapril** improves biomarkers, quality of life, and exercise capacity in HFpEF, with the 80 mg dose offering the best balance of efficacy and tolerability.  \n- Both drugs were generally well tolerated, with adverse events comparable to placebo and no major safety concerns identified.",
+      "id": "wiki_celeb_001"
+    }
+  ],
+  "config": {
+    "experiment": "sliders",
+    "system": "sliders",
+    "system_config": {
+      "generate_task_guidelines": false,
+      "rephrase_question": {
+        "enabled": true,
+        "prompt_file": "sliders/rephrase_question_component.prompt",
+        "library_of_guidelines_path": "sliders_taxonomy.json"
+      },
+      "generate_schema": {
+        "add_extra_information_class": false,
+        "add_document_text": true,
+        "generate_schema_type": "library_based",
+        "library_of_guidelines_path": "sliders_taxonomy.json"
+      },
+      "extract_schema": {
+        "decompose_fields": false,
+        "dedupe_merged_rows": false,
+        "num_samples_per_chunk": 1,
+        "is_relevant_chunk": true,
+        "extract_quotes": true
+      },
+      "merge_tables": {
+        "merge_strategy": "reconciliation",
+        "reconciliation": {
+          "debug_mode": false,
+          "primary_key_selection": {
+            "version": "v1",
+            "max_candidates": 10,
+            "max_inspections_per_candidate": 10,
+            "max_retries": 3
+          },
+          "canonicalization": {
+            "mode": "two_pass",
+            "max_cycles": 20,
+            "max_retries_per_cycle": 3,
+            "max_inspection_history": 3,
+            "inspections_per_field": 50,
+            "null_handling": {
+              "max_inspections": 5,
+              "placeholder_text": "UNKNOWN",
+              "verification": {
+                "enable": false,
+                "max_inspections": 5
+              }
+            },
+            "document_level_max_cycles": 5
+          },
+          "controller_executor_loop": {
+            "max_iterations": 5,
+            "max_controller_inspections": 5,
+            "max_executor_inspections": 5,
+            "max_sql_attempts": 3,
+            "verification": {
+              "enable": true,
+              "max_inspections": 5
+            },
+            "context_generator": {
+              "enable": true,
+              "model": "gpt-4.1",
+              "max_rows": 20
+            }
+          },
+          "non_pk_canonicalization": {
+            "enable": true,
+            "inspections_per_field": 5,
+            "column_selector": {
+              "max_inspections": 5,
+              "excluded_columns": [
+                "row_id",
+                "page_number",
+                "__reconciliation_context__",
+                "number_instances"
+              ],
+              "excluded_patterns": [
+                "_quote",
+                "_rationale",
+                "_confidence"
+              ]
+            }
+          },
+          "statistics": {
+            "enable": true,
+            "filename": "reconciliation_stats.json"
+          }
+        },
+        "include_quotes": true
+      },
+      "inspect_answer": {
+        "enable_citation_generation": true,
+        "enable_reconciliation_stats_verbalization": true
+      },
+      "check_if_merge_needed": false,
+      "force_sql": false,
+      "answer_strategy": "sql_inspect",
+      "models": {
+        "answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "answer_no_table": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "answer_tool_output": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "extract_schema": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 32000,
+          "temperature": 0.0
+        },
+        "generate_schema": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "merge_tables": {
+          "model": "gpt-4.1",
+          "max_tokens": 32000,
+          "temperature": 0.0
+        },
+        "task_guidelines": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "check_objective_necessity": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "rephrase_question": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "direct_answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "force_answer": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "is_relevant_chunk": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "check_if_merge_needed": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "select_guidelines_for_schema": {
+          "model": "gpt-4.1-mini",
+          "max_tokens": 2000,
+          "temperature": 0.0
+        },
+        "select_primary_key": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "canonicalize_fields": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "column_selector": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "context_generator": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        },
+        "handle_null_pks": {
+          "model": "gpt-4.1",
+          "max_tokens": 8192,
+          "temperature": 0.0
+        }
+      },
+      "output_folder": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sliders_output/20260630_233305",
+      "visualize": true
+    },
+    "experiment_config": {
+      "questions_path": "/var/folders/9_/c7gvlh6n0v58806dy29ztq2r0000gn/T/tmpzwxbshc8/questions.txt",
+      "files_dir": "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/sample_docs",
+      "num_questions": null,
+      "random_state": 42,
+      "document_config": {
+        "chunk_size": 16000,
+        "overlap_size": 0,
+        "title_model": "gpt-4.1",
+        "description_model": "gpt-4.1-mini",
+        "table_summary_model": "gpt-4.1-mini"
+      }
+    },
+    "output_file": "sliders_output.json"
+  }
+}

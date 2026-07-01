@@ -554,6 +554,11 @@ async def run_inspect_answer(
         metadata["answer_generation"] = {}
     metadata["answer_generation"]["answer_time"] = answer_time
     metadata["answer_generation"]["num_queries"] = len(query_history)
+    # Persist the SQL query trace (reasoning + SQL + result) so the pipeline
+    # visualization can show exactly which queries produced the answer.
+    metadata["answer_generation"]["query_history"] = [
+        {"reasoning": reasoning, "sql": sql, "result": result} for (reasoning, sql, result) in query_history
+    ]
 
     if isinstance(final_answer, str):
         metadata["answer_generation"]["final_answer_tokens"] = len(final_answer.split())

@@ -1,0 +1,2428 @@
+{
+  "question": "What are the key findings?",
+  "question_id": "wiki_celeb_001",
+  "generated_at": "2026-06-30T23:38:31",
+  "final_answer": "Based on the SQL query results from the `TrialKeyFinding` table, here are the key findings from two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004):\n\n---\n\n## 1. **SAMPLE-HTX-001 (Alphaxolin in Hypertension)**\n\n### **Efficacy**\n- **Ambulatory Blood Pressure:**  \n  - Alphaxolin reduced 24-hour ambulatory systolic blood pressure by **5.8 mmHg more than placebo at 12 weeks** (statistically significant, p = 0.001, 95% CI: -7.5 to -4.1 mmHg).\n- **Office Blood Pressure:**  \n  - Alphaxolin reduced office systolic blood pressure by **9.4 mmHg** and diastolic by **5.2 mmHg** compared to placebo reductions of 3.1 mmHg and 1.6 mmHg, respectively.\n- **Overall:**  \n  - Alphaxolin 20 mg daily added to background antihypertensive therapy produced a **clinically meaningful reduction in 24-hour ambulatory blood pressure** with an acceptable short-term safety profile.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **18%** of alphaxolin and **15%** of placebo participants.\n  - Serious adverse events were rare and **none were related to the study drug**.\n\n### **Tolerability**\n- **Common Adverse Events:**  \n  - Headache (**6%**), dizziness (**4%**), and peripheral edema (**3%**) were the most common with alphaxolin.\n\n---\n\n## 2. **SAMPLE-HFPEF-004 (Betapril in HFpEF)**\n\n### **Efficacy**\n- **NT-proBNP and Quality of Life:**  \n  - Betapril produced a **dose-dependent reduction in NT-proBNP** (ratio at week 24: **0.78**, p = 0.001, 95% CI: 0.7 to 0.88) and **improvement in quality of life** in HFpEF over 24 weeks.\n- **KCCQ-OSS (Quality of Life Score):**  \n  - Betapril improved KCCQ-OSS with dose-dependent increases of **4.1, 6.8, and 7.2 points** versus **2.0 in placebo**.\n- **6-Minute Walk Distance:**  \n  - Improved by up to **32 meters** in the 160 mg arm compared to **8 meters in placebo**.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **40\u201348%** of participants across arms, with **no significant between-group difference**.\n  - Hypotension occurred in **1%** (placebo), **1%** (40 mg), **3%** (80 mg), and **3%** (160 mg) arms (not statistically significant).\n\n### **Tolerability**\n- **Dose Selection:**  \n  - The **80 mg dose** achieved near-maximal efficacy with **lower hypotension burden than 160 mg**, making it the preferred dose for Phase III evaluation.\n\n---\n\n## **Summary Table**\n\n| Trial             | Efficacy Highlights                                                                 | Safety/Tolerability Highlights                                                                                 |\n|-------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001    | -24h SBP: -5.8 mmHg vs placebo (p=0.001)<br>-Office SBP: -9.4 mmHg vs placebo      | 18% adverse events (vs 15% placebo); common: headache (6%), dizziness (4%), edema (3%); no drug-related SAEs |\n| SAMPLE-HFPEF-004  | NT-proBNP ratio: 0.78 (p=0.001)<br>KCCQ-OSS: +7.2 pts (max dose)<br>6MWD: +32 m    | 40\u201348% adverse events; hypotension \u22643%; 80 mg dose preferred for efficacy/tolerability balance                |\n\n---\n\n**In summary:**  \n- **Alphaxolin** significantly lowers blood pressure with a favorable safety profile.\n- **Betapril** improves biomarkers, quality of life, and exercise capacity in HFpEF, with the 80 mg dose offering the best balance of efficacy and tolerability.  \n- Both drugs were generally well tolerated, with adverse events comparable to placebo and no major safety concerns identified.",
+  "overview": {
+    "num_documents": 2,
+    "document_names": [
+      "drug_trial_a",
+      "drug_trial_b"
+    ],
+    "document_sizes": [
+      4571,
+      4674
+    ],
+    "total_chunks": 2,
+    "timing": {
+      "start_time": 1782876800.596729,
+      "schema_generation": {
+        "generation_time": 7.000155925750732,
+        "library_based_selection_time": 7.000211000442505
+      },
+      "schema_extraction": {},
+      "table_merging": {
+        "merging_time": 129.83199787139893
+      },
+      "answer_generation": {},
+      "total_duration": 310.53621196746826
+    },
+    "errors": []
+  },
+  "chunking": {
+    "documents": [
+      {
+        "name": "drug_trial_a",
+        "description": "Randomized, double-blind, placebo-controlled trial of alphaxolin for moderate essential hypertension in adults.",
+        "size": 4571,
+        "num_chunks": 1,
+        "chunks": [
+          {
+            "index": 0,
+            "headers": {
+              "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+              "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+              "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+            },
+            "length": 4570,
+            "content": "# Randomized trial of drug alphaxolin in moderate hypertension\n\n- Trial ID: SAMPLE-HTX-001\n- Status: Example document for SLIDERS. Not a real study.\n\n## Abstract\n\n**Background.** Alphaxolin is an investigational selective vasodilator proposed for the management of moderate essential hypertension in adults who remain above target on monotherapy.\n\n**Methods.** This was a double-blind, placebo-controlled, parallel-group randomized trial conducted at 12 outpatient cardiology centers. Adults aged 40-70 years with sustained seated systolic blood pressure between 140 and 160 mmHg on a single background antihypertensive agent were randomly assigned in a 1:1 ratio to receive oral alphaxolin 20 mg once daily or matching placebo for 12 weeks. The primary endpoint was change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12.\n\n**Results.** A total of 420 participants were randomized (210 per arm). Mean age was 58.4 years and 46% were female. At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg (95% CI \u22129.6 to \u22126.6) in the alphaxolin group and \u22122.3 mmHg (95% CI \u22123.8 to \u22120.8) in the placebo group, for a between-group difference of \u22125.8 mmHg (P < 0.001). Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants. Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to study drug.\n\n**Conclusions.** Alphaxolin added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure over 12 weeks with an acceptable safety profile.\n\n## Methods\n\n### Design\nMulticenter, double-blind, placebo-controlled, parallel-group randomized trial. Participants, investigators, and outcome adjudicators were masked to treatment assignment.\n\n### Participants\nEligible participants were adults 40-70 years of age with seated systolic BP 140-160 mmHg on a stable dose of a single first-line antihypertensive (ACE inhibitor, ARB, calcium channel blocker, or thiazide) for at least eight weeks prior to enrollment. Key exclusions were secondary hypertension, prior cardiovascular event within six months, eGFR < 45 mL/min/1.73m\u00b2, and pregnancy.\n\n### Intervention\nAlphaxolin 20 mg orally once daily, or matching placebo, for 12 weeks, added to the participant's existing antihypertensive regimen.\n\n### Outcomes\nThe primary outcome was the change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12. Secondary outcomes included change in office systolic blood pressure, change in diastolic blood pressure, and safety assessed by treatment-emergent adverse events.\n\n## Results\n\n### Participants\nBetween March 2024 and August 2024, 512 participants were screened and 420 were randomized (210 alphaxolin, 210 placebo). Baseline characteristics were balanced. Of randomized participants, 198 in the alphaxolin group and 202 in the placebo group completed week 12.\n\n### Primary outcome\nAdjusted mean change in 24-hour ambulatory systolic BP at week 12 was \u22128.1 mmHg in the alphaxolin group and \u22122.3 mmHg in the placebo group; between-group difference \u22125.8 mmHg (95% CI \u22127.5 to \u22124.1; P < 0.001).\n\n### Secondary outcomes\nOffice systolic BP decreased by \u22129.4 mmHg (alphaxolin) vs \u22123.1 mmHg (placebo). Office diastolic BP decreased by \u22125.2 mmHg vs \u22121.6 mmHg.\n\n### Adverse events\nTreatment-emergent adverse events were reported in 37/210 (18%) alphaxolin and 32/210 (15%) placebo participants. The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).\n\n## Discussion\n\nIn adults with moderate hypertension uncontrolled on monotherapy, adding alphaxolin reduced 24-hour ambulatory systolic blood pressure by approximately 6 mmHg more than placebo over 12 weeks. The effect was consistent across prespecified subgroups including age, sex, baseline background therapy class, and presence of diabetes.\n\nThe trial has several limitations. The 12-week duration is too short to assess cardiovascular outcomes. Background therapy was restricted to monotherapy, so the findings may not generalize to patients on multiple antihypertensives. The study population was predominantly from high-income countries.\n\n## Conclusion\n\nAlphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile. Longer trials powered on cardiovascular outcomes are warranted before routine use can be recommended.",
+            "truncated": false,
+            "relevant": true
+          }
+        ]
+      },
+      {
+        "name": "drug_trial_b",
+        "description": "Phase II, randomized, double-blind, placebo-controlled dose-finding trial of betapril for heart failure with preserved ejection fraction (HFpEF).",
+        "size": 4674,
+        "num_chunks": 1,
+        "chunks": [
+          {
+            "index": 0,
+            "headers": {
+              "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+              "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+              "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+            },
+            "length": 4673,
+            "content": "# Phase II trial of betapril in heart failure with preserved ejection fraction\n\n- Trial ID: SAMPLE-HFPEF-004\n- Status: Example document for SLIDERS. Not a real study.\n\n## Abstract\n\n**Background.** Betapril is a novel small-molecule natriuretic peptide potentiator being developed for heart failure with preserved ejection fraction (HFpEF), a condition with limited pharmacological options.\n\n**Methods.** We conducted a Phase II, randomized, double-blind, placebo-controlled dose-finding trial at 18 academic medical centers. Patients with symptomatic HFpEF (LVEF \u2265 50%, NYHA class II-III, elevated NT-proBNP) were randomized 1:1:1:1 to betapril 40 mg, betapril 80 mg, betapril 160 mg, or placebo, all once daily for 24 weeks. The primary endpoint was change from baseline in NT-proBNP at week 24.\n\n**Results.** We randomized 284 participants (mean age 68.2 years, 54% female, median baseline NT-proBNP 912 pg/mL). At week 24, the geometric mean ratio of NT-proBNP versus placebo was 0.92 (95% CI 0.83-1.02) for the 40 mg arm, 0.81 (0.72-0.91) for the 80 mg arm, and 0.78 (0.70-0.88) for the 160 mg arm. KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm. Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo.\n\n**Conclusions.** Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks. The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.\n\n## Methods\n\n### Design\nPhase II, multicenter, randomized, double-blind, placebo-controlled, parallel-group trial with four arms. The trial was registered prior to enrollment and conducted under Good Clinical Practice guidelines.\n\n### Participants\nKey inclusion criteria: age \u2265 50 years; LVEF \u2265 50% on qualifying echocardiogram; NYHA class II or III symptoms; NT-proBNP \u2265 300 pg/mL (\u2265 600 pg/mL if atrial fibrillation present); stable background HFpEF therapy for at least 4 weeks. Key exclusions: eGFR < 30 mL/min/1.73m\u00b2; systolic BP < 100 mmHg; prior intolerance to natriuretic-peptide-potentiating agents.\n\n### Interventions\nParticipants received oral betapril at 40 mg, 80 mg, 160 mg, or matching placebo, once daily for 24 weeks. Background HFpEF therapy (diuretics, SGLT2 inhibitors, mineralocorticoid receptor antagonists) was continued at the discretion of the investigator.\n\n### Outcomes\nThe primary endpoint was the ratio of NT-proBNP at week 24 compared to baseline, expressed as a geometric mean ratio versus placebo. Secondary endpoints included change in KCCQ Overall Summary Score (KCCQ-OSS), 6-minute walk distance, and safety.\n\n## Results\n\n### Enrollment\nBetween October 2023 and June 2024, 410 patients were screened and 284 randomized: 70 to betapril 40 mg, 72 to betapril 80 mg, 71 to betapril 160 mg, and 71 to placebo. Baseline characteristics were balanced across arms. Mean age was 68.2 years; 54% were female; 38% had atrial fibrillation; 47% had diabetes.\n\n### Primary outcome\nThe geometric mean ratio of NT-proBNP at week 24 versus placebo was:\n- Betapril 40 mg: 0.92 (95% CI 0.83-1.02)\n- Betapril 80 mg: 0.81 (0.72-0.91)\n- Betapril 160 mg: 0.78 (0.70-0.88)\nTest for trend across dose P < 0.001.\n\n### Secondary outcomes\nKCCQ-OSS improved from baseline by 2.0 (placebo), 4.1 (40 mg), 6.8 (80 mg), and 7.2 (160 mg) points. 6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms.\n\n### Safety\nTreatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference. Clinically meaningful hypotension (systolic BP < 90 mmHg requiring intervention) occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg). No drug-related serious adverse events were reported.\n\n## Discussion\n\nIn this Phase II dose-finding study, betapril produced a dose-dependent reduction in NT-proBNP and an improvement in patient-reported quality of life in HFpEF. The 80 mg dose achieved near-maximal efficacy on the primary endpoint and carried a lower burden of hypotension than the 160 mg dose, making it the preferred dose for subsequent Phase III evaluation.\n\nLimitations include the modest sample size, the 24-week duration which does not permit assessment of hospitalization or mortality endpoints, and enrollment predominantly from academic centers.\n\n## Conclusion\n\nBetapril demonstrated a dose-dependent NT-proBNP reduction and quality-of-life improvement in HFpEF. The 80 mg once-daily dose is being advanced into a Phase III trial powered on cardiovascular death and heart-failure hospitalization.",
+            "truncated": false,
+            "relevant": true
+          }
+        ]
+      }
+    ]
+  },
+  "schema": {
+    "schema": {
+      "reasoning": "To answer 'What are the key findings?' from a clinical trial report, we need to extract the main results and conclusions as stated in the document. These are typically found in the Results and Conclusions sections, and may include both quantitative (e.g., effect sizes, p-values) and qualitative (e.g., summary statements) findings. Since 'key findings' is a high-level summary, we need a table that captures each finding, its type (efficacy, safety, etc.), and any supporting quantitative/statistical information if present. Each finding should be linked to the trial (e.g., by trial_id or title) for later merging. If multiple findings are reported (e.g., primary and secondary endpoints, safety outcomes), each should be a separate row. No nested types are needed; each finding is a row. Supporting fields include the finding text, type, and any quantitative/statistical values if present.",
+      "tables": [
+        {
+          "name": "TrialKeyFinding",
+          "description": "Key findings and results as reported in the clinical trial document, including both qualitative and quantitative findings. Each row represents a single key finding or result.",
+          "fields": [
+            {
+              "name": "trial_id",
+              "data_type": "str",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Unique identifier for the clinical trial (e.g., as stated in the document: trial registration number, protocol ID, or title).",
+              "required": true,
+              "normalization": null
+            },
+            {
+              "name": "finding_type",
+              "data_type": "enum",
+              "enum_values": [
+                "efficacy",
+                "safety",
+                "tolerability",
+                "pharmacokinetics",
+                "other"
+              ],
+              "unit": null,
+              "scale": "none",
+              "description": "Category of the key finding (e.g., efficacy, safety, tolerability, pharmacokinetics, or other as described in the document).",
+              "required": true,
+              "normalization": null
+            },
+            {
+              "name": "finding_summary",
+              "data_type": "str",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Concise summary of the key finding as stated in the document (may be a direct quote or paraphrase).",
+              "required": true,
+              "normalization": null
+            },
+            {
+              "name": "endpoint_name",
+              "data_type": "str",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Name or description of the endpoint or outcome to which the finding refers (e.g., 'change in mean 24-hour ambulatory systolic blood pressure at week 12').",
+              "required": false,
+              "normalization": null
+            },
+            {
+              "name": "effect_value",
+              "data_type": "decimal",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Numeric value of the effect or result (e.g., difference between groups, mean change, risk ratio), if reported. Unit should be specified in effect_unit.",
+              "required": false,
+              "normalization": null
+            },
+            {
+              "name": "effect_unit",
+              "data_type": "str",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Unit of measurement for effect_value (e.g., mmHg, %, events, etc.), as stated in the document.",
+              "required": false,
+              "normalization": null
+            },
+            {
+              "name": "statistical_significance",
+              "data_type": "bool",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Whether the finding was reported as statistically significant (true/false), if stated in the document.",
+              "required": false,
+              "normalization": null
+            },
+            {
+              "name": "p_value",
+              "data_type": "decimal",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Reported p-value for the finding, if available.",
+              "required": false,
+              "normalization": null
+            },
+            {
+              "name": "confidence_interval_lower",
+              "data_type": "decimal",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Lower bound of the reported confidence interval for the effect, if available.",
+              "required": false,
+              "normalization": null
+            },
+            {
+              "name": "confidence_interval_upper",
+              "data_type": "decimal",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Upper bound of the reported confidence interval for the effect, if available.",
+              "required": false,
+              "normalization": null
+            },
+            {
+              "name": "confidence_interval_unit",
+              "data_type": "str",
+              "enum_values": null,
+              "unit": null,
+              "scale": "none",
+              "description": "Unit of measurement for the confidence interval bounds (should match effect_unit), if available.",
+              "required": false,
+              "normalization": null
+            }
+          ]
+        }
+      ]
+    },
+    "question_type": "simple",
+    "document_type": "others",
+    "classification_reasoning": "The question asks for the key findings from clinical trial documents. This is a straightforward information retrieval task where the answer is found directly in the document. Therefore, the question type is 'simple'. The documents are clinical trial reports describing randomized controlled trials, which do not fit the categories of dataset, story, or policy. They are best categorized as 'others' since they are scientific reports that do not fit the other document types.",
+    "rephrase": {
+      "enabled": true,
+      "original_question": "What are the key findings?",
+      "questions": {
+        "schema": {
+          "question": "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety results, and any notable conclusions or limitations. Capture relevant contextual details such as population studied, interventions, comparators, outcome measures, and timeframes.",
+          "reasoning": "The original question asks for 'key findings' from clinical trial documents. To design an extraction schema, we need to capture all relevant details that constitute a 'key finding' in a clinical trial context. This includes the main outcomes, statistical significance, effect sizes, safety results, and any notable secondary findings. We should also anticipate capturing the context of the finding (e.g., population, intervention, comparator, outcome measures), as well as any limitations or conclusions drawn by the study authors. The schema should be general enough to apply to any clinical trial report, not just the specific documents mentioned."
+        },
+        "extraction": {
+          "question": "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that describes significant results or conclusions, regardless of where it appears in the text.",
+          "reasoning": "The original question asks for 'key findings,' which are likely to be spread throughout the documents and may include results, conclusions, or significant outcomes. To ensure exhaustive extraction, the question should instruct the extractor to capture all statements, data, or conclusions that are presented as key findings, results, or main outcomes in any chunk of either document. This approach ensures that no relevant information is missed, regardless of where it appears in the documents."
+        },
+        "merge": {
+          "question": "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure each finding is attributed to its source document, deduplicate any overlapping entries, and resolve conflicts where necessary, preserving the fidelity of the original data.",
+          "reasoning": "The original question asks for the key findings from two clinical trial documents. At the table merging stage, the goal is to consolidate all extracted key findings from both 'drug_trial_a' and 'drug_trial_b' into a single, clean table. This table should preserve all relevant details, deduplicate overlapping findings, and resolve any conflicts, ensuring each finding is clearly attributed to its source document. No filtering or aggregation by specific drugs or outcomes should be performed at this stage; all findings from both documents should be included in normalized form."
+        },
+        "answer": {
+          "question": "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?",
+          "reasoning": "The user is asking for the main results from two clinical trials: one on alphaxolin for hypertension and one on betapril for HFpEF. To clarify, the question should specify that the key findings from both drug_trial_a and drug_trial_b are requested."
+        }
+      },
+      "fallback_components": [],
+      "question_list": [
+        "Identify and extract all key findings from clinical trial reports, including primary and secondary outcomes, effect sizes, statistical significance, safety results, and any notable conclusions or limitations. Capture relevant contextual details such as population studied, interventions, comparators, outcome measures, and timeframes.",
+        "Extract all statements, data, or conclusions that are presented as key findings, results, or main outcomes from any part of the documents 'drug_trial_a' and 'drug_trial_b'. Capture every piece of evidence that describes significant results or conclusions, regardless of where it appears in the text.",
+        "Combine all extracted key findings from 'drug_trial_a' and 'drug_trial_b' into a single, consolidated table. Ensure each finding is attributed to its source document, deduplicate any overlapping entries, and resolve conflicts where necessary, preserving the fidelity of the original data.",
+        "What are the main results from the clinical trials of alphaxolin for hypertension and betapril for heart failure with preserved ejection fraction?"
+      ]
+    },
+    "generated_classes": 1,
+    "total_fields": 11
+  },
+  "extraction": {
+    "stats": {
+      "chunks_processed": 2,
+      "successful_extractions": 2,
+      "failed_extractions": 0,
+      "retry_attempts": 0,
+      "success_rate": 1.0,
+      "extraction_time": 129.46742391586304
+    },
+    "tables": [
+      {
+        "name": "TrialKeyFinding",
+        "row_count": 10,
+        "rows": [
+          {
+            "document_name": "drug_trial_a",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HTX-001",
+                "quote": [
+                  "Trial ID: SAMPLE-HTX-001"
+                ],
+                "rationale": "Trial ID is explicitly stated at the top of the document under the trial header.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "efficacy",
+                "quote": [
+                  "At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg (95% CI \u22129.6 to \u22126.6) in the alphaxolin group and \u22122.3 mmHg (95% CI \u22123.8 to \u22120.8) in the placebo group, for a between-group difference of \u22125.8 mmHg (P < 0.001)."
+                ],
+                "rationale": "This finding describes the primary efficacy endpoint of blood pressure reduction.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks.",
+                "quote": [
+                  "At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg ... and \u22122.3 mmHg ... for a between-group difference of \u22125.8 mmHg (P < 0.001)."
+                ],
+                "rationale": "The summary is a paraphrase of the primary outcome result explicitly stated in the Abstract and Results sections.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "change in mean 24-hour ambulatory systolic blood pressure at week 12",
+                "quote": [
+                  "The primary endpoint was change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12."
+                ],
+                "rationale": "The endpoint is explicitly defined in the Methods and repeated in the Results.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": -5.8,
+                "quote": [
+                  "for a between-group difference of \u22125.8 mmHg (P < 0.001)"
+                ],
+                "rationale": "The between-group difference in blood pressure reduction is explicitly stated as \u22125.8 mmHg.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_unit": {
+                "value": "mmHg",
+                "quote": [
+                  "\u22125.8 mmHg"
+                ],
+                "rationale": "Unit is explicitly stated as mmHg for blood pressure.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "statistical_significance": {
+                "value": true,
+                "quote": [
+                  "P < 0.001"
+                ],
+                "rationale": "The p-value is less than 0.001 indicating statistical significance.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "p_value": {
+                "value": 0.001,
+                "quote": [
+                  "P < 0.001"
+                ],
+                "rationale": "P-value is reported as less than 0.001; normalized to 0.001 for schema.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "confidence_interval_lower": {
+                "value": -7.5,
+                "quote": [
+                  "95% CI \u22127.5 to \u22124.1"
+                ],
+                "rationale": "Lower bound of the 95% confidence interval for the between-group difference is \u22127.5 mmHg.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "confidence_interval_upper": {
+                "value": -4.1,
+                "quote": [
+                  "95% CI \u22127.5 to \u22124.1"
+                ],
+                "rationale": "Upper bound of the 95% confidence interval for the between-group difference is \u22124.1 mmHg.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "confidence_interval_unit": {
+                "value": "mmHg",
+                "quote": [
+                  "95% CI \u22127.5 to \u22124.1 mmHg"
+                ],
+                "rationale": "Confidence interval unit matches effect unit mmHg.",
+                "confidence": "Very High",
+                "is_explicit": true
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_a",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HTX-001",
+                "quote": [
+                  "Trial ID: SAMPLE-HTX-001"
+                ],
+                "rationale": "Trial ID repeated for consistency.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "efficacy",
+                "quote": [
+                  "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin) vs \u22123.1 mmHg (placebo). Office diastolic BP decreased by \u22125.2 mmHg vs \u22121.6 mmHg."
+                ],
+                "rationale": "Secondary efficacy outcomes on office blood pressure are explicitly reported.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Alphaxolin reduced office systolic blood pressure by 9.4 mmHg and diastolic blood pressure by 5.2 mmHg compared to placebo reductions of 3.1 mmHg and 1.6 mmHg respectively.",
+                "quote": [
+                  "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin) vs \u22123.1 mmHg (placebo). Office diastolic BP decreased by \u22125.2 mmHg vs \u22121.6 mmHg."
+                ],
+                "rationale": "Summary paraphrases the secondary outcome results explicitly stated in the Results section.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "change in office systolic and diastolic blood pressure",
+                "quote": [
+                  "Secondary outcomes included change in office systolic blood pressure, change in diastolic blood pressure"
+                ],
+                "rationale": "Endpoint is explicitly defined as secondary outcomes in Methods and reported in Results.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": -9.4,
+                "quote": [
+                  "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin)"
+                ],
+                "rationale": "Effect value taken as the alphaxolin group mean change for office systolic BP.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_unit": {
+                "value": "mmHg",
+                "quote": [
+                  "\u22129.4 mmHg"
+                ],
+                "rationale": "Unit is mmHg for blood pressure.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "statistical_significance": {
+                "value": null,
+                "quote": null,
+                "rationale": "No explicit p-value or statistical significance reported for secondary office BP outcomes.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "p_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No p-value reported for this outcome.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_lower": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval reported for this outcome.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_upper": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval reported for this outcome.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_a",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HTX-001",
+                "quote": [
+                  "Trial ID: SAMPLE-HTX-001"
+                ],
+                "rationale": "Trial ID repeated for consistency.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "safety",
+                "quote": [
+                  "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants. Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to study drug."
+                ],
+                "rationale": "Safety outcomes explicitly reported in Abstract and Results sections.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants; serious adverse events were rare and none related to study drug.",
+                "quote": [
+                  "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants. Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to study drug."
+                ],
+                "rationale": "Summary paraphrases the safety results explicitly stated in the Abstract and Results.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "treatment-emergent adverse events and serious adverse events",
+                "quote": [
+                  "safety assessed by treatment-emergent adverse events."
+                ],
+                "rationale": "Endpoint defined in Methods and reported in Results.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": 18,
+                "quote": [
+                  "Treatment-emergent adverse events occurred in 18% of alphaxolin"
+                ],
+                "rationale": "Effect value is the percentage of participants with adverse events in the alphaxolin group.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_unit": {
+                "value": "%",
+                "quote": [
+                  "18%"
+                ],
+                "rationale": "Unit is percentage of participants.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "statistical_significance": {
+                "value": null,
+                "quote": null,
+                "rationale": "No statistical significance or p-value reported for adverse events.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "p_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No p-value reported for adverse events.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_lower": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval reported for adverse events.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_upper": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval reported for adverse events.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_a",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HTX-001",
+                "quote": [
+                  "Trial ID: SAMPLE-HTX-001"
+                ],
+                "rationale": "Trial ID repeated for consistency.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "tolerability",
+                "quote": [
+                  "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%)."
+                ],
+                "rationale": "Tolerability findings are explicitly reported as common adverse events.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Common adverse events with alphaxolin were headache (6%), dizziness (4%), and peripheral edema (3%).",
+                "quote": [
+                  "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%)."
+                ],
+                "rationale": "Summary paraphrases the tolerability data explicitly stated in the Results.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "frequency of common adverse events",
+                "quote": [
+                  "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%)."
+                ],
+                "rationale": "Endpoint is the frequency of common adverse events reported in Results.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": 6,
+                "quote": [
+                  "headache (6%)"
+                ],
+                "rationale": "Effect value is the percentage incidence of the most common adverse event, headache.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_unit": {
+                "value": "%",
+                "quote": [
+                  "6%"
+                ],
+                "rationale": "Unit is percentage incidence.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "statistical_significance": {
+                "value": null,
+                "quote": null,
+                "rationale": "No statistical testing or p-values reported for adverse event frequencies.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "p_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No p-value reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_lower": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_upper": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_a",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HTX-001",
+                "quote": [
+                  "Trial ID: SAMPLE-HTX-001"
+                ],
+                "rationale": "Trial ID repeated for consistency.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "efficacy",
+                "quote": [
+                  "Alphaxolin added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure over 12 weeks with an acceptable safety profile."
+                ],
+                "rationale": "This is a concluding statement summarizing efficacy and safety.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.",
+                "quote": [
+                  "Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile."
+                ],
+                "rationale": "Direct quote from the Conclusion section summarizing main outcome.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "24-hour ambulatory blood pressure reduction and safety profile",
+                "quote": [
+                  "clinically meaningful reduction in 24-hour ambulatory blood pressure over 12 weeks with an acceptable safety profile."
+                ],
+                "rationale": "Endpoint summarized in the Conclusion section.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No new numeric effect value reported here beyond prior detailed results.",
+                "confidence": "Very Low",
+                "is_explicit": false
+              },
+              "effect_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No unit applicable as no numeric effect value.",
+                "confidence": "Very Low",
+                "is_explicit": false
+              },
+              "statistical_significance": {
+                "value": null,
+                "quote": null,
+                "rationale": "No statistical significance stated in this summary statement.",
+                "confidence": "Very Low",
+                "is_explicit": false
+              },
+              "p_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No p-value stated.",
+                "confidence": "Very Low",
+                "is_explicit": false
+              },
+              "confidence_interval_lower": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval stated.",
+                "confidence": "Very Low",
+                "is_explicit": false
+              },
+              "confidence_interval_upper": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval stated.",
+                "confidence": "Very Low",
+                "is_explicit": false
+              },
+              "confidence_interval_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence interval stated.",
+                "confidence": "Very Low",
+                "is_explicit": false
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_b",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HFPEF-004",
+                "quote": [
+                  "Trial ID: SAMPLE-HFPEF-004"
+                ],
+                "rationale": "Trial ID is explicitly stated at the top of the document under the trial header.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "efficacy",
+                "quote": [
+                  "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks."
+                ],
+                "rationale": "The key efficacy finding is the dose-dependent reduction in NT-proBNP and quality of life improvement stated in the Abstract and Conclusion.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.",
+                "quote": [
+                  "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks."
+                ],
+                "rationale": "Direct quote from the Abstract and Conclusion summarizing the main efficacy outcome.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "change from baseline in NT-proBNP at week 24",
+                "quote": [
+                  "The primary endpoint was change from baseline in NT-proBNP at week 24."
+                ],
+                "rationale": "The primary endpoint is explicitly defined in the Abstract and Methods sections.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": 0.78,
+                "quote": [
+                  "The geometric mean ratio of NT-proBNP versus placebo was ... 0.78 (0.70-0.88) for the 160 mg arm."
+                ],
+                "rationale": "The largest effect size reported is for the 160 mg arm with a geometric mean ratio of 0.78 versus placebo, indicating a 22% reduction.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_unit": {
+                "value": "ratio",
+                "quote": [
+                  "geometric mean ratio of NT-proBNP versus placebo"
+                ],
+                "rationale": "Effect is expressed as a geometric mean ratio relative to placebo.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "statistical_significance": {
+                "value": true,
+                "quote": [
+                  "Test for trend across dose P < 0.001."
+                ],
+                "rationale": "The dose-response trend was statistically significant with P < 0.001.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "p_value": {
+                "value": 0.001,
+                "quote": [
+                  "Test for trend across dose P < 0.001."
+                ],
+                "rationale": "P-value reported as less than 0.001, normalized to 0.001 for schema.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "confidence_interval_lower": {
+                "value": 0.7,
+                "quote": [
+                  "0.78 (0.70-0.88) for the 160 mg arm."
+                ],
+                "rationale": "Lower bound of 95% confidence interval for the 160 mg arm geometric mean ratio.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "confidence_interval_upper": {
+                "value": 0.88,
+                "quote": [
+                  "0.78 (0.70-0.88) for the 160 mg arm."
+                ],
+                "rationale": "Upper bound of 95% confidence interval for the 160 mg arm geometric mean ratio.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "confidence_interval_unit": {
+                "value": "ratio",
+                "quote": [
+                  "0.78 (0.70-0.88) for the 160 mg arm."
+                ],
+                "rationale": "Confidence interval units match the effect unit (ratio).",
+                "confidence": "Very High",
+                "is_explicit": true
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_b",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HFPEF-004",
+                "quote": [
+                  "Trial ID: SAMPLE-HFPEF-004"
+                ],
+                "rationale": "Trial ID repeated for consistency.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "efficacy",
+                "quote": [
+                  "KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm."
+                ],
+                "rationale": "Secondary efficacy endpoint showing improvement in quality of life measured by KCCQ Overall Summary Score.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Betapril improved quality of life as measured by KCCQ-OSS with dose-dependent increases of 4.1, 6.8, and 7.2 points versus 2.0 in placebo.",
+                "quote": [
+                  "KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm."
+                ],
+                "rationale": "Direct quote from the Results section describing secondary endpoint improvements.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "change in KCCQ Overall Summary Score (KCCQ-OSS)",
+                "quote": [
+                  "Secondary endpoints included change in KCCQ Overall Summary Score (KCCQ-OSS)"
+                ],
+                "rationale": "Endpoint explicitly defined in Methods and reported in Results.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": 7.2,
+                "quote": [
+                  "KCCQ-OSS improved by ... 7.2 points respectively, versus 2.0 in the placebo arm."
+                ],
+                "rationale": "Largest improvement reported for the 160 mg arm was 7.2 points.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_unit": {
+                "value": "points",
+                "quote": [
+                  "KCCQ-OSS improved by ... points"
+                ],
+                "rationale": "Effect unit is points on the KCCQ-OSS scale.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "statistical_significance": {
+                "value": null,
+                "quote": null,
+                "rationale": "No explicit p-value or significance statement reported for KCCQ-OSS changes.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "p_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No p-value reported for this endpoint.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_lower": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported for KCCQ-OSS changes.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_upper": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported for KCCQ-OSS changes.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_b",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HFPEF-004",
+                "quote": [
+                  "Trial ID: SAMPLE-HFPEF-004"
+                ],
+                "rationale": "Trial ID repeated for consistency.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "efficacy",
+                "quote": [
+                  "6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms."
+                ],
+                "rationale": "Secondary efficacy endpoint showing improvement in 6-minute walk distance.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Betapril improved 6-minute walk distance by up to 32 meters in the 160 mg arm compared to 8 meters in placebo.",
+                "quote": [
+                  "6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms."
+                ],
+                "rationale": "Direct quote from Results section describing secondary endpoint improvements.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "change in 6-minute walk distance",
+                "quote": [
+                  "Secondary endpoints included ... 6-minute walk distance"
+                ],
+                "rationale": "Endpoint explicitly defined in Methods and reported in Results.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": 32,
+                "quote": [
+                  "6-minute walk distance improved by ... 32 ... m across the four arms."
+                ],
+                "rationale": "Largest improvement reported for the 160 mg arm was 32 meters.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_unit": {
+                "value": "m",
+                "quote": [
+                  "6-minute walk distance improved by ... m"
+                ],
+                "rationale": "Effect unit is meters.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "statistical_significance": {
+                "value": null,
+                "quote": null,
+                "rationale": "No explicit p-value or significance statement reported for 6-minute walk distance changes.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "p_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No p-value reported for this endpoint.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_lower": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported for 6-minute walk distance changes.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_upper": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported for 6-minute walk distance changes.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_b",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HFPEF-004",
+                "quote": [
+                  "Trial ID: SAMPLE-HFPEF-004"
+                ],
+                "rationale": "Trial ID repeated for consistency.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "safety",
+                "quote": [
+                  "Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo."
+                ],
+                "rationale": "Safety finding on adverse events and hypotension rates reported in Abstract and Safety section.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in 1% placebo, 1% (40 mg), 3% (80 mg), and 3% (160 mg) arms.",
+                "quote": [
+                  "Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference. Clinically meaningful hypotension occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg)."
+                ],
+                "rationale": "Direct quote from Safety section summarizing adverse event rates and hypotension incidence.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "treatment-emergent adverse events and hypotension incidence",
+                "quote": [
+                  "Treatment-emergent adverse events ... Hypotension occurred in ... arms."
+                ],
+                "rationale": "Safety endpoints explicitly described in Safety section.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": 3,
+                "quote": [
+                  "hypotension occurred in 3% of the 160 mg arm"
+                ],
+                "rationale": "Highest reported hypotension incidence was 3% in the 160 mg arm.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_unit": {
+                "value": "%",
+                "quote": [
+                  "3% of the 160 mg arm"
+                ],
+                "rationale": "Effect unit is percentage of participants.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "statistical_significance": {
+                "value": false,
+                "quote": [
+                  "Treatment-emergent adverse events were similar across arms with no significant between-group difference."
+                ],
+                "rationale": "No significant difference in adverse events between groups reported.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "p_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No p-value reported for safety endpoints.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_lower": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported for safety endpoints.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_upper": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported for safety endpoints.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              }
+            }
+          },
+          {
+            "document_name": "drug_trial_b",
+            "chunk_id": 0,
+            "is_placeholder": false,
+            "fields": {
+              "trial_id": {
+                "value": "SAMPLE-HFPEF-004",
+                "quote": [
+                  "Trial ID: SAMPLE-HFPEF-004"
+                ],
+                "rationale": "Trial ID repeated for consistency.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_type": {
+                "value": "tolerability",
+                "quote": [
+                  "The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial."
+                ],
+                "rationale": "Tolerability conclusion stated in Abstract and Discussion regarding dose selection.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "finding_summary": {
+                "value": "The 80 mg dose achieved near-maximal efficacy with lower hypotension burden than 160 mg, making it the preferred dose for Phase III evaluation.",
+                "quote": [
+                  "The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.",
+                  "The 80 mg dose achieved near-maximal efficacy on the primary endpoint and carried a lower burden of hypotension than the 160 mg dose, making it the preferred dose for subsequent Phase III evaluation."
+                ],
+                "rationale": "Direct quotes from Abstract and Discussion summarizing tolerability and dose selection.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "endpoint_name": {
+                "value": "dose tolerability and selection",
+                "quote": [
+                  "The 80 mg dose offered a favorable balance of efficacy and tolerability."
+                ],
+                "rationale": "Endpoint relates to tolerability and dose selection based on safety and efficacy balance.",
+                "confidence": "Very High",
+                "is_explicit": true
+              },
+              "effect_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No numeric effect value reported for tolerability or dose selection.",
+                "confidence": "Very High",
+                "is_explicit": false
+              },
+              "effect_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No effect unit applicable.",
+                "confidence": "Very High",
+                "is_explicit": false
+              },
+              "statistical_significance": {
+                "value": null,
+                "quote": null,
+                "rationale": "No statistical test reported for tolerability summary.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "p_value": {
+                "value": null,
+                "quote": null,
+                "rationale": "No p-value reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_lower": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_upper": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              },
+              "confidence_interval_unit": {
+                "value": null,
+                "quote": null,
+                "rationale": "No confidence intervals reported.",
+                "confidence": "Medium",
+                "is_explicit": false
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "reconciliation": {
+    "primary_key": {
+      "fields": [
+        "trial_id",
+        "finding_type",
+        "endpoint_name",
+        "finding_summary"
+      ],
+      "reasoning": "Each row represents a single key finding from a clinical trial document, and the goal is to consolidate overlapping findings from both 'drug_trial_a' and 'drug_trial_b' while preserving attribution to the source. The unique observation here is defined by the combination of the trial (trial_id), the type of finding (finding_type), the specific endpoint (endpoint_name), and the summary of the finding (finding_summary). These fields together capture what the finding is about, for which trial, and for which endpoint, without including measured values (which are consolidated). Including document_name is not necessary for the canonical table, as the same finding from different documents should be merged. This composite key ensures that duplicate extractions of the same finding are consolidated, while distinct findings remain separate.",
+      "query_count": 0
+    },
+    "pk_groups": {
+      "total": 10,
+      "single_row": 10,
+      "multi_row": 0,
+      "processed": 0,
+      "failed": 0
+    },
+    "all_operations": [],
+    "tables": [
+      {
+        "name": "TrialKeyFinding",
+        "stats": {
+          "primary_key": [
+            "trial_id",
+            "finding_type",
+            "endpoint_name",
+            "finding_summary"
+          ],
+          "canonicalization": {
+            "stats_per_field": {},
+            "total_fields_canonicalized": 0,
+            "total_fields_processed": 0
+          },
+          "non_pk_canonicalization": {
+            "enabled": true,
+            "stats_per_field": {},
+            "total_fields_canonicalized": 0,
+            "total_fields_processed": 0,
+            "columns_identified": [
+              "effect_unit",
+              "statistical_significance",
+              "confidence_interval_unit"
+            ]
+          },
+          "row_grouping": {
+            "unique_primary_key_values": 10,
+            "single_row_groups": 10,
+            "multi_row_groups": 0
+          },
+          "multi_row_processing": {
+            "initial_total_rows": 0,
+            "final_total_rows": 0,
+            "rows_reduced": 0
+          },
+          "controller_actions": {
+            "deduplicate": 0,
+            "aggregate": 0,
+            "resolve_conflicts": 0,
+            "canonicalize": 0
+          },
+          "final_stats": {
+            "initial_total_rows": 10,
+            "final_total_rows": 10,
+            "total_rows_reduced": 0
+          }
+        },
+        "before": {
+          "columns": [
+            "row_id",
+            "page_number",
+            "document_name",
+            "text_header",
+            "trial_id_quote",
+            "trial_id_rationale",
+            "trial_id",
+            "finding_type_quote",
+            "finding_type_rationale",
+            "finding_type",
+            "finding_summary_quote",
+            "finding_summary_rationale",
+            "finding_summary",
+            "endpoint_name_quote",
+            "endpoint_name_rationale",
+            "endpoint_name",
+            "effect_value_quote",
+            "effect_value_rationale",
+            "effect_value",
+            "effect_unit_quote",
+            "effect_unit_rationale",
+            "effect_unit",
+            "statistical_significance_quote",
+            "statistical_significance_rationale",
+            "statistical_significance",
+            "p_value_quote",
+            "p_value_rationale",
+            "p_value",
+            "confidence_interval_lower_quote",
+            "confidence_interval_lower_rationale",
+            "confidence_interval_lower",
+            "confidence_interval_upper_quote",
+            "confidence_interval_upper_rationale",
+            "confidence_interval_upper",
+            "confidence_interval_unit_quote",
+            "confidence_interval_unit_rationale",
+            "confidence_interval_unit"
+          ],
+          "rows": [
+            [
+              0,
+              0,
+              "drug_trial_a",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              [
+                "Trial ID: SAMPLE-HTX-001"
+              ],
+              "Trial ID is explicitly stated at the top of the document under the trial header.",
+              "SAMPLE-HTX-001",
+              [
+                "At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg (95% CI \u22129.6 to \u22126.6) in the alphaxolin group and \u22122.3 mmHg (95% CI \u22123.8 to \u22120.8) in the placebo group, for a between-group difference of \u22125.8 mmHg (P < 0.001)."
+              ],
+              "This finding describes the primary efficacy endpoint of blood pressure reduction.",
+              "efficacy",
+              [
+                "At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg ... and \u22122.3 mmHg ... for a between-group difference of \u22125.8 mmHg (P < 0.001)."
+              ],
+              "The summary is a paraphrase of the primary outcome result explicitly stated in the Abstract and Results sections.",
+              "Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks.",
+              [
+                "The primary endpoint was change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12."
+              ],
+              "The endpoint is explicitly defined in the Methods and repeated in the Results.",
+              "change in mean 24-hour ambulatory systolic blood pressure at week 12",
+              [
+                "for a between-group difference of \u22125.8 mmHg (P < 0.001)"
+              ],
+              "The between-group difference in blood pressure reduction is explicitly stated as \u22125.8 mmHg.",
+              -5.8,
+              [
+                "\u22125.8 mmHg"
+              ],
+              "Unit is explicitly stated as mmHg for blood pressure.",
+              "mmHg",
+              [
+                "P < 0.001"
+              ],
+              "The p-value is less than 0.001 indicating statistical significance.",
+              true,
+              [
+                "P < 0.001"
+              ],
+              "P-value is reported as less than 0.001; normalized to 0.001 for schema.",
+              0.001,
+              [
+                "95% CI \u22127.5 to \u22124.1"
+              ],
+              "Lower bound of the 95% confidence interval for the between-group difference is \u22127.5 mmHg.",
+              -7.5,
+              [
+                "95% CI \u22127.5 to \u22124.1"
+              ],
+              "Upper bound of the 95% confidence interval for the between-group difference is \u22124.1 mmHg.",
+              -4.1,
+              [
+                "95% CI \u22127.5 to \u22124.1 mmHg"
+              ],
+              "Confidence interval unit matches effect unit mmHg.",
+              "mmHg"
+            ],
+            [
+              1,
+              0,
+              "drug_trial_a",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              [
+                "Trial ID: SAMPLE-HTX-001"
+              ],
+              "Trial ID repeated for consistency.",
+              "SAMPLE-HTX-001",
+              [
+                "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin) vs \u22123.1 mmHg (placebo). Office diastolic BP decreased by \u22125.2 mmHg vs \u22121.6 mmHg."
+              ],
+              "Secondary efficacy outcomes on office blood pressure are explicitly reported.",
+              "efficacy",
+              [
+                "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin) vs \u22123.1 mmHg (placebo). Office diastolic BP decreased by \u22125.2 mmHg vs \u22121.6 mmHg."
+              ],
+              "Summary paraphrases the secondary outcome results explicitly stated in the Results section.",
+              "Alphaxolin reduced office systolic blood pressure by 9.4 mmHg and diastolic blood pressure by 5.2 mmHg compared to placebo reductions of 3.1 mmHg and 1.6 mmHg respectively.",
+              [
+                "Secondary outcomes included change in office systolic blood pressure, change in diastolic blood pressure"
+              ],
+              "Endpoint is explicitly defined as secondary outcomes in Methods and reported in Results.",
+              "change in office systolic and diastolic blood pressure",
+              [
+                "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin)"
+              ],
+              "Effect value taken as the alphaxolin group mean change for office systolic BP.",
+              -9.4,
+              [
+                "\u22129.4 mmHg"
+              ],
+              "Unit is mmHg for blood pressure.",
+              "mmHg",
+              null,
+              "No explicit p-value or statistical significance reported for secondary office BP outcomes.",
+              "",
+              null,
+              "No p-value reported for this outcome.",
+              "",
+              null,
+              "No confidence interval reported for this outcome.",
+              "",
+              null,
+              "No confidence interval reported for this outcome.",
+              "",
+              null,
+              "No confidence interval reported.",
+              ""
+            ],
+            [
+              2,
+              0,
+              "drug_trial_a",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              [
+                "Trial ID: SAMPLE-HTX-001"
+              ],
+              "Trial ID repeated for consistency.",
+              "SAMPLE-HTX-001",
+              [
+                "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants. Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to study drug."
+              ],
+              "Safety outcomes explicitly reported in Abstract and Results sections.",
+              "safety",
+              [
+                "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants. Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to study drug."
+              ],
+              "Summary paraphrases the safety results explicitly stated in the Abstract and Results.",
+              "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants; serious adverse events were rare and none related to study drug.",
+              [
+                "safety assessed by treatment-emergent adverse events."
+              ],
+              "Endpoint defined in Methods and reported in Results.",
+              "treatment-emergent adverse events and serious adverse events",
+              [
+                "Treatment-emergent adverse events occurred in 18% of alphaxolin"
+              ],
+              "Effect value is the percentage of participants with adverse events in the alphaxolin group.",
+              18,
+              [
+                "18%"
+              ],
+              "Unit is percentage of participants.",
+              "%",
+              null,
+              "No statistical significance or p-value reported for adverse events.",
+              "",
+              null,
+              "No p-value reported for adverse events.",
+              "",
+              null,
+              "No confidence interval reported for adverse events.",
+              "",
+              null,
+              "No confidence interval reported for adverse events.",
+              "",
+              null,
+              "No confidence interval reported.",
+              ""
+            ],
+            [
+              3,
+              0,
+              "drug_trial_a",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              [
+                "Trial ID: SAMPLE-HTX-001"
+              ],
+              "Trial ID repeated for consistency.",
+              "SAMPLE-HTX-001",
+              [
+                "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%)."
+              ],
+              "Tolerability findings are explicitly reported as common adverse events.",
+              "tolerability",
+              [
+                "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%)."
+              ],
+              "Summary paraphrases the tolerability data explicitly stated in the Results.",
+              "Common adverse events with alphaxolin were headache (6%), dizziness (4%), and peripheral edema (3%).",
+              [
+                "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%)."
+              ],
+              "Endpoint is the frequency of common adverse events reported in Results.",
+              "frequency of common adverse events",
+              [
+                "headache (6%)"
+              ],
+              "Effect value is the percentage incidence of the most common adverse event, headache.",
+              6,
+              [
+                "6%"
+              ],
+              "Unit is percentage incidence.",
+              "%",
+              null,
+              "No statistical testing or p-values reported for adverse event frequencies.",
+              "",
+              null,
+              "No p-value reported.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              ""
+            ],
+            [
+              4,
+              0,
+              "drug_trial_a",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              [
+                "Trial ID: SAMPLE-HTX-001"
+              ],
+              "Trial ID repeated for consistency.",
+              "SAMPLE-HTX-001",
+              [
+                "Alphaxolin added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure over 12 weeks with an acceptable safety profile."
+              ],
+              "This is a concluding statement summarizing efficacy and safety.",
+              "efficacy",
+              [
+                "Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile."
+              ],
+              "Direct quote from the Conclusion section summarizing main outcome.",
+              "Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.",
+              [
+                "clinically meaningful reduction in 24-hour ambulatory blood pressure over 12 weeks with an acceptable safety profile."
+              ],
+              "Endpoint summarized in the Conclusion section.",
+              "24-hour ambulatory blood pressure reduction and safety profile",
+              null,
+              "No new numeric effect value reported here beyond prior detailed results.",
+              "",
+              null,
+              "No unit applicable as no numeric effect value.",
+              "",
+              null,
+              "No statistical significance stated in this summary statement.",
+              "",
+              null,
+              "No p-value stated.",
+              "",
+              null,
+              "No confidence interval stated.",
+              "",
+              null,
+              "No confidence interval stated.",
+              "",
+              null,
+              "No confidence interval stated.",
+              ""
+            ],
+            [
+              5,
+              0,
+              "drug_trial_b",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              [
+                "Trial ID: SAMPLE-HFPEF-004"
+              ],
+              "Trial ID is explicitly stated at the top of the document under the trial header.",
+              "SAMPLE-HFPEF-004",
+              [
+                "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks."
+              ],
+              "The key efficacy finding is the dose-dependent reduction in NT-proBNP and quality of life improvement stated in the Abstract and Conclusion.",
+              "efficacy",
+              [
+                "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks."
+              ],
+              "Direct quote from the Abstract and Conclusion summarizing the main efficacy outcome.",
+              "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.",
+              [
+                "The primary endpoint was change from baseline in NT-proBNP at week 24."
+              ],
+              "The primary endpoint is explicitly defined in the Abstract and Methods sections.",
+              "change from baseline in NT-proBNP at week 24",
+              [
+                "The geometric mean ratio of NT-proBNP versus placebo was ... 0.78 (0.70-0.88) for the 160 mg arm."
+              ],
+              "The largest effect size reported is for the 160 mg arm with a geometric mean ratio of 0.78 versus placebo, indicating a 22% reduction.",
+              0.78,
+              [
+                "geometric mean ratio of NT-proBNP versus placebo"
+              ],
+              "Effect is expressed as a geometric mean ratio relative to placebo.",
+              "ratio",
+              [
+                "Test for trend across dose P < 0.001."
+              ],
+              "The dose-response trend was statistically significant with P < 0.001.",
+              true,
+              [
+                "Test for trend across dose P < 0.001."
+              ],
+              "P-value reported as less than 0.001, normalized to 0.001 for schema.",
+              0.001,
+              [
+                "0.78 (0.70-0.88) for the 160 mg arm."
+              ],
+              "Lower bound of 95% confidence interval for the 160 mg arm geometric mean ratio.",
+              0.7,
+              [
+                "0.78 (0.70-0.88) for the 160 mg arm."
+              ],
+              "Upper bound of 95% confidence interval for the 160 mg arm geometric mean ratio.",
+              0.88,
+              [
+                "0.78 (0.70-0.88) for the 160 mg arm."
+              ],
+              "Confidence interval units match the effect unit (ratio).",
+              "ratio"
+            ],
+            [
+              6,
+              0,
+              "drug_trial_b",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              [
+                "Trial ID: SAMPLE-HFPEF-004"
+              ],
+              "Trial ID repeated for consistency.",
+              "SAMPLE-HFPEF-004",
+              [
+                "KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm."
+              ],
+              "Secondary efficacy endpoint showing improvement in quality of life measured by KCCQ Overall Summary Score.",
+              "efficacy",
+              [
+                "KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm."
+              ],
+              "Direct quote from the Results section describing secondary endpoint improvements.",
+              "Betapril improved quality of life as measured by KCCQ-OSS with dose-dependent increases of 4.1, 6.8, and 7.2 points versus 2.0 in placebo.",
+              [
+                "Secondary endpoints included change in KCCQ Overall Summary Score (KCCQ-OSS)"
+              ],
+              "Endpoint explicitly defined in Methods and reported in Results.",
+              "change in KCCQ Overall Summary Score (KCCQ-OSS)",
+              [
+                "KCCQ-OSS improved by ... 7.2 points respectively, versus 2.0 in the placebo arm."
+              ],
+              "Largest improvement reported for the 160 mg arm was 7.2 points.",
+              7.2,
+              [
+                "KCCQ-OSS improved by ... points"
+              ],
+              "Effect unit is points on the KCCQ-OSS scale.",
+              "points",
+              null,
+              "No explicit p-value or significance statement reported for KCCQ-OSS changes.",
+              "",
+              null,
+              "No p-value reported for this endpoint.",
+              "",
+              null,
+              "No confidence intervals reported for KCCQ-OSS changes.",
+              "",
+              null,
+              "No confidence intervals reported for KCCQ-OSS changes.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              ""
+            ],
+            [
+              7,
+              0,
+              "drug_trial_b",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              [
+                "Trial ID: SAMPLE-HFPEF-004"
+              ],
+              "Trial ID repeated for consistency.",
+              "SAMPLE-HFPEF-004",
+              [
+                "6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms."
+              ],
+              "Secondary efficacy endpoint showing improvement in 6-minute walk distance.",
+              "efficacy",
+              [
+                "6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms."
+              ],
+              "Direct quote from Results section describing secondary endpoint improvements.",
+              "Betapril improved 6-minute walk distance by up to 32 meters in the 160 mg arm compared to 8 meters in placebo.",
+              [
+                "Secondary endpoints included ... 6-minute walk distance"
+              ],
+              "Endpoint explicitly defined in Methods and reported in Results.",
+              "change in 6-minute walk distance",
+              [
+                "6-minute walk distance improved by ... 32 ... m across the four arms."
+              ],
+              "Largest improvement reported for the 160 mg arm was 32 meters.",
+              32,
+              [
+                "6-minute walk distance improved by ... m"
+              ],
+              "Effect unit is meters.",
+              "m",
+              null,
+              "No explicit p-value or significance statement reported for 6-minute walk distance changes.",
+              "",
+              null,
+              "No p-value reported for this endpoint.",
+              "",
+              null,
+              "No confidence intervals reported for 6-minute walk distance changes.",
+              "",
+              null,
+              "No confidence intervals reported for 6-minute walk distance changes.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              ""
+            ],
+            [
+              8,
+              0,
+              "drug_trial_b",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              [
+                "Trial ID: SAMPLE-HFPEF-004"
+              ],
+              "Trial ID repeated for consistency.",
+              "SAMPLE-HFPEF-004",
+              [
+                "Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo."
+              ],
+              "Safety finding on adverse events and hypotension rates reported in Abstract and Safety section.",
+              "safety",
+              [
+                "Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference. Clinically meaningful hypotension occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg)."
+              ],
+              "Direct quote from Safety section summarizing adverse event rates and hypotension incidence.",
+              "Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in 1% placebo, 1% (40 mg), 3% (80 mg), and 3% (160 mg) arms.",
+              [
+                "Treatment-emergent adverse events ... Hypotension occurred in ... arms."
+              ],
+              "Safety endpoints explicitly described in Safety section.",
+              "treatment-emergent adverse events and hypotension incidence",
+              [
+                "hypotension occurred in 3% of the 160 mg arm"
+              ],
+              "Highest reported hypotension incidence was 3% in the 160 mg arm.",
+              3,
+              [
+                "3% of the 160 mg arm"
+              ],
+              "Effect unit is percentage of participants.",
+              "%",
+              [
+                "Treatment-emergent adverse events were similar across arms with no significant between-group difference."
+              ],
+              "No significant difference in adverse events between groups reported.",
+              false,
+              null,
+              "No p-value reported for safety endpoints.",
+              "",
+              null,
+              "No confidence intervals reported for safety endpoints.",
+              "",
+              null,
+              "No confidence intervals reported for safety endpoints.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              ""
+            ],
+            [
+              9,
+              0,
+              "drug_trial_b",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              [
+                "Trial ID: SAMPLE-HFPEF-004"
+              ],
+              "Trial ID repeated for consistency.",
+              "SAMPLE-HFPEF-004",
+              [
+                "The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial."
+              ],
+              "Tolerability conclusion stated in Abstract and Discussion regarding dose selection.",
+              "tolerability",
+              [
+                "The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.",
+                "The 80 mg dose achieved near-maximal efficacy on the primary endpoint and carried a lower burden of hypotension than the 160 mg dose, making it the preferred dose for subsequent Phase III evaluation."
+              ],
+              "Direct quotes from Abstract and Discussion summarizing tolerability and dose selection.",
+              "The 80 mg dose achieved near-maximal efficacy with lower hypotension burden than 160 mg, making it the preferred dose for Phase III evaluation.",
+              [
+                "The 80 mg dose offered a favorable balance of efficacy and tolerability."
+              ],
+              "Endpoint relates to tolerability and dose selection based on safety and efficacy balance.",
+              "dose tolerability and selection",
+              null,
+              "No numeric effect value reported for tolerability or dose selection.",
+              "",
+              null,
+              "No effect unit applicable.",
+              "",
+              null,
+              "No statistical test reported for tolerability summary.",
+              "",
+              null,
+              "No p-value reported.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              "",
+              null,
+              "No confidence intervals reported.",
+              ""
+            ]
+          ],
+          "total_rows": 10,
+          "shown_rows": 10
+        },
+        "after": {
+          "columns": [
+            "row_id",
+            "confidence_interval_unit",
+            "trial_id",
+            "finding_type",
+            "finding_summary",
+            "endpoint_name",
+            "effect_value",
+            "effect_unit",
+            "statistical_significance",
+            "p_value",
+            "confidence_interval_lower",
+            "confidence_interval_upper",
+            "effect_unit_rationale",
+            "statistical_significance_rationale",
+            "text_header",
+            "finding_type_quote",
+            "finding_type_rationale",
+            "document_name",
+            "confidence_interval_upper_quote",
+            "confidence_interval_unit_quote",
+            "trial_id_quote",
+            "effect_unit_quote",
+            "statistical_significance_quote",
+            "finding_summary_rationale",
+            "confidence_interval_unit_rationale",
+            "p_value_rationale",
+            "endpoint_name_rationale",
+            "confidence_interval_upper_rationale",
+            "trial_id_rationale",
+            "confidence_interval_lower_quote",
+            "effect_value_rationale",
+            "finding_summary_quote",
+            "effect_value_quote",
+            "endpoint_name_quote",
+            "number_instances",
+            "p_value_quote",
+            "page_number",
+            "confidence_interval_lower_rationale",
+            "__reconciliation_context__"
+          ],
+          "rows": [
+            [
+              0,
+              "mmHg",
+              "SAMPLE-HTX-001",
+              "EFFICACY",
+              "Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks.",
+              "mean 24-hour ambulatory systolic blood pressure at week 12",
+              "-5.8",
+              "MMHG",
+              "TRUE",
+              "0.001",
+              "-7.5",
+              "-4.1",
+              "Unit is explicitly stated as mmHg for blood pressure.",
+              "The p-value is less than 0.001 indicating statistical significance.",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              "At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg (95% CI \u22129.6 to \u22126.6) in the alphaxolin group and \u22122.3 mmHg (95% CI \u22123.8 to \u22120.8) in the placebo group, for a between-group difference of \u22125.8 mmHg (P < 0.001).",
+              "This finding describes the primary efficacy endpoint of blood pressure reduction.",
+              "drug_trial_a",
+              "95% CI \u22127.5 to \u22124.1",
+              "95% CI \u22127.5 to \u22124.1 mmHg",
+              "Trial ID: SAMPLE-HTX-001",
+              "\u22125.8 mmHg",
+              "P < 0.001",
+              "The summary is a paraphrase of the primary outcome result explicitly stated in the Abstract and Results sections.",
+              "Confidence interval unit matches effect unit mmHg.",
+              "P-value is reported as less than 0.001; normalized to 0.001 for schema.",
+              "The endpoint is explicitly defined in the Methods and repeated in the Results.",
+              "Upper bound of the 95% confidence interval for the between-group difference is \u22124.1 mmHg.",
+              "Trial ID is explicitly stated at the top of the document under the trial header.",
+              "95% CI \u22127.5 to \u22124.1",
+              "The between-group difference in blood pressure reduction is explicitly stated as \u22125.8 mmHg.",
+              "At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg ... and \u22122.3 mmHg ... for a between-group difference of \u22125.8 mmHg (P < 0.001).",
+              "for a between-group difference of \u22125.8 mmHg (P < 0.001)",
+              "The primary endpoint was change from baseline in mean 24-hour ambulatory systolic blood pressure at week 12.",
+              1,
+              "P < 0.001",
+              0,
+              "Lower bound of the 95% confidence interval for the between-group difference is \u22127.5 mmHg.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              1,
+              null,
+              "SAMPLE-HTX-001",
+              "EFFICACY",
+              "Alphaxolin reduced office systolic blood pressure by 9.4 mmHg and diastolic blood pressure by 5.2 mmHg compared to placebo reductions of 3.1 mmHg and 1.6 mmHg respectively.",
+              "change in office systolic and diastolic blood pressure",
+              "-9.4",
+              "MMHG",
+              null,
+              "",
+              "",
+              "",
+              "Unit is mmHg for blood pressure.",
+              "No explicit p-value or statistical significance reported for secondary office BP outcomes.",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin) vs \u22123.1 mmHg (placebo). Office diastolic BP decreased by \u22125.2 mmHg vs \u22121.6 mmHg.",
+              "Secondary efficacy outcomes on office blood pressure are explicitly reported.",
+              "drug_trial_a",
+              "<NA>",
+              "<NA>",
+              "Trial ID: SAMPLE-HTX-001",
+              "\u22129.4 mmHg",
+              "<NA>",
+              "Summary paraphrases the secondary outcome results explicitly stated in the Results section.",
+              "No confidence interval reported.",
+              "No p-value reported for this outcome.",
+              "Endpoint is explicitly defined as secondary outcomes in Methods and reported in Results.",
+              "No confidence interval reported for this outcome.",
+              "Trial ID repeated for consistency.",
+              "<NA>",
+              "Effect value taken as the alphaxolin group mean change for office systolic BP.",
+              "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin) vs \u22123.1 mmHg (placebo). Office diastolic BP decreased by \u22125.2 mmHg vs \u22121.6 mmHg.",
+              "Office systolic BP decreased by \u22129.4 mmHg (alphaxolin)",
+              "Secondary outcomes included change in office systolic blood pressure, change in diastolic blood pressure",
+              1,
+              "<NA>",
+              0,
+              "No confidence interval reported for this outcome.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              2,
+              null,
+              "SAMPLE-HTX-001",
+              "SAFETY",
+              "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants; serious adverse events were rare and none related to study drug.",
+              "treatment-emergent adverse events and serious adverse events",
+              "18",
+              "%",
+              null,
+              "",
+              "",
+              "",
+              "Unit is percentage of participants.",
+              "No statistical significance or p-value reported for adverse events.",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants. Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to study drug.",
+              "Safety outcomes explicitly reported in Abstract and Results sections.",
+              "drug_trial_a",
+              "<NA>",
+              "<NA>",
+              "Trial ID: SAMPLE-HTX-001",
+              "18%",
+              "<NA>",
+              "Summary paraphrases the safety results explicitly stated in the Abstract and Results.",
+              "No confidence interval reported.",
+              "No p-value reported for adverse events.",
+              "Endpoint defined in Methods and reported in Results.",
+              "No confidence interval reported for adverse events.",
+              "Trial ID repeated for consistency.",
+              "<NA>",
+              "Effect value is the percentage of participants with adverse events in the alphaxolin group.",
+              "Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants. Three serious adverse events occurred in the alphaxolin group and two in the placebo group; none were judged related to study drug.",
+              "Treatment-emergent adverse events occurred in 18% of alphaxolin",
+              "safety assessed by treatment-emergent adverse events.",
+              1,
+              "<NA>",
+              0,
+              "No confidence interval reported for adverse events.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              3,
+              null,
+              "SAMPLE-HTX-001",
+              "TOLERABILITY",
+              "Common adverse events with alphaxolin were headache (6%), dizziness (4%), and peripheral edema (3%).",
+              "frequency of common adverse events",
+              "6",
+              "%",
+              null,
+              "",
+              "",
+              "",
+              "Unit is percentage incidence.",
+              "No statistical testing or p-values reported for adverse event frequencies.",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).",
+              "Tolerability findings are explicitly reported as common adverse events.",
+              "drug_trial_a",
+              "<NA>",
+              "<NA>",
+              "Trial ID: SAMPLE-HTX-001",
+              "6%",
+              "<NA>",
+              "Summary paraphrases the tolerability data explicitly stated in the Results.",
+              "No confidence intervals reported.",
+              "No p-value reported.",
+              "Endpoint is the frequency of common adverse events reported in Results.",
+              "No confidence intervals reported.",
+              "Trial ID repeated for consistency.",
+              "<NA>",
+              "Effect value is the percentage incidence of the most common adverse event, headache.",
+              "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).",
+              "headache (6%)",
+              "The most common events in the alphaxolin group were headache (6%), dizziness (4%), and peripheral edema (3%).",
+              1,
+              "<NA>",
+              0,
+              "No confidence intervals reported.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              4,
+              null,
+              "SAMPLE-HTX-001",
+              "EFFICACY",
+              "Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.",
+              "mean 24-hour ambulatory systolic blood pressure at week 12",
+              "",
+              null,
+              null,
+              "",
+              "",
+              "",
+              "No unit applicable as no numeric effect value.",
+              "No statistical significance stated in this summary statement.",
+              {
+                "Header 1": "Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension > Randomized trial of drug alphaxolin in moderate hypertension",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Intervention > Outcomes > Participants > Primary outcome > Secondary outcomes > Adverse events"
+              },
+              "Alphaxolin added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure over 12 weeks with an acceptable safety profile.",
+              "This is a concluding statement summarizing efficacy and safety.",
+              "drug_trial_a",
+              "<NA>",
+              "<NA>",
+              "Trial ID: SAMPLE-HTX-001",
+              "<NA>",
+              "<NA>",
+              "Direct quote from the Conclusion section summarizing main outcome.",
+              "No confidence interval stated.",
+              "No p-value stated.",
+              "Endpoint summarized in the Conclusion section.",
+              "No confidence interval stated.",
+              "Trial ID repeated for consistency.",
+              "<NA>",
+              "No new numeric effect value reported here beyond prior detailed results.",
+              "Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.",
+              "<NA>",
+              "clinically meaningful reduction in 24-hour ambulatory blood pressure over 12 weeks with an acceptable safety profile.",
+              1,
+              "<NA>",
+              0,
+              "No confidence interval stated.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              5,
+              "ratio",
+              "SAMPLE-HFPEF-004",
+              "EFFICACY",
+              "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.",
+              "change from baseline in NT-proBNP at week 24",
+              "0.78",
+              "RATIO",
+              "TRUE",
+              "0.001",
+              "0.7",
+              "0.88",
+              "Effect is expressed as a geometric mean ratio relative to placebo.",
+              "The dose-response trend was statistically significant with P < 0.001.",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.",
+              "The key efficacy finding is the dose-dependent reduction in NT-proBNP and quality of life improvement stated in the Abstract and Conclusion.",
+              "drug_trial_b",
+              "0.78 (0.70-0.88) for the 160 mg arm.",
+              "0.78 (0.70-0.88) for the 160 mg arm.",
+              "Trial ID: SAMPLE-HFPEF-004",
+              "geometric mean ratio of NT-proBNP versus placebo",
+              "Test for trend across dose P < 0.001.",
+              "Direct quote from the Abstract and Conclusion summarizing the main efficacy outcome.",
+              "Confidence interval units match the effect unit (ratio).",
+              "P-value reported as less than 0.001, normalized to 0.001 for schema.",
+              "The primary endpoint is explicitly defined in the Abstract and Methods sections.",
+              "Upper bound of 95% confidence interval for the 160 mg arm geometric mean ratio.",
+              "Trial ID is explicitly stated at the top of the document under the trial header.",
+              "0.78 (0.70-0.88) for the 160 mg arm.",
+              "The largest effect size reported is for the 160 mg arm with a geometric mean ratio of 0.78 versus placebo, indicating a 22% reduction.",
+              "Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.",
+              "The geometric mean ratio of NT-proBNP versus placebo was ... 0.78 (0.70-0.88) for the 160 mg arm.",
+              "The primary endpoint was change from baseline in NT-proBNP at week 24.",
+              1,
+              "Test for trend across dose P < 0.001.",
+              0,
+              "Lower bound of 95% confidence interval for the 160 mg arm geometric mean ratio.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              6,
+              null,
+              "SAMPLE-HFPEF-004",
+              "EFFICACY",
+              "Betapril improved quality of life as measured by KCCQ-OSS with dose-dependent increases of 4.1, 6.8, and 7.2 points versus 2.0 in placebo.",
+              "change in KCCQ Overall Summary Score (KCCQ-OSS)",
+              "7.2",
+              "POINTS",
+              null,
+              "",
+              "",
+              "",
+              "Effect unit is points on the KCCQ-OSS scale.",
+              "No explicit p-value or significance statement reported for KCCQ-OSS changes.",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              "KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm.",
+              "Secondary efficacy endpoint showing improvement in quality of life measured by KCCQ Overall Summary Score.",
+              "drug_trial_b",
+              "<NA>",
+              "<NA>",
+              "Trial ID: SAMPLE-HFPEF-004",
+              "KCCQ-OSS improved by ... points",
+              "<NA>",
+              "Direct quote from the Results section describing secondary endpoint improvements.",
+              "No confidence intervals reported.",
+              "No p-value reported for this endpoint.",
+              "Endpoint explicitly defined in Methods and reported in Results.",
+              "No confidence intervals reported for KCCQ-OSS changes.",
+              "Trial ID repeated for consistency.",
+              "<NA>",
+              "Largest improvement reported for the 160 mg arm was 7.2 points.",
+              "KCCQ-OSS improved by 4.1, 6.8, and 7.2 points respectively, versus 2.0 in the placebo arm.",
+              "KCCQ-OSS improved by ... 7.2 points respectively, versus 2.0 in the placebo arm.",
+              "Secondary endpoints included change in KCCQ Overall Summary Score (KCCQ-OSS)",
+              1,
+              "<NA>",
+              0,
+              "No confidence intervals reported for KCCQ-OSS changes.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              7,
+              null,
+              "SAMPLE-HFPEF-004",
+              "EFFICACY",
+              "Betapril improved 6-minute walk distance by up to 32 meters in the 160 mg arm compared to 8 meters in placebo.",
+              "change in 6-minute walk distance",
+              "32",
+              "M",
+              null,
+              "",
+              "",
+              "",
+              "Effect unit is meters.",
+              "No explicit p-value or significance statement reported for 6-minute walk distance changes.",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              "6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms.",
+              "Secondary efficacy endpoint showing improvement in 6-minute walk distance.",
+              "drug_trial_b",
+              "<NA>",
+              "<NA>",
+              "Trial ID: SAMPLE-HFPEF-004",
+              "6-minute walk distance improved by ... m",
+              "<NA>",
+              "Direct quote from Results section describing secondary endpoint improvements.",
+              "No confidence intervals reported.",
+              "No p-value reported for this endpoint.",
+              "Endpoint explicitly defined in Methods and reported in Results.",
+              "No confidence intervals reported for 6-minute walk distance changes.",
+              "Trial ID repeated for consistency.",
+              "<NA>",
+              "Largest improvement reported for the 160 mg arm was 32 meters.",
+              "6-minute walk distance improved by 8, 18, 32, and 30 m across the four arms.",
+              "6-minute walk distance improved by ... 32 ... m across the four arms.",
+              "Secondary endpoints included ... 6-minute walk distance",
+              1,
+              "<NA>",
+              0,
+              "No confidence intervals reported for 6-minute walk distance changes.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              8,
+              null,
+              "SAMPLE-HFPEF-004",
+              "SAFETY",
+              "Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in 1% placebo, 1% (40 mg), 3% (80 mg), and 3% (160 mg) arms.",
+              "treatment-emergent adverse events and hypotension incidence",
+              "3",
+              "%",
+              "FALSE",
+              "",
+              "",
+              "",
+              "Effect unit is percentage of participants.",
+              "No significant difference in adverse events between groups reported.",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              "Treatment-emergent adverse events were similar across arms; hypotension occurred in 3% of the 160 mg arm and 1% of placebo.",
+              "Safety finding on adverse events and hypotension rates reported in Abstract and Safety section.",
+              "drug_trial_b",
+              "<NA>",
+              "<NA>",
+              "Trial ID: SAMPLE-HFPEF-004",
+              "3% of the 160 mg arm",
+              "Treatment-emergent adverse events were similar across arms with no significant between-group difference.",
+              "Direct quote from Safety section summarizing adverse event rates and hypotension incidence.",
+              "No confidence intervals reported.",
+              "No p-value reported for safety endpoints.",
+              "Safety endpoints explicitly described in Safety section.",
+              "No confidence intervals reported for safety endpoints.",
+              "Trial ID repeated for consistency.",
+              "<NA>",
+              "Highest reported hypotension incidence was 3% in the 160 mg arm.",
+              "Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference. Clinically meaningful hypotension occurred in 1% (placebo), 1% (40 mg), 3% (80 mg), and 3% (160 mg).",
+              "hypotension occurred in 3% of the 160 mg arm",
+              "Treatment-emergent adverse events ... Hypotension occurred in ... arms.",
+              1,
+              "<NA>",
+              0,
+              "No confidence intervals reported for safety endpoints.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ],
+            [
+              9,
+              null,
+              "SAMPLE-HFPEF-004",
+              "TOLERABILITY",
+              "The 80 mg dose achieved near-maximal efficacy with lower hypotension burden than 160 mg, making it the preferred dose for Phase III evaluation.",
+              "dose tolerability and selection",
+              "",
+              null,
+              null,
+              "",
+              "",
+              "",
+              "No effect unit applicable.",
+              "No statistical test reported for tolerability summary.",
+              {
+                "Header 1": "Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction > Phase II trial of betapril in heart failure with preserved ejection fraction",
+                "Header 2": "Abstract > Methods > Methods > Methods > Methods > Methods > Results > Results > Results > Results > Results > Discussion > Conclusion",
+                "Header 3": "Design > Participants > Interventions > Outcomes > Enrollment > Primary outcome > Secondary outcomes > Safety"
+              },
+              "The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.",
+              "Tolerability conclusion stated in Abstract and Discussion regarding dose selection.",
+              "drug_trial_b",
+              "<NA>",
+              "<NA>",
+              "Trial ID: SAMPLE-HFPEF-004",
+              "<NA>",
+              "<NA>",
+              "Direct quotes from Abstract and Discussion summarizing tolerability and dose selection.",
+              "No confidence intervals reported.",
+              "No p-value reported.",
+              "Endpoint relates to tolerability and dose selection based on safety and efficacy balance.",
+              "No confidence intervals reported.",
+              "Trial ID repeated for consistency.",
+              "<NA>",
+              "No numeric effect value reported for tolerability or dose selection.",
+              "['The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III outcomes trial.'\n 'The 80 mg dose achieved near-maximal efficacy on the primary endpoint and carried a lower burden of hypotension than the 160 mg dose, making it the preferred dose for subsequent Phase III evaluation.']",
+              "<NA>",
+              "The 80 mg dose offered a favorable balance of efficacy and tolerability.",
+              1,
+              "<NA>",
+              0,
+              "No confidence intervals reported.",
+              "{\"operation\": \"none\", \"original_row_count\": 1, \"final_row_count\": 1, \"summary\": \"Single row, no reconciliation needed\", \"information_discarded\": \"none\"}"
+            ]
+          ],
+          "total_rows": 10,
+          "shown_rows": 10
+        }
+      }
+    ]
+  },
+  "answer": {
+    "final_answer": "Based on the SQL query results from the `TrialKeyFinding` table, here are the key findings from two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004):\n\n---\n\n## 1. **SAMPLE-HTX-001 (Alphaxolin in Hypertension)**\n\n### **Efficacy**\n- **Ambulatory Blood Pressure:**  \n  - Alphaxolin reduced 24-hour ambulatory systolic blood pressure by **5.8 mmHg more than placebo at 12 weeks** (statistically significant, p = 0.001, 95% CI: -7.5 to -4.1 mmHg).\n- **Office Blood Pressure:**  \n  - Alphaxolin reduced office systolic blood pressure by **9.4 mmHg** and diastolic by **5.2 mmHg** compared to placebo reductions of 3.1 mmHg and 1.6 mmHg, respectively.\n- **Overall:**  \n  - Alphaxolin 20 mg daily added to background antihypertensive therapy produced a **clinically meaningful reduction in 24-hour ambulatory blood pressure** with an acceptable short-term safety profile.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **18%** of alphaxolin and **15%** of placebo participants.\n  - Serious adverse events were rare and **none were related to the study drug**.\n\n### **Tolerability**\n- **Common Adverse Events:**  \n  - Headache (**6%**), dizziness (**4%**), and peripheral edema (**3%**) were the most common with alphaxolin.\n\n---\n\n## 2. **SAMPLE-HFPEF-004 (Betapril in HFpEF)**\n\n### **Efficacy**\n- **NT-proBNP and Quality of Life:**  \n  - Betapril produced a **dose-dependent reduction in NT-proBNP** (ratio at week 24: **0.78**, p = 0.001, 95% CI: 0.7 to 0.88) and **improvement in quality of life** in HFpEF over 24 weeks.\n- **KCCQ-OSS (Quality of Life Score):**  \n  - Betapril improved KCCQ-OSS with dose-dependent increases of **4.1, 6.8, and 7.2 points** versus **2.0 in placebo**.\n- **6-Minute Walk Distance:**  \n  - Improved by up to **32 meters** in the 160 mg arm compared to **8 meters in placebo**.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **40\u201348%** of participants across arms, with **no significant between-group difference**.\n  - Hypotension occurred in **1%** (placebo), **1%** (40 mg), **3%** (80 mg), and **3%** (160 mg) arms (not statistically significant).\n\n### **Tolerability**\n- **Dose Selection:**  \n  - The **80 mg dose** achieved near-maximal efficacy with **lower hypotension burden than 160 mg**, making it the preferred dose for Phase III evaluation.\n\n---\n\n## **Summary Table**\n\n| Trial             | Efficacy Highlights                                                                 | Safety/Tolerability Highlights                                                                                 |\n|-------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001    | -24h SBP: -5.8 mmHg vs placebo (p=0.001)<br>-Office SBP: -9.4 mmHg vs placebo      | 18% adverse events (vs 15% placebo); common: headache (6%), dizziness (4%), edema (3%); no drug-related SAEs |\n| SAMPLE-HFPEF-004  | NT-proBNP ratio: 0.78 (p=0.001)<br>KCCQ-OSS: +7.2 pts (max dose)<br>6MWD: +32 m    | 40\u201348% adverse events; hypotension \u22643%; 80 mg dose preferred for efficacy/tolerability balance                |\n\n---\n\n**In summary:**  \n- **Alphaxolin** significantly lowers blood pressure with a favorable safety profile.\n- **Betapril** improves biomarkers, quality of life, and exercise capacity in HFpEF, with the 80 mg dose offering the best balance of efficacy and tolerability.  \n- Both drugs were generally well tolerated, with adverse events comparable to placebo and no major safety concerns identified.",
+    "query_history": [
+      {
+        "reasoning": "The table is small (10 rows), so I will sample the full table to review all key findings, their summaries, and relevant details. This will allow me to directly answer the question about key findings.",
+        "sql": "SELECT trial_id, finding_type, finding_summary, endpoint_name, effect_value, effect_unit, statistical_significance, p_value, confidence_interval_lower, confidence_interval_upper, confidence_interval_unit FROM TrialKeyFinding_feda534a ORDER BY row_id ASC LIMIT 10;",
+        "result": "Shape: (10, 11)\n        trial_id finding_type                                                                                                                                                                                                  finding_summary                                                endpoint_name effect_value effect_unit statistical_significance p_value confidence_interval_lower confidence_interval_upper confidence_interval_unit\n  SAMPLE-HTX-001     EFFICACY                                                                                                         Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks.   mean 24-hour ambulatory systolic blood pressure at week 12         -5.8        MMHG                     TRUE   0.001                      -7.5                      -4.1                     mmHg\n  SAMPLE-HTX-001     EFFICACY                                     Alphaxolin reduced office systolic blood pressure by 9.4 mmHg and diastolic blood pressure by 5.2 mmHg compared to placebo reductions of 3.1 mmHg and 1.6 mmHg respectively.       change in office systolic and diastolic blood pressure         -9.4        MMHG                      NaN                                                                                  NaN\n  SAMPLE-HTX-001       SAFETY                                                Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants; serious adverse events were rare and none related to study drug. treatment-emergent adverse events and serious adverse events           18           %                      NaN                                                                                  NaN\n  SAMPLE-HTX-001 TOLERABILITY                                                                                                             Common adverse events with alphaxolin were headache (6%), dizziness (4%), and peripheral edema (3%).                           frequency of common adverse events            6           %                      NaN                                                                                  NaN\n  SAMPLE-HTX-001     EFFICACY                Alphaxolin 20 mg daily added to background antihypertensive therapy produced a clinically meaningful reduction in 24-hour ambulatory blood pressure with an acceptable short-term safety profile.   mean 24-hour ambulatory systolic blood pressure at week 12                      NaN                      NaN                                                                                  NaN\nSAMPLE-HFPEF-004     EFFICACY                                                                                             Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks.                 change from baseline in NT-proBNP at week 24         0.78       RATIO                     TRUE   0.001                       0.7                      0.88                    ratio\nSAMPLE-HFPEF-004     EFFICACY                                                                       Betapril improved quality of life as measured by KCCQ-OSS with dose-dependent increases of 4.1, 6.8, and 7.2 points versus 2.0 in placebo.              change in KCCQ Overall Summary Score (KCCQ-OSS)          7.2      POINTS                      NaN                                                                                  NaN\nSAMPLE-HFPEF-004     EFFICACY                                                                                                   Betapril improved 6-minute walk distance by up to 32 meters in the 160 mg arm compared to 8 meters in placebo.                             change in 6-minute walk distance           32           M                      NaN                                                                                  NaN\nSAMPLE-HFPEF-004       SAFETY Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in 1% placebo, 1% (40 mg), 3% (80 mg), and 3% (160 mg) arms.  treatment-emergent adverse events and hypotension incidence            3           %                    FALSE                                                                                  NaN\nSAMPLE-HFPEF-004 TOLERABILITY                                                                  The 80 mg dose achieved near-maximal efficacy with lower hypotension burden than 160 mg, making it the preferred dose for Phase III evaluation.                              dose tolerability and selection                      NaN                      NaN                                                                                  NaN"
+      }
+    ],
+    "regular_answer": "Key findings:\n\nFor SAMPLE-HTX-001 (Alphaxolin in hypertension):\n- Efficacy: Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks (statistically significant, p=0.001, 95% CI: -7.5 to -4.1 mmHg). Office systolic and diastolic BP also reduced more with Alphaxolin than placebo.\n- Safety: Treatment-emergent adverse events occurred in 18% of Alphaxolin and 15% of placebo participants; serious adverse events were rare and none related to study drug.\n- Tolerability: Most common adverse events were headache (6%), dizziness (4%), and peripheral edema (3%).\n- Conclusion: Alphaxolin 20 mg daily added to background therapy produced a clinically meaningful reduction in 24-hour ambulatory BP with an acceptable short-term safety profile.\n\nFor SAMPLE-HFPEF-004 (Betapril in HFpEF):\n- Efficacy: Betapril produced a dose-dependent reduction in NT-proBNP (geometric mean ratio 0.78 [0.70-0.88] for 160 mg arm, p=0.001) and improvement in quality of life (KCCQ-OSS increased by up to 7.2 points vs 2.0 in placebo). 6-minute walk distance improved by up to 32 meters in the 160 mg arm vs 8 meters in placebo.\n- Safety: Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in up to 3% in the highest dose arm.\n- Tolerability: The 80 mg dose achieved near-maximal efficacy with lower hypotension burden than 160 mg, making it the preferred dose for Phase III evaluation.",
+    "inspect_answer": "Based on the SQL query results from the `TrialKeyFinding` table, here are the key findings from two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004):\n\n---\n\n## 1. **SAMPLE-HTX-001 (Alphaxolin in Hypertension)**\n\n### **Efficacy**\n- **Ambulatory Blood Pressure:**  \n  - Alphaxolin reduced 24-hour ambulatory systolic blood pressure by **5.8 mmHg more than placebo at 12 weeks** (statistically significant, p = 0.001, 95% CI: -7.5 to -4.1 mmHg).\n- **Office Blood Pressure:**  \n  - Alphaxolin reduced office systolic blood pressure by **9.4 mmHg** and diastolic by **5.2 mmHg** compared to placebo reductions of 3.1 mmHg and 1.6 mmHg, respectively.\n- **Overall:**  \n  - Alphaxolin 20 mg daily added to background antihypertensive therapy produced a **clinically meaningful reduction in 24-hour ambulatory blood pressure** with an acceptable short-term safety profile.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **18%** of alphaxolin and **15%** of placebo participants.\n  - Serious adverse events were rare and **none were related to the study drug**.\n\n### **Tolerability**\n- **Common Adverse Events:**  \n  - Headache (**6%**), dizziness (**4%**), and peripheral edema (**3%**) were the most common with alphaxolin.\n\n---\n\n## 2. **SAMPLE-HFPEF-004 (Betapril in HFpEF)**\n\n### **Efficacy**\n- **NT-proBNP and Quality of Life:**  \n  - Betapril produced a **dose-dependent reduction in NT-proBNP** (ratio at week 24: **0.78**, p = 0.001, 95% CI: 0.7 to 0.88) and **improvement in quality of life** in HFpEF over 24 weeks.\n- **KCCQ-OSS (Quality of Life Score):**  \n  - Betapril improved KCCQ-OSS with dose-dependent increases of **4.1, 6.8, and 7.2 points** versus **2.0 in placebo**.\n- **6-Minute Walk Distance:**  \n  - Improved by up to **32 meters** in the 160 mg arm compared to **8 meters in placebo**.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **40\u201348%** of participants across arms, with **no significant between-group difference**.\n  - Hypotension occurred in **1%** (placebo), **1%** (40 mg), **3%** (80 mg), and **3%** (160 mg) arms (not statistically significant).\n\n### **Tolerability**\n- **Dose Selection:**  \n  - The **80 mg dose** achieved near-maximal efficacy with **lower hypotension burden than 160 mg**, making it the preferred dose for Phase III evaluation.\n\n---\n\n## **Summary Table**\n\n| Trial             | Efficacy Highlights                                                                 | Safety/Tolerability Highlights                                                                                 |\n|-------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001    | -24h SBP: -5.8 mmHg vs placebo (p=0.001)<br>-Office SBP: -9.4 mmHg vs placebo      | 18% adverse events (vs 15% placebo); common: headache (6%), dizziness (4%), edema (3%); no drug-related SAEs |\n| SAMPLE-HFPEF-004  | NT-proBNP ratio: 0.78 (p=0.001)<br>KCCQ-OSS: +7.2 pts (max dose)<br>6MWD: +32 m    | 40\u201348% adverse events; hypotension \u22643%; 80 mg dose preferred for efficacy/tolerability balance                |\n\n---\n\n**In summary:**  \n- **Alphaxolin** significantly lowers blood pressure with a favorable safety profile.\n- **Betapril** improves biomarkers, quality of life, and exercise capacity in HFpEF, with the 80 mg dose offering the best balance of efficacy and tolerability.  \n- Both drugs were generally well tolerated, with adverse events comparable to placebo and no major safety concerns identified.",
+    "pre_merge_answer": "Key findings:\n\nFor alphaxolin in moderate hypertension (SAMPLE-HTX-001):\n- Efficacy: Alphaxolin reduced 24-hour ambulatory systolic blood pressure by 5.8 mmHg more than placebo at 12 weeks (statistically significant, p<0.001; 95% CI: -7.5 to -4.1 mmHg). Office systolic and diastolic BP also decreased more with alphaxolin than placebo.\n- Safety: Treatment-emergent adverse events occurred in 18% of alphaxolin and 15% of placebo participants; serious adverse events were rare and none were related to the study drug.\n- Tolerability: The most common adverse events with alphaxolin were headache (6%), dizziness (4%), and peripheral edema (3%).\n- Overall: Alphaxolin added to background antihypertensive therapy produced a clinically meaningful reduction in blood pressure with an acceptable short-term safety profile.\n\nFor betapril in HFpEF (SAMPLE-HFPEF-004):\n- Efficacy: Betapril produced a dose-dependent reduction in NT-proBNP (geometric mean ratio 0.78 [0.70-0.88] for 160 mg arm, p<0.001) and improvement in quality of life (KCCQ-OSS improved by up to 7.2 points vs 2.0 in placebo) and 6-minute walk distance (up to 32 meters in 160 mg arm vs 8 meters in placebo).\n- Safety: Treatment-emergent adverse events occurred in 40-48% of participants across arms with no significant between-group difference; hypotension occurred in up to 3% of the highest dose arm.\n- Tolerability: The 80 mg dose offered a favorable balance of efficacy and tolerability and is being carried forward into a Phase III trial.\n\nThese findings are directly supported by the 'finding_summary' field in the provided table.",
+    "post_merge_answer": "Based on the SQL query results from the `TrialKeyFinding` table, here are the key findings from two clinical trials (SAMPLE-HTX-001 and SAMPLE-HFPEF-004):\n\n---\n\n## 1. **SAMPLE-HTX-001 (Alphaxolin in Hypertension)**\n\n### **Efficacy**\n- **Ambulatory Blood Pressure:**  \n  - Alphaxolin reduced 24-hour ambulatory systolic blood pressure by **5.8 mmHg more than placebo at 12 weeks** (statistically significant, p = 0.001, 95% CI: -7.5 to -4.1 mmHg).\n- **Office Blood Pressure:**  \n  - Alphaxolin reduced office systolic blood pressure by **9.4 mmHg** and diastolic by **5.2 mmHg** compared to placebo reductions of 3.1 mmHg and 1.6 mmHg, respectively.\n- **Overall:**  \n  - Alphaxolin 20 mg daily added to background antihypertensive therapy produced a **clinically meaningful reduction in 24-hour ambulatory blood pressure** with an acceptable short-term safety profile.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **18%** of alphaxolin and **15%** of placebo participants.\n  - Serious adverse events were rare and **none were related to the study drug**.\n\n### **Tolerability**\n- **Common Adverse Events:**  \n  - Headache (**6%**), dizziness (**4%**), and peripheral edema (**3%**) were the most common with alphaxolin.\n\n---\n\n## 2. **SAMPLE-HFPEF-004 (Betapril in HFpEF)**\n\n### **Efficacy**\n- **NT-proBNP and Quality of Life:**  \n  - Betapril produced a **dose-dependent reduction in NT-proBNP** (ratio at week 24: **0.78**, p = 0.001, 95% CI: 0.7 to 0.88) and **improvement in quality of life** in HFpEF over 24 weeks.\n- **KCCQ-OSS (Quality of Life Score):**  \n  - Betapril improved KCCQ-OSS with dose-dependent increases of **4.1, 6.8, and 7.2 points** versus **2.0 in placebo**.\n- **6-Minute Walk Distance:**  \n  - Improved by up to **32 meters** in the 160 mg arm compared to **8 meters in placebo**.\n\n### **Safety**\n- **Adverse Events:**  \n  - Treatment-emergent adverse events occurred in **40\u201348%** of participants across arms, with **no significant between-group difference**.\n  - Hypotension occurred in **1%** (placebo), **1%** (40 mg), **3%** (80 mg), and **3%** (160 mg) arms (not statistically significant).\n\n### **Tolerability**\n- **Dose Selection:**  \n  - The **80 mg dose** achieved near-maximal efficacy with **lower hypotension burden than 160 mg**, making it the preferred dose for Phase III evaluation.\n\n---\n\n## **Summary Table**\n\n| Trial             | Efficacy Highlights                                                                 | Safety/Tolerability Highlights                                                                                 |\n|-------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|\n| SAMPLE-HTX-001    | -24h SBP: -5.8 mmHg vs placebo (p=0.001)<br>-Office SBP: -9.4 mmHg vs placebo      | 18% adverse events (vs 15% placebo); common: headache (6%), dizziness (4%), edema (3%); no drug-related SAEs |\n| SAMPLE-HFPEF-004  | NT-proBNP ratio: 0.78 (p=0.001)<br>KCCQ-OSS: +7.2 pts (max dose)<br>6MWD: +32 m    | 40\u201348% adverse events; hypotension \u22643%; 80 mg dose preferred for efficacy/tolerability balance                |\n\n---\n\n**In summary:**  \n- **Alphaxolin** significantly lowers blood pressure with a favorable safety profile.\n- **Betapril** improves biomarkers, quality of life, and exercise capacity in HFpEF, with the 80 mg dose offering the best balance of efficacy and tolerability.  \n- Both drugs were generally well tolerated, with adverse events comparable to placebo and no major safety concerns identified.",
+    "citation_sql": "SELECT * FROM TrialKeyFinding_feda534a ORDER BY row_id ASC;",
+    "citation_paragraph": "The key findings summarized above are based on data extracted from the `TrialKeyFinding` table for two clinical trials: SAMPLE-HTX-001 (Alphaxolin in hypertension) and SAMPLE-HFPEF-004 (Betapril in HFpEF). For SAMPLE-HTX-001, efficacy and safety results\u2014including the statistically significant reduction in 24-hour ambulatory systolic blood pressure (\u22125.8 mmHg, p = 0.001, 95% CI: \u22127.5 to \u22124.1 mmHg), office blood pressure changes, and adverse event rates\u2014were drawn from explicit statements in the Abstract, Results, and Conclusion sections, as indicated by the provided text headers and direct quotes (e.g., \"At week 12, the adjusted mean change in 24-hour systolic blood pressure was \u22128.1 mmHg... for a between-group difference of \u22125.8 mmHg (P < 0.001)\"). For SAMPLE-HFPEF-004, findings on NT-proBNP reduction, KCCQ-OSS improvement, 6-minute walk distance, and safety/tolerability were supported by direct quotes and rationales from the Abstract, Results, and Discussion (e.g., \"Betapril produced a dose-dependent reduction in NT-proBNP and improvement in quality of life in HFpEF over 24 weeks\"). All data points, including effect values, statistical significance, and endpoint definitions, were referenced directly from the trial documents as detailed in the provenance fields and supporting rationales in the source data rows.",
+    "reconciliation_stats_summary": "The reconciliation process grouped key findings using a combination of trial ID, finding type, endpoint name, and finding summary as the primary key. All 10 key findings were unique, with no duplicates or conflicting entries detected, so no reconciliation actions (such as deduplication or conflict resolution) were needed. As a result, the total number of rows remained unchanged at 10, with no reduction during processing.",
+    "num_queries": 1,
+    "used_tables": true
+  }
+}

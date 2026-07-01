@@ -145,6 +145,7 @@ async def _run_sliders_async(
     openai_api_key: str | None = None,
     openai_base_url: str | None = None,
     schema: Any = None,
+    visualize: bool = False,
 ) -> Union[str, dict]:
     """Async implementation of :func:`run_sliders`."""
     if azure_api_key or azure_endpoint or openai_api_key or openai_base_url:
@@ -195,6 +196,7 @@ async def _run_sliders_async(
             config["system_config"].setdefault("generate_schema", {})["user_schema"] = schema
 
         config["system_config"]["output_folder"] = str(out_dir)
+        config["system_config"]["visualize"] = visualize
 
         experiment = WikiCeleb(config["experiment_config"])
         system = SlidersAgent(config["system_config"])
@@ -225,6 +227,13 @@ async def _run_sliders_async(
 
         answer = "\n\n".join(answers)
 
+        report_paths: list[str] = []
+        for m in results.get("all_metadata", []):
+            if isinstance(m, dict):
+                report_path = (m.get("visualization") or {}).get("report_path")
+                if report_path:
+                    report_paths.append(report_path)
+
         if return_full_result:
             return {
                 "answer": answer,
@@ -232,6 +241,7 @@ async def _run_sliders_async(
                 "results": results,
                 "results_json_path": str(output_file),
                 "output_dir": str(out_dir),
+                "report_paths": report_paths,
             }
 
         return answer
@@ -250,6 +260,7 @@ def run_sliders(
     openai_api_key: str | None = None,
     openai_base_url: str | None = None,
     schema: Any = None,
+    visualize: bool = False,
 ) -> Union[str, dict]:
     """Run SLIDERS on a document corpus and return the answer to ``question``.
 
@@ -282,11 +293,17 @@ def run_sliders(
             Any missing metadata is filled in by a single LLM call; the LLM
             will not add tables or fields the user did not list. Passing a
             schema bypasses schema induction entirely.
+        visualize: If ``True``, generate a self-contained HTML report per
+            question under the output directory (``report_<question_id>.html``)
+            that walks through every pipeline step (chunking, schema induction,
+            extraction with provenance, reconciliation, and SQL answer
+            synthesis). Paths are returned under ``report_paths`` when
+            ``return_full_result=True``.
 
     Returns:
         The predicted answer as a string, or (when ``return_full_result=True``)
         a dict with the keys ``answer``, ``answers``, ``results``,
-        ``results_json_path``, and ``output_dir``.
+        ``results_json_path``, ``output_dir``, and ``report_paths``.
     """
     return asyncio.run(
         _run_sliders_async(
@@ -302,5 +319,6 @@ def run_sliders(
             openai_api_key=openai_api_key,
             openai_base_url=openai_base_url,
             schema=schema,
+            visualize=visualize,
         )
     )
