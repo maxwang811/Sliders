@@ -15,6 +15,35 @@ from sliders.log_utils import logger
 from sliders.experiments.base import Experiment
 
 
+# region agent log
+import json as _dbg_json
+import time as _dbg_time
+
+_DBG_LOG_PATH = "/Users/mohanwang/Desktop/Internships/AI Augmented Database/sliders/.cursor/debug-3303b8.log"
+
+
+def _dbg(location, message, data, hypothesis_id, run_id="initial"):
+    try:
+        with open(_DBG_LOG_PATH, "a") as _f:
+            _f.write(
+                _dbg_json.dumps(
+                    {
+                        "sessionId": "3303b8",
+                        "timestamp": int(_dbg_time.time() * 1000),
+                        "location": location,
+                        "message": message,
+                        "data": data,
+                        "hypothesisId": hypothesis_id,
+                        "runId": run_id,
+                    }
+                )
+                + "\n"
+            )
+    except Exception:
+        pass
+# endregion
+
+
 def log_finance_bench_results(result):
     logger.info(f"Gold Answer: {result['gold_answer']}")
     logger.info(f"Predicted Answer: {result['predicted_answer']}")
@@ -107,20 +136,55 @@ class FinanceBench(Experiment):
     async def _run_row(self, row: dict, system: System, all_metadata: list) -> dict:
         question = row["question"]
         file_path = os.path.join(self.files_dir, row["doc_name"] + ".md")
-        document = await Document.from_markdown(
-            file_path,
-            description=self.description,
-            document_name=row["doc_name"],
-            **self.config.get("document_config", {}),
-        )
-
-        logger.info(f"Number of chunks: {len(document.chunks)}")
-        if self.config.get("docprocesssing", True):
-            all_documents = await contextualize_document_metadata([document], question, model=self.config.get("document_config", {}).get("description_model", "gpt-4.1-mini"))
-        else:
-            all_documents = [document]
-
+        # region agent log
         try:
+            _md_exists = os.path.exists(file_path)
+            _md_size = os.path.getsize(file_path) if _md_exists else None
+            _pdf_dir = os.path.join(os.path.dirname(self.files_dir.rstrip("/")), "pdfs")
+            _pdf_path = os.path.join(_pdf_dir, row["doc_name"] + ".pdf")
+            _md_count = (
+                len([n for n in os.listdir(self.files_dir) if n.endswith(".md")])
+                if os.path.isdir(self.files_dir)
+                else -1
+            )
+            _dbg(
+                "finance_bench.py:_run_row",
+                "markdown load attempt",
+                {
+                    "doc_name": row.get("doc_name"),
+                    "question_id": row.get("financebench_id"),
+                    "file_path": file_path,
+                    "file_path_abs": os.path.abspath(file_path),
+                    "md_exists": _md_exists,
+                    "md_size": _md_size,
+                    "pdf_exists": os.path.exists(_pdf_path),
+                    "files_dir": self.files_dir,
+                    "files_dir_exists": os.path.isdir(self.files_dir),
+                    "md_count_in_dir": _md_count,
+                    "cwd": os.getcwd(),
+                },
+                hypothesis_id="A,B,C,E",
+            )
+        except Exception:
+            pass
+        # endregion
+        try:
+            # Load + contextualize the document inside the try/except so a single
+            # bad/missing markdown file yields a structured error result instead
+            # of raising and aborting the whole (parallel) run.
+            document = await Document.from_markdown(
+                file_path,
+                description=self.description,
+                document_name=row["doc_name"],
+                **self.config.get("document_config", {}),
+            )
+
+            logger.info(f"Number of chunks: {len(document.chunks)}")
+            if self.config.get("docprocesssing", True):
+                all_documents = await contextualize_document_metadata([document], question, model=self.config.get("document_config", {}).get("description_model", "gpt-4.1-mini"))
+            else:
+                all_documents = [document]
+
             answer, metadata = await system.run(question, all_documents, question_id=row["financebench_id"])
             metadata["gold_answer"] = row["answer"]
             metadata["predicted_answer"] = answer
@@ -201,9 +265,55 @@ class FinanceBench(Experiment):
 
         dataset_size = len(dataset)
 
+        # region agent log
+        try:
+            _present, _missing = [], []
+            for _row in dataset:
+                _fp = os.path.join(self.files_dir, _row["doc_name"] + ".md")
+                if os.path.exists(_fp) and os.path.getsize(_fp) > 0:
+                    _present.append(_row["doc_name"])
+                else:
+                    _missing.append(_row["doc_name"])
+            _dbg(
+                "finance_bench.py:run",
+                "preflight markdown availability",
+                {
+                    "parallel": parallel,
+                    "dataset_size": dataset_size,
+                    "files_dir": self.files_dir,
+                    "files_dir_abs": os.path.abspath(self.files_dir),
+                    "files_dir_exists": os.path.isdir(self.files_dir),
+                    "cwd": os.getcwd(),
+                    "rows_with_md": len(_present),
+                    "rows_missing_md": len(_missing),
+                    "unique_missing_docs": sorted(set(_missing)),
+                },
+                hypothesis_id="A,C,D",
+            )
+        except Exception:
+            pass
+        # endregion
+
         if parallel:
-            tasks = [self._run_row(row, system, all_metadata) for row in dataset]
-            results = await tqdm_asyncio.gather(*tasks, desc="Evaluating")
+            # tqdm_asyncio.gather() forwards unknown kwargs to the tqdm progress
+            # bar, so (unlike asyncio.gather) it rejects return_exceptions=True.
+            # Normalize failures per-row instead: a single failing row returns
+            # its exception rather than aborting the whole gather.
+            async def _run_row_safe(row):
+                try:
+                    return await self._run_row(row, system, all_metadata)
+                except Exception as e:  # noqa: BLE001
+                    return e
+
+            tasks = [_run_row_safe(row) for row in dataset]
+            raw_results = await tqdm_asyncio.gather(*tasks, desc="Evaluating")
+            results = []
+            for r in raw_results:
+                if isinstance(r, BaseException):
+                    logger.error(f"Row task failed and was skipped: {r}")
+                    results.append({"error": str(r), "question_id": None})
+                else:
+                    results.append(r)
         else:
             for idx, row in enumerate(tqdm(dataset, desc="Running experiment")):
                 logger.info(
@@ -222,6 +332,8 @@ class FinanceBench(Experiment):
                     logger.info("POST-MERGE EVALUATION:")
                     log_finance_bench_results(result["post_merge_evaluation"])
                     logger.info("=" * 80)
+                elif "error" in result:
+                    logger.warning(f"Skipping row with error: {result.get('error')}")
                 else:
                     log_finance_bench_results(result)
 
@@ -326,8 +438,9 @@ class FinanceBench(Experiment):
                 logger.info(f"Completed {len(results)}/{dataset_size} questions")
 
         for i, result in enumerate(results):
-            result["id"] = all_metadata[i].get("id")
-            result["evidence"] = all_metadata[i].get("evidence")
+            meta = all_metadata[i] if i < len(all_metadata) else {}
+            result["id"] = meta.get("id")
+            result["evidence"] = meta.get("evidence")
 
         # Check if we have pre-merge/post-merge evaluations
         has_split_evaluation = len(results) > 0 and "pre_merge_evaluation" in results[0]

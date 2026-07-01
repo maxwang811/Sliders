@@ -1,3 +1,4 @@
+import asyncio
 import hashlib
 import inspect
 import json
@@ -79,6 +80,11 @@ def set_llm_credentials(
 
 # Redis client for caching
 _redis_client: Optional[redis.Redis] = None
+# Whether Redis initialization has been attempted. Once True, the (possibly None)
+# result in ``_redis_client`` is reused without retrying, so a down Redis disables
+# caching after a single attempt instead of reconnecting on every LLM call.
+_redis_init_done: bool = False
+_redis_init_lock: asyncio.Lock = asyncio.Lock()
 
 
 async def get_redis_client() -> redis.Redis | None:
@@ -88,23 +94,39 @@ async def get_redis_client() -> redis.Redis | None:
     variables (also loaded from a ``.env`` file), defaulting to
     ``localhost:6379``. If the connection fails, caching is silently disabled.
     """
-    global _redis_client
-    if _redis_client is None:
+    global _redis_client, _redis_init_done
+    # Fast path: initialization already attempted; reuse the cached result
+    # (a live client or None) without reconnecting.
+    if _redis_init_done:
+        return _redis_client
+
+    # Serialize first-time initialization so concurrent tasks don't each spin up
+    # their own connection attempt or observe a half-initialized global client.
+    async with _redis_init_lock:
+        if _redis_init_done:
+            return _redis_client
+
         redis_host = os.getenv("REDIS_HOST", "localhost")
         redis_port = int(os.getenv("REDIS_PORT", "6379"))
         try:
-            _redis_client = redis.Redis(
+            # Build into a local; only publish to the global after a successful
+            # ping so other tasks never receive an unverified client.
+            client = redis.Redis(
                 host=redis_host,
                 port=redis_port,
                 decode_responses=True,
                 socket_connect_timeout=1,
                 socket_timeout=1,
             )
-            await _redis_client.ping()
+            await client.ping()
+            _redis_client = client
             logger.info(f"Connected to Redis for LLM caching at {redis_host}:{redis_port}")
         except Exception as e:
             logger.debug(f"Redis unavailable at {redis_host}:{redis_port} ({e}); LLM cache disabled.")
             _redis_client = None
+        finally:
+            _redis_init_done = True
+
     return _redis_client
 
 

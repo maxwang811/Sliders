@@ -204,6 +204,10 @@ node_modules/
 
 
 outputs/
+
+# Downloaded benchmark datasets (FinanceBench PDFs/markdown, etc.)
+datasets/
+
 gnbr/
 parp_papers/test_data/
 pubmed_breast_cancer/

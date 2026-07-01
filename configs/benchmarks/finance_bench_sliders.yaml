@@ -152,9 +152,9 @@ system_config:
       max_tokens: 8192
       temperature: 0.0
 experiment_config:
-  benchmark_path: /path/to/datasets/financebench/financebench_open_source.jsonl
-  gpt_results_path: /path/to/datasets/financebench/gpt-4_oracle_reverse.jsonl
-  files_dir: /path/to/datasets/financebench/markdown/
+  benchmark_path: datasets/financebench/financebench_open_source.jsonl
+  gpt_results_path: datasets/financebench/gpt-4_oracle_reverse.jsonl
+  files_dir: datasets/financebench/markdown/
   soft_evaluator_model: gpt-4.1
   hard_evaluator_model: gpt-4.1
   num_questions: null
